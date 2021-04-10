@@ -1,7 +1,7 @@
 {
-	"name": "openui5-sample-app",
-	"version": "0.2.0",
-	"description": "Sample of an OpenUI5 app",
+	"name": "dravelopsconfigfrontend",
+	"version": "1.0.0",
+	"description": "User interface for system configuration of dravelops",
 	"private": true,
 	"scripts": {
 		"start": "ui5 serve",
