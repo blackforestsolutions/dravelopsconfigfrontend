@@ -12,7 +12,7 @@
             <subHeader>
                 <OverflowToolbar>
                     <Button text="API"/>
-                    <Button text="Dummy 1"/>
+                    <Button text= "{i18n>INPUT_PLACEHOLDER}"/>
                     <Button text="Dummy 2"/>
                 </OverflowToolbar>
             </subHeader>
