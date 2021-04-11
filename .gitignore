@@ -61,3 +61,5 @@ typings/
 .env
 
 dist/
+.idea/dravelopsconfigfrontend.iml
+.idea/workspace.xml
