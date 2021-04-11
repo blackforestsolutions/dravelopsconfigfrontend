@@ -13,5 +13,5 @@ framework:
     - name: themelib_sap_fiori_3
 server:
   settings:
-    httpPort: 1337
-    httpsPort: 1443
+    httpPort: 8080
+    httpsPort: 8081
