@@ -1,24 +1,18 @@
 sap.ui.define(
-  [
-    "sap/ui/Device",
-    "sap/ui/core/mvc/Controller",
-    "sap/ui/model/json/JSONModel",
-  ],
-  function (Device, Controller, JSONModel) {
-    "use strict";
+    [
+        "sap/ui/Device",
+        "sap/ui/core/mvc/Controller",
+    ],
+    function (Device, Controller) {
+        "use strict";
 
-    return Controller.extend(
-      "de.blackforestsolutions.dravelopsconfigfrontend.controller.App",
-      {
-        onInit: function () {
-          this.getView().setModel(
-            new JSONModel({
-              isMobile: Device.browser.mobile,
-            }),
-            "view"
-          );
-        },
-      }
-    );
-  }
+        return Controller.extend(
+            "de.blackforestsolutions.dravelopsconfigfrontend.controller.App",
+            {
+                onInit: function () {
+
+                },
+            }
+        );
+    }
 );

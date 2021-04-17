@@ -5,14 +5,13 @@
         xmlns="sap.m">
     <App>
         <Page
-                title="Title"
+                title="{i18n>TITLE}"
                 class="sapUiContentPadding sapUiResponsivePadding--header sapUiResponsivePadding--subHeader sapUiResponsivePadding--content sapUiResponsivePadding--footer"
-                showNavButton="true"
-        >
+                showNavButton="true">
             <subHeader>
                 <OverflowToolbar>
                     <Button text="API"/>
-                    <Button text= "{i18n>INPUT_PLACEHOLDER}"/>
+                    <Button text="{i18n>INPUT_PLACEHOLDER}"/>
                     <Button text="Dummy 2"/>
                 </OverflowToolbar>
             </subHeader>
