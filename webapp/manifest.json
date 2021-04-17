@@ -41,7 +41,10 @@
         }
       ]
     },
-    "contentDensities": {},
+    "contentDensities": {
+      "compact": true,
+      "cozy": false
+    },
     "flexEnabled": true
   },
   "sap.ui": {
