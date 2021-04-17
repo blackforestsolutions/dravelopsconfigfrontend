@@ -1,6 +1,6 @@
 specVersion: "2.3"
 metadata:
-  name: de.blackforestdevs.dravelopsconfigfrontend
+  name: de.blackforestsolutions.dravelopsconfigfrontend
 type: application
 framework:
   name: OpenUI5

@@ -2,7 +2,7 @@
 
 sap.ui.define([
 	"sap/ui/test/opaQunit",
-	"de/blackforestdevs/dravelopsconfigfrontend/test/integration/pages/App"
+	"de/blackforestsolutions/dravelopsconfigfrontend/test/integration/pages/App"
 ], function (opaTest) {
 	"use strict";
 

@@ -8,7 +8,7 @@ sap.ui.require([
 ], function (Opa5, AggregationLengthEquals, PropertyStrictEquals, Properties, EnterText, Press) {
 	"use strict";
 
-	var sViewName = "de.blackforestdevs.dravelopsconfigfrontend.view.App";
+	var sViewName = "de.blackforestsolutions.dravelopsconfigfrontend.view.App";
 	var sAddToItemInputId = "addTodoItemInput";
 	var sSearchTodoItemsInputId = "searchTodoItemsInput";
 	var sItemListId = "todoList";

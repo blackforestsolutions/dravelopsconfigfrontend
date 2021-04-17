@@ -6,7 +6,7 @@ sap.ui.getCore().attachInit(function () {
 	"use strict";
 
 	sap.ui.require([
-		"de/blackforestdevs/dravelopsconfigfrontend/test/unit/AllTests"
+		"de/blackforestsolutions/dravelopsconfigfrontend/test/unit/AllTests"
 	], function () {
 		QUnit.start();
 	});

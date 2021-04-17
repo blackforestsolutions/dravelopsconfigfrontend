@@ -8,7 +8,7 @@ sap.ui.define(
     "use strict";
 
     return Controller.extend(
-      "de.blackforestdevs.dravelopsconfigfrontend.controller.App",
+      "de.blackforestsolutions.dravelopsconfigfrontend.controller.App",
       {
         onInit: function () {
           this.getView().setModel(

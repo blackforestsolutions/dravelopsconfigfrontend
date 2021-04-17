@@ -3,12 +3,12 @@ sap.ui.define([
 ], function(Opa5) {
 	"use strict";
 
-	return Opa5.extend("de.blackforestdevs.dravelopsconfigfrontend.test.integration.arrangements.Startup", {
+	return Opa5.extend("de.blackforestsolutions.dravelopsconfigfrontend.test.integration.arrangements.Startup", {
 
 		iStartMyApp: function () {
 			this.iStartMyUIComponent({
 				componentConfig: {
-					name: "de.blackforestdevs.dravelopsconfigfrontend",
+					name: "de.blackforestsolutions.dravelopsconfigfrontend",
 					async: true,
 					manifest: true
 				}

@@ -1,7 +1,7 @@
 sap.ui.define([
 	"sap/ui/base/ManagedObject",
 	"sap/ui/core/mvc/Controller",
-	"de/blackforestdevs/dravelopsconfigfrontend/controller/App.controller",
+	"de/blackforestsolutions/dravelopsconfigfrontend/controller/App.controller",
 	"sap/ui/model/json/JSONModel"
 ], function(ManagedObject, Controller, AppController, JSONModel) {
 	"use strict";

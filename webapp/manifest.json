@@ -1,7 +1,7 @@
 {
   "_version": "1.12.0",
   "sap.app": {
-    "id": "de.blackforestdevs.dravelopsconfigfrontend",
+    "id": "de.blackforestsolutions.dravelopsconfigfrontend",
     "type": "application"
   },
   "sap.ui5": {
@@ -14,7 +14,7 @@
       }
     },
     "rootView": {
-      "viewName": "de.blackforestdevs.dravelopsconfigfrontend.view.App",
+      "viewName": "de.blackforestsolutions.dravelopsconfigfrontend.view.App",
       "type": "XML",
       "async": true,
       "id": "app"
@@ -23,7 +23,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "de.blackforestdevs.dravelopsconfigfrontend.i18n.i18n",
+          "bundleName": "de.blackforestsolutions.dravelopsconfigfrontend.i18n.i18n",
           "supportedLocales": ["en", "de"],
           "fallbackLocale": "en"
         }
