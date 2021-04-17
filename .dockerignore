@@ -10,3 +10,4 @@ yarn-error.log
 webapp
 .eslintrc
 ui5.yaml
+.idea
