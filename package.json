@@ -10,7 +10,7 @@
     "karma-ci": "rimraf coverage && karma start karma-ci.conf.js",
     "watch": "yarn run karma",
     "test": "yarn run lint && npm run karma-ci",
-    "build": "ui5 build -a --clean-dest",
+    "build": "ui5 build -a",
     "build-self-contained": "ui5 build self-contained -a --clean-dest",
     "serve-dist": "ws --compress -d dist"
   },
