@@ -11,3 +11,8 @@ webapp
 .eslintrc
 ui5.yaml
 .idea
+package.json
+package-lock.json
+README.md
+docker-compose.yml
+coverage
