@@ -1,0 +1,17 @@
+{
+  "name": "dravelopsconfigfrontend",
+  "version": "1.0.0",
+  "description": "User interface for system configuration of dravelops",
+  "private": true,
+  "scripts": {
+    "start": "ui5 serve -o index.html --accept-remote-connections",
+    "lint": "eslint webapp",
+    "build": "ui5 build -a"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@ui5/cli": "^2.10.2",
+    "eslint": "^7.23.0",
+    "local-web-server": "^4.2.1"
+  }
+}

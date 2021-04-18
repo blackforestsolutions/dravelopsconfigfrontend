@@ -1,0 +1,7 @@
+version: "3.7"
+
+services:
+  app:
+    image: blackforestsolutions/dravelopsconfigfrontend:v0.1.0-daf8a35
+    ports:
+      - "8080:80"

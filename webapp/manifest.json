@@ -1,0 +1,58 @@
+{
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "de.blackforestsolutions.dravelopsconfigfrontend",
+    "type": "application",
+    "title": "dravelopsconfigfrontend",
+    "applicationVersion": {}
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.75.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.ui.unified": {}
+      }
+    },
+    "rootView": {
+      "viewName": "de.blackforestsolutions.dravelopsconfigfrontend.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "app"
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "de.blackforestsolutions.dravelopsconfigfrontend.i18n.i18n",
+          "supportedLocales": [
+            "en",
+            "de"
+          ],
+          "fallbackLocale": "en"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/styles.css"
+        }
+      ]
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": false
+    },
+    "flexEnabled": true
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  }
+}

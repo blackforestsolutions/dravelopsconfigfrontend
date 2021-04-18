@@ -1,0 +1,25 @@
+<mvc:View
+        controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.App"
+
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m">
+    <App>
+        <Page
+                title="{i18n>TITLE}"
+                class="sapUiContentPadding sapUiResponsivePadding--header sapUiResponsivePadding--subHeader sapUiResponsivePadding--content sapUiResponsivePadding--footer"
+                showNavButton="true">
+            <subHeader>
+                <OverflowToolbar>
+                    <Button text="API"/>
+                    <Button text="{i18n>INPUT_PLACEHOLDER}"/>
+                    <Button text="Dummy 2"/>
+                </OverflowToolbar>
+            </subHeader>
+            <content>
+                <VBox>
+                    <Text text="Lorem ipsum dolor st amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat"/>
+                </VBox>
+            </content>
+        </Page>
+    </App>
+</mvc:View>
