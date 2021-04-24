@@ -45,6 +45,39 @@
       "compact": true,
       "cozy": false
     },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "viewPath": "de.blackforestsolutions.dravelopsconfigfrontend.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "bypassed": {
+          "target": "notFound"
+        },
+        "async": true
+      },
+      "routes": [
+        {
+          "pattern": "",
+          "name": "appHome",
+          "target": "home"
+        }
+      ],
+      "targets": {
+        "home": {
+          "viewId": "home",
+          "viewName": "Home",
+          "viewLevel": 1
+        },
+        "notFound": {
+          "viewId": "notFound",
+          "viewName": "NotFound",
+          "transition": "show"
+        }
+      }
+    },
     "flexEnabled": true
   },
   "sap.ui": {

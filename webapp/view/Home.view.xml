@@ -1,0 +1,10 @@
+<mvc:View
+        controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.Home"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns="sap.m">
+    <Page title="hello" class="sapUiResponsiveContentPadding">
+        <content>
+            <Button text="wassup" class="sapUiTinyMarginEnd"/>
+        </content>
+    </Page>
+</mvc:View>
