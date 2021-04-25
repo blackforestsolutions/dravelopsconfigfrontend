@@ -61,14 +61,14 @@
       "routes": [
         {
           "pattern": "",
-          "name": "appHome",
-          "target": "home"
+          "name": "appLaunchpad",
+          "target": "launchpad"
         }
       ],
       "targets": {
-        "home": {
-          "viewId": "home",
-          "viewName": "Home",
+        "launchpad": {
+          "viewId": "launchpad",
+          "viewName": "Launchpad",
           "viewLevel": 1
         },
         "notFound": {

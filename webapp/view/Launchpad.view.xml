@@ -1,5 +1,5 @@
 <mvc:View
-        controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.Home"
+        controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.Launchpad"
         xmlns:mvc="sap.ui.core.mvc"
         xmlns="sap.m">
     <Page
