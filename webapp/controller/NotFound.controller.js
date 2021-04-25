@@ -1,8 +1,8 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], function (Controller) {
+    "de/blackforestsolutions/dravelopsconfigfrontend/controller/BaseController",
+], function (BaseController) {
     "use strict";
-    return Controller.extend("de.blackforestsolutions.dravelopsconfigfrontend.controller.NotFound", {
+    return BaseController.extend("de.blackforestsolutions.dravelopsconfigfrontend.controller.NotFound", {
         onInit: function () {
         }
     });

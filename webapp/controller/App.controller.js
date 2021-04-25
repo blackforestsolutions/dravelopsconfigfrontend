@@ -1,12 +1,12 @@
 sap.ui.define(
     [
         "sap/ui/Device",
-        "sap/ui/core/mvc/Controller",
+        "de/blackforestsolutions/dravelopsconfigfrontend/controller/BaseController",
     ],
-    function (Device, Controller) {
+    function (Device, BaseController) {
         "use strict";
 
-        return Controller.extend(
+        return BaseController.extend(
             "de.blackforestsolutions.dravelopsconfigfrontend.controller.App",
             {
                 onInit: function () {
