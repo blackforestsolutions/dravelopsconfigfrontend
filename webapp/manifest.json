@@ -36,7 +36,8 @@
     },
     "resources": {
       "css": [
-        {          "uri": "css/styles.css"
+        {
+          "uri": "css/styles.css"
         }
       ]
     },
