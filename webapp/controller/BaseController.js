@@ -1,3 +1,9 @@
+/**
+ * BaseController cointains functions which are use multiple times.
+ * e.g. onNavBack
+ * */
+
+
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/routing/History",

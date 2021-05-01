@@ -1,3 +1,7 @@
+/**
+ * root controller
+ * */
+
 sap.ui.define(
     [
         "sap/ui/Device",

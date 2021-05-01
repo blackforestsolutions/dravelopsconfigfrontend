@@ -1,3 +1,8 @@
+/**
+ * Launchpad is the main page of the application
+ * */
+
+
 sap.ui.define([
     "de/blackforestsolutions/dravelopsconfigfrontend/controller/BaseController",
 
