@@ -15,41 +15,41 @@
             </OverflowToolbar>
         </subHeader>
         <content>
-            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
-                         header="Configure-1" sizeBehavior=".Responsive">
-                <TileContent>
-                    <TileContent>
-                        <ImageContent
-                                src="sap-icon://developer-settings"
-                                description="Icon">
-                        </ImageContent>
-                    </TileContent>
-                </TileContent>
-            </GenericTile>
-            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
-                         header="Configure-2" sizeBehavior=".Responsive">
-                <TileContent>
-                    <TileContent>
-                        <ImageContent
-                                src="sap-icon://developer-settings"
-                                description="Icon">
-                        </ImageContent>
-                    </TileContent>
-                </TileContent>
-            </GenericTile>
-            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
-                         header="Configure-3" sizeBehavior=".Responsive">
-                <TileContent>
-                    <TileContent>
-                        <ImageContent
-                                src="sap-icon://developer-settings"
-                                description="Icon">
-                        </ImageContent>
-                    </TileContent>
-                </TileContent>
-            </GenericTile>
 
-
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                         header="Configure-1" press="tileClicked">
+                <TileContent>
+                    <TileContent>
+                        <ImageContent
+                                src="sap-icon://developer-settings"
+                                description="Icon">
+                        </ImageContent>
+                    </TileContent>
+                </TileContent>
+            </GenericTile>
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                         header="Configure-2" press="tileClicked">
+                <TileContent>
+                    <TileContent>
+                        <ImageContent
+                                src="sap-icon://developer-settings"
+                                description="Icon">
+                        </ImageContent>
+                    </TileContent>
+                </TileContent>
+            </GenericTile>
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                         header="Configure-3" press="tileClicked">
+                <TileContent>
+                    <TileContent>
+                        <ImageContent
+                                src="sap-icon://developer-settings"
+                                description="Icon">
+                        </ImageContent>
+                    </TileContent>
+                </TileContent>
+            </GenericTile>
         </content>
+
     </Page>
 </mvc:View>
