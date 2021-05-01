@@ -3,21 +3,53 @@
         xmlns:mvc="sap.ui.core.mvc"
         xmlns="sap.m">
     <mvc:XMLView viewName="de.blackforestsolutions.dravelopsconfigfrontend.view.Logotoolbar"/>
-    <Page
-            title="{i18n>TITLE}"
-            class="sapUiContentPadding sapUiResponsivePadding--header sapUiResponsivePadding--subHeader sapUiResponsivePadding--content sapUiResponsivePadding--footer"
-            showNavButton="true">
+    <Page showHeader="false"
+          class="sapUiContentPadding sapUiResponsivePadding--header sapUiResponsivePadding--subHeader sapUiResponsivePadding--content sapUiResponsivePadding--footer">
+
         <subHeader>
             <OverflowToolbar>
-                <Button text="API"/>
-                <Button text="{i18n>INPUT_PLACEHOLDER}"/>
-                <Button text="Dummy 2"/>
+                <Button text="{i18n>anchorbutton-1}"/>
+                <Button text="{i18n>anchorbutton-2}"/>
+                <Button text="{i18n>anchorbutton-3}"/>
+                <Button text="{i18n>anchorbutton-4}"/>
             </OverflowToolbar>
         </subHeader>
         <content>
-            <VBox>
-                <Text text="Lorem ipsum dolor st amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat"/>
-            </VBox>
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                         header="Configure-1" sizeBehavior=".Responsive">
+                <TileContent>
+                    <TileContent>
+                        <ImageContent
+                                src="sap-icon://developer-settings"
+                                description="Icon">
+                        </ImageContent>
+                    </TileContent>
+                </TileContent>
+            </GenericTile>
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                         header="Configure-2" sizeBehavior=".Responsive">
+                <TileContent>
+                    <TileContent>
+                        <ImageContent
+                                src="sap-icon://developer-settings"
+                                description="Icon">
+                        </ImageContent>
+                    </TileContent>
+                </TileContent>
+            </GenericTile>
+            <GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                         header="Configure-3" sizeBehavior=".Responsive">
+                <TileContent>
+                    <TileContent>
+                        <ImageContent
+                                src="sap-icon://developer-settings"
+                                description="Icon">
+                        </ImageContent>
+                    </TileContent>
+                </TileContent>
+            </GenericTile>
+
+
         </content>
     </Page>
 </mvc:View>
