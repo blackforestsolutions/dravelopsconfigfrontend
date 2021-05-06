@@ -21,7 +21,7 @@ sap.ui.define(
                     pressedTileId === deploymentConfigurationTileId
                         ? oRouter.navTo(routeDeploymentConfigurationTile, {}, true)
                         : console.log("Routing to deployment configuration was not possible.");
-                },
+                }
             }
         );
     }

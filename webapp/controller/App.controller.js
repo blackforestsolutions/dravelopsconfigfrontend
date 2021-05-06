@@ -5,7 +5,7 @@
 sap.ui.define(
     [
         "sap/ui/Device",
-        "de/blackforestsolutions/dravelopsconfigfrontend/controller/BaseController",
+        "de/blackforestsolutions/dravelopsconfigfrontend/controller/BaseController"
     ],
     function (Device, BaseController) {
         "use strict";
@@ -15,7 +15,7 @@ sap.ui.define(
             {
                 onInit: function () {
 
-                },
+                }
             }
         );
     }
