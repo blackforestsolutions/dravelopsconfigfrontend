@@ -7,13 +7,17 @@
     "applicationVersion": {}
   },
   "sap.ui5": {
+    "config": {
+      "fullWidth": true
+    },
     "dependencies": {
       "minUI5Version": "1.75.0",
       "libs": {
         "sap.ui.core": {},
         "sap.m": {},
         "sap.ui.unified": {},
-        "sap.f": {}
+        "sap.f": {},
+        "sap.uxap": {}
       }
     },
     "rootView": {
@@ -64,6 +68,11 @@
           "pattern": "",
           "name": "appLaunchpad",
           "target": "launchpad"
+        },
+        {
+          "pattern": "configuration/deploymentconfiguration",
+          "name": "deploymentconfiguration",
+          "target": "deploymentconfiguration"
         }
       ],
       "targets": {
@@ -75,7 +84,12 @@
         "notFound": {
           "viewId": "notFound",
           "viewName": "NotFound",
-          "transition": "show"
+          "transition": "fade"
+        },
+        "deploymentconfiguration": {
+          "viewId": "deploymentconfiguration",
+          "viewName": "launchpad/configurations/DeploymentConfiguration",
+          "transition": "fade"
         }
       }
     },
@@ -84,6 +98,7 @@
   "sap.ui": {
     "technology": "UI5",
     "deviceTypes": {
+      "fullWidth": true,
       "desktop": true,
       "tablet": true,
       "phone": true
