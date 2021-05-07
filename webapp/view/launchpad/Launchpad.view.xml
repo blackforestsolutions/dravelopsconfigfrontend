@@ -6,10 +6,9 @@
         xmlns="sap.uxap"
         xmlns:m="sap.m"
 >
-
-    <mvc:XMLView viewName="de.blackforestsolutions.dravelopsconfigfrontend.view.shared.Logotoolbar"/>
+    <mvc:XMLView viewName="de.blackforestsolutions.dravelopsconfigfrontend.view.shared.Logotoolbar" async="true"/>
     <ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="true" alwaysShowContentHeader="false"
-                      showAnchorBarPopover="false" showHeaderContent="false" toggleHeaderOnTitleClick="false">
+                      showAnchorBarPopover="false" showHeaderContent="false">
         <sections>
             <ObjectPageSection titleUppercase="true" id="panel-1" title="{i18n>Anchorbutton-1}" showTitle="false">
                 <subSections>

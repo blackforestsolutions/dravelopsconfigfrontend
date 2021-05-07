@@ -1,8 +1,14 @@
 /**Launchpad is the main page of the application*/
 
 sap.ui.define(
-    ["de/blackforestsolutions/dravelopsconfigfrontend/controller/BaseController"],
-    function (BaseController) {
+    [
+        "sap/ui/model/json/JSONModel",
+        "de/blackforestsolutions/dravelopsconfigfrontend/controller/BaseController"
+
+    ],
+    function (BaseController
+        , JSONModel
+    ) {
         "use strict";
         const apiSettingsTileId = "container-dravelopsconfigfrontend---launchpad--apiSettingsTile";
         const routeApiSettingsTile = "apisettings";
@@ -14,12 +20,27 @@ sap.ui.define(
 
                 tileClicked(oEvent) {
                     const pressedTileId = oEvent.getSource().getId();
-                    const oRouter = this.getOwnerComponent().getRouter();
+                    // const oRouter = this.getOwnerComponent().getRouter();
+                    if (pressedTileId === apiSettingsTileId) {
+                        this.logLoadedData();
 
-                    pressedTileId === apiSettingsTileId
+                        // oRouter.navTo(routeApiSettingsTile, {}, true);
+                    } else {
+                        console.log("Routing to API Settings was not possible.");
+                    }
+
+                    /*pressedTileId === apiSettingsTileId
                         ? oRouter.navTo(routeApiSettingsTile, {}, true)
-                        : console.log("Routing to API Settings was not possible.");
-                }
+                        : console.log("Routing to API Settings was not possible.");*/
+                },
+                logLoadedData: async function () {
+                    var oModel = new JSONModel();
+                    var url = "http://localhost:8080/config_backend/apisettings";
+                    $.get(url, function (response) {
+                        console.log(response);
+                        oModel.setData(response);
+                    });
+                },
             }
         );
     }

@@ -6,7 +6,7 @@
         xmlns="sap.m"
 >
 
-    <mvc:XMLView viewName="de.blackforestsolutions.dravelopsconfigfrontend.view.shared.Logotoolbar"/>
+    <mvc:XMLView viewName="de.blackforestsolutions.dravelopsconfigfrontend.view.shared.Logotoolbar" async="true"/>
     <Page showNavButton="true"
           navButtonPress="onNavBack">
     </Page>
