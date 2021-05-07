@@ -1,5 +1,4 @@
-/**BaseController cointains functions which are use multiple times.
- * e.g. onNavBack*/
+/**BaseController contains functions which are use multiple times.e.g. onNavBack*/
 
 
 sap.ui.define([

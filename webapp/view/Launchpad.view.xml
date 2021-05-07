@@ -16,9 +16,9 @@
                     <ObjectPageSubSection id="tiles-1" titleUppercase="false">
                         <blocks>
                             <m:Panel headerText="{i18n>Anchorbutton-1}" backgroundDesign="Transparent" width="100%">
-                                <m:GenericTile id="deploymentConfigurationTile"
+                                <m:GenericTile id="apiSettingsTile"
                                                class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
-                                               header="Deployment Configuration" press="tileClicked">
+                                               header="{i18n>ApiSettingsTile}" press="tileClicked">
                                     <m:TileContent>
                                         <m:TileContent>
                                             <m:ImageContent

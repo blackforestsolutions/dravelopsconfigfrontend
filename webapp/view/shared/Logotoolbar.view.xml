@@ -1,4 +1,4 @@
-<mvc:ViewDeploymentConfigurationDeploymentConfiguration
+<mvc:View
         controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.shared.Logotoolbar"
         xmlns:mvc="sap.ui.core.mvc"
         xmlns="sap.f">
@@ -7,4 +7,4 @@
             title=""
             homeIconPressed="onHomeIconPressed">
     </ShellBar>
-</mvc:ViewDeploymentConfigurationDeploymentConfiguration>
+</mvc:View>

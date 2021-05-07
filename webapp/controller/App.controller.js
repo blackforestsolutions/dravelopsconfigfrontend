@@ -1,6 +1,5 @@
-/**
- * root controller
- * */
+/**root controller*/
+
 
 sap.ui.define(
     [

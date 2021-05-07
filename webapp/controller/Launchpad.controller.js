@@ -1,13 +1,11 @@
-/**
- * Launchpad is the main page of the application
- * */
+/**Launchpad is the main page of the application*/
 
 sap.ui.define(
     ["de/blackforestsolutions/dravelopsconfigfrontend/controller/BaseController"],
     function (BaseController) {
         "use strict";
-        const deploymentConfigurationTileId = "container-dravelopsconfigfrontend---launchpad--deploymentConfigurationTile";
-        const routeDeploymentConfigurationTile = "deploymentconfiguration";
+        const apiSettingsTileId = "container-dravelopsconfigfrontend---launchpad--apiSettingsTile";
+        const routeApiSettingsTile = "apisettings";
         return BaseController.extend(
             "de.blackforestsolutions.dravelopsconfigfrontend.controller.Launchpad",
             {
@@ -18,9 +16,9 @@ sap.ui.define(
                     const pressedTileId = oEvent.getSource().getId();
                     const oRouter = this.getOwnerComponent().getRouter();
 
-                    pressedTileId === deploymentConfigurationTileId
-                        ? oRouter.navTo(routeDeploymentConfigurationTile, {}, true)
-                        : console.log("Routing to deployment configuration was not possible.");
+                    pressedTileId === apiSettingsTileId
+                        ? oRouter.navTo(routeApiSettingsTile, {}, true)
+                        : console.log("Routing to API Settings was not possible.");
                 }
             }
         );

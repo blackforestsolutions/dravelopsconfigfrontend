@@ -1,7 +1,7 @@
 <!--the yaml can be read and edited here-->
 
 <mvc:View
-        controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.DeploymentConfiguration"
+        controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.ApiSettings"
         xmlns:mvc="sap.ui.core.mvc"
         xmlns="sap.m"
 >

@@ -4,7 +4,9 @@
     "id": "de.blackforestsolutions.dravelopsconfigfrontend",
     "type": "application",
     "title": "dravelopsconfigfrontend",
-    "applicationVersion": {}
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
   },
   "sap.ui5": {
     "config": {
@@ -70,9 +72,9 @@
           "target": "launchpad"
         },
         {
-          "pattern": "configuration/deploymentconfiguration",
-          "name": "deploymentconfiguration",
-          "target": "deploymentconfiguration"
+          "pattern": "configuration/apisettings",
+          "name": "apisettings",
+          "target": "apisettings"
         }
       ],
       "targets": {
@@ -86,9 +88,9 @@
           "viewName": "NotFound",
           "transition": "fade"
         },
-        "deploymentconfiguration": {
-          "viewId": "deploymentconfiguration",
-          "viewName": "launchpad/configurations/DeploymentConfiguration",
+        "apisettings": {
+          "viewId": "apisettings",
+          "viewName": "launchpad/configurations/ApiSettings",
           "transition": "fade"
         }
       }
@@ -98,7 +100,6 @@
   "sap.ui": {
     "technology": "UI5",
     "deviceTypes": {
-      "fullWidth": true,
       "desktop": true,
       "tablet": true,
       "phone": true

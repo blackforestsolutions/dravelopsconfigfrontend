@@ -1,3 +1,5 @@
+/**header toolbar for every page to get back to launchpad*/
+
 sap.ui.define([
     "de/blackforestsolutions/dravelopsconfigfrontend/controller/BaseController"
 ], function (Basecontroller) {
