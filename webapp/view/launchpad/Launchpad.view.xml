@@ -1,7 +1,7 @@
 <!--will be made into separate views-->
 
 <mvc:View
-        controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.Launchpad"
+        controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.Launchpad"
         xmlns:mvc="sap.ui.core.mvc"
         xmlns="sap.uxap"
         xmlns:m="sap.m"
