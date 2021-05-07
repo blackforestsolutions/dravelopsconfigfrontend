@@ -80,7 +80,7 @@
       "targets": {
         "launchpad": {
           "viewId": "launchpad",
-          "viewName": "Launchpad",
+          "viewName": "launchpad/Launchpad",
           "viewLevel": 1
         },
         "notFound": {

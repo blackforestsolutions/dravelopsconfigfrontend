@@ -7,7 +7,7 @@ sap.ui.define(
         const apiSettingsTileId = "container-dravelopsconfigfrontend---launchpad--apiSettingsTile";
         const routeApiSettingsTile = "apisettings";
         return BaseController.extend(
-            "de.blackforestsolutions.dravelopsconfigfrontend.controller.Launchpad",
+            "de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.Launchpad",
             {
                 onInit: function () {
                 },
