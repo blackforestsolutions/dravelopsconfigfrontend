@@ -1,22 +1,104 @@
+<!--will be made into separate views-->
+
 <mvc:View
         controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.Launchpad"
         xmlns:mvc="sap.ui.core.mvc"
-        xmlns="sap.m">
-    <Page
-            title="{i18n>TITLE}"
-            class="sapUiContentPadding sapUiResponsivePadding--header sapUiResponsivePadding--subHeader sapUiResponsivePadding--content sapUiResponsivePadding--footer"
-            showNavButton="true">
-        <subHeader>
-            <OverflowToolbar>
-                <Button text="API"/>
-                <Button text="{i18n>INPUT_PLACEHOLDER}"/>
-                <Button text="Dummy 2"/>
-            </OverflowToolbar>
-        </subHeader>
-        <content>
-            <VBox>
-                <Text text="Lorem ipsum dolor st amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat"/>
-            </VBox>
-        </content>
-    </Page>
+        xmlns="sap.uxap"
+        xmlns:m="sap.m"
+>
+
+    <mvc:XMLView viewName="de.blackforestsolutions.dravelopsconfigfrontend.view.shared.Logotoolbar"/>
+    <ObjectPageLayout id="ObjectPageLayout" upperCaseAnchorBar="true" alwaysShowContentHeader="false"
+                      showAnchorBarPopover="false" showHeaderContent="false" toggleHeaderOnTitleClick="false">
+        <sections>
+            <ObjectPageSection titleUppercase="true" id="panel-1" title="{i18n>Anchorbutton-1}" showTitle="false">
+                <subSections>
+                    <ObjectPageSubSection id="tiles-1" titleUppercase="false">
+                        <blocks>
+                            <m:Panel headerText="{i18n>Anchorbutton-1}" backgroundDesign="Transparent" width="100%">
+                                <m:GenericTile id="apiSettingsTile"
+                                               class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                                               header="{i18n>ApiSettingsTile}" press="tileClicked">
+                                    <m:TileContent>
+                                        <m:TileContent>
+                                            <m:ImageContent
+                                                    src="sap-icon://developer-settings"
+                                                    description="Icon">
+                                            </m:ImageContent>
+                                        </m:TileContent>
+                                    </m:TileContent>
+                                </m:GenericTile>
+                                <m:GenericTile id="tile1-2" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                                               header="Configure-2" press="tileClicked">
+                                    <m:TileContent>
+                                        <m:TileContent>
+                                            <m:ImageContent
+                                                    src="sap-icon://developer-settings"
+                                                    description="Icon">
+                                            </m:ImageContent>
+                                        </m:TileContent>
+                                    </m:TileContent>
+                                </m:GenericTile>
+                                <m:GenericTile id="tile1-3" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                                               header="Configure-3" press="tileClicked">
+                                    <m:TileContent>
+                                        <m:TileContent>
+                                            <m:ImageContent
+                                                    src="sap-icon://developer-settings"
+                                                    description="Icon">
+                                            </m:ImageContent>
+                                        </m:TileContent>
+                                    </m:TileContent>
+                                </m:GenericTile>
+                            </m:Panel>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+            <ObjectPageSection titleUppercase="false" id="panel-2" title="{i18n>Anchorbutton-2}" showTitle="false">
+                <subSections>
+                    <ObjectPageSubSection id="tiles-2" titleUppercase="false">
+                        <blocks>
+                            <m:Panel headerText="{i18n>Anchorbutton-2}" backgroundDesign="Transparent" width="100%">
+
+                                <m:GenericTile id="tile2-1" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                                               header="Configure-1" press="tileClicked">
+                                    <m:TileContent>
+                                        <m:TileContent>
+                                            <m:ImageContent
+                                                    src="sap-icon://developer-settings"
+                                                    description="Icon">
+                                            </m:ImageContent>
+                                        </m:TileContent>
+                                    </m:TileContent>
+                                </m:GenericTile>
+                                <m:GenericTile id="tile2-2" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                                               header="Configure-2" press="tileClicked">
+                                    <m:TileContent>
+                                        <m:TileContent>
+                                            <m:ImageContent
+                                                    src="sap-icon://developer-settings"
+                                                    description="Icon">
+                                            </m:ImageContent>
+                                        </m:TileContent>
+                                    </m:TileContent>
+                                </m:GenericTile>
+                                <m:GenericTile id="tile2-3" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                                               header="Configure-3" press="tileClicked">
+                                    <m:TileContent>
+                                        <m:TileContent>
+                                            <m:ImageContent
+                                                    src="sap-icon://developer-settings"
+                                                    description="Icon">
+                                            </m:ImageContent>
+                                        </m:TileContent>
+                                    </m:TileContent>
+                                </m:GenericTile>
+                            </m:Panel>
+                        </blocks>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+        </sections>
+    </ObjectPageLayout>
 </mvc:View>

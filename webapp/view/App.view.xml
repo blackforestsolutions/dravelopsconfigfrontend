@@ -2,7 +2,7 @@
         controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.App"
         xmlns:mvc="sap.ui.core.mvc"
         xmlns="sap.m">
-    <Shell>
+    <Shell appWidthLimited="false">
         <App id="app"/>
     </Shell>
 </mvc:View>

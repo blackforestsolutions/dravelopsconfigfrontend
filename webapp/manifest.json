@@ -4,15 +4,22 @@
     "id": "de.blackforestsolutions.dravelopsconfigfrontend",
     "type": "application",
     "title": "dravelopsconfigfrontend",
-    "applicationVersion": {}
+    "applicationVersion": {
+      "version": "1.0.0"
+    }
   },
   "sap.ui5": {
+    "config": {
+      "fullWidth": true
+    },
     "dependencies": {
       "minUI5Version": "1.75.0",
       "libs": {
         "sap.ui.core": {},
         "sap.m": {},
-        "sap.ui.unified": {}
+        "sap.ui.unified": {},
+        "sap.f": {},
+        "sap.uxap": {}
       }
     },
     "rootView": {
@@ -63,6 +70,11 @@
           "pattern": "",
           "name": "appLaunchpad",
           "target": "launchpad"
+        },
+        {
+          "pattern": "configuration/apisettings",
+          "name": "apisettings",
+          "target": "apisettings"
         }
       ],
       "targets": {
@@ -74,7 +86,12 @@
         "notFound": {
           "viewId": "notFound",
           "viewName": "NotFound",
-          "transition": "show"
+          "transition": "fade"
+        },
+        "apisettings": {
+          "viewId": "apisettings",
+          "viewName": "launchpad/configurations/ApiSettings",
+          "transition": "fade"
         }
       }
     },
