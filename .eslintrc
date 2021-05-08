@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "jquery": true
   },
   "globals": {
     "sap": true,
@@ -177,5 +178,8 @@
         "nonwords": false
       }
     ]
+  },
+  "parserOptions": {
+    "ecmaVersion": 12
   }
 }
