@@ -10,7 +10,6 @@ sap.ui.define(
         const apiSettingsTileId = "container-dravelopsconfigfrontend---launchpad--apiSettingsTile";
         const routeApiSettingsTile = "apisettings";
         const errorMessage = "Routing to API Settings was not possible.";
-        var url = "http://localhost:8080/config_backend/apisettings";
         return BaseController.extend(
             "de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.Launchpad",
             {
@@ -24,16 +23,16 @@ sap.ui.define(
                     const pressedTileId = oEvent.getSource().getId();
                     const oRouter = this.getOwnerComponent().getRouter();
 
+                    // retuned nichts, rest communication buch
+
                     if (pressedTileId === apiSettingsTileId) {
-                        this.getApiSettingsFromBackendAndRouteToApiSettingsView().then(r => oRouter.navTo(routeApiSettingsTile, {}, true));
+                        this.routeToApiSettings(oRouter);
                     } else {
                         console.log(errorMessage);
                     }
                 },
-                getApiSettingsFromBackendAndRouteToApiSettingsView: async () => {
-                    $.get(url, function (response) {
-                        console.log(response);
-                    });
+                routeToApiSettings: async (oRouter) => {
+                    oRouter.navTo(routeApiSettingsTile, {}, true);
                 }
             }
         );

@@ -6,9 +6,18 @@ sap.ui.define([
 
 ], function (BaseController) {
     "use strict";
-    return BaseController.extend("de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.ApiSettings", {
-        onInit: function () {
 
+    var url = "http://localhost:8080/config_backend/apisettings";
+    return BaseController.extend("de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.ApiSettings", {
+        getApiSettingsFromBackend: async () => {
+            $.get(url, function (response) {
+                console.log(response);// @will response ist das json
+
+            });
+        },
+
+        onInit: function () {
+            this.getApiSettingsFromBackend();
         }
     });
 });
