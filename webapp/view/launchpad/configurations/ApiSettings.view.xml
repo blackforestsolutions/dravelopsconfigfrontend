@@ -4,10 +4,75 @@
         controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.ApiSettings"
         xmlns:mvc="sap.ui.core.mvc"
         xmlns="sap.m"
+        xmlns:f="sap.ui.layout.form"
+        xmlns:l="sap.ui.layout" 
+        xmlns:core="sap.ui.core"
 >
 
     <mvc:XMLView viewName="de.blackforestsolutions.dravelopsconfigfrontend.view.shared.Logotoolbar" async="true"/>
     <Page showNavButton="true"
           navButtonPress="onNavBack">
+          <content>
+          
+    <f:SimpleForm id="configFormPart1" editable="true" layout="ResponsiveGridLayout" title="Configuration">
+        <f:content>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://action-settings" tooltip="Config entries"/>
+            </Toolbar>
+            <Title text="Dummy Header 1" level="H5" titleStyle="H5"/>
+            <Label text="Dummy Textfield 1" design="Bold">
+                <layoutData>
+                    <l:GridData span="XL2 L2 M2 S6"/>
+                </layoutData>
+            </Label>
+            <MaskInput id="dummyTextfield1" value="{dummy_Textfield1}" placeholder="Enter number..." mask="(CCC) CCC-CCCC"
+                placeholderSymbol="_">
+                <rules>
+                    <MaskInputRule maskFormatSymbol="C" regex="[0-9]"/>
+                </rules>
+                <layoutData>
+                    <l:GridData span="XL4 L4 M4 S6"/>
+                </layoutData>
+            </MaskInput>
+            <Label text="Dummy Textfield 2" design="Bold">
+                <layoutData>
+                    <l:GridData span="XL2 L2 M2 S6"/>
+                </layoutData>
+            </Label>
+            <Input id="dummyTextfield2" value="{dummy_Textfield2}">
+            <layoutData>
+                <l:GridData span="XL4 L4 M4 S6"/>
+            </layoutData>
+            </Input>
+
+            <Label text="Dummy Checkbox 1" design="Bold">
+                <layoutData>
+                    <l:GridData span="XL2 L2 M2 S6"/>
+                </layoutData>
+            </Label>
+            <CheckBox id="cb1" />
+        </f:content>
+        </f:SimpleForm>
+        <f:SimpleForm id="configFormPart2" editable="true" layout="ResponsiveGridLayout">
+        <f:content>
+            <Title text="Dummy Header 2" level="H5"/>
+            <Label text="Dummy Textfield 3" design="Bold">
+                <layoutData>
+                    <l:GridData span="XL2 L2 M2 S6"/>
+                </layoutData>
+            </Label>
+            <MaskInput id="dummyTextfield3" value="{dummy_Textfield3}" placeholder="Enter number..." mask="(CCC) CCC-CCCC" placeholderSymbol="_">
+                <rules>
+                    <MaskInputRule maskFormatSymbol="C" regex="[0-9]"/>
+                </rules>
+                <layoutData>
+                    <l:GridData span="XL4 L4 M4 S6"/>
+                </layoutData>
+            </MaskInput>
+        </f:content>
+        </f:SimpleForm>
+
+          </content>
     </Page>
 </mvc:View>
