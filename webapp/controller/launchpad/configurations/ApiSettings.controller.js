@@ -2,26 +2,26 @@
 
 
 sap.ui.define([
-    "de/blackforestsolutions/dravelopsconfigfrontend/controller/BaseController"
+    "de/blackforestsolutions/dravelopsconfigfrontend/controller/BaseController",
+    "sap/ui/model/json/JSONModel"
 
-], function (BaseController) {
+], function (BaseController, JSONModel) {
     "use strict";
 
     var url = "http://localhost:8080/config_backend/apisettings";
-    var responseJson;
+    let oModelApiSettings;
     return BaseController.extend("de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.ApiSettings", {
-        getApiSettingsFromBackend: async () => {
-            $.get(url, function (response) {
-                /**console.log(response);// @will response ist das json*/
-                responseJson = response;
-            });
-        },
 
         onInit: function () {
-            this.getApiSettingsFromBackend();
-            var oModel = new JSONModel();
-            oModel.loadData("jsonfilename.json")
-            //JS Objekt in Json Model mappen
+            oModelApiSettings = new JSONModel();
+            oModelApiSettings.loadData(url);
+            oModelApiSettings.dataLoaded().then(() => {
+                this.getView().setModel(oModelApiSettings, "apisettings");
+                // console.log(oModelApiSettings);
+                console.log(oModelApiSettings.getData())
+            })
+
         }
+
     });
 });
