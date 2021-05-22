@@ -7,77 +7,12 @@
         xmlns:f="sap.ui.layout.form"
         xmlns:core="sap.ui.core"
 >
-<!--https://sapui5.hana.ondemand.com/#/entity/sap.ui.layout.form.Form/sample/sap.ui.layout.sample.Form480_12120/code/Display.fragment.xml-->
     <mvc:XMLView viewName="de.blackforestsolutions.dravelopsconfigfrontend.view.shared.Logotoolbar" async="true"/>
 
 
     <Page showNavButton="true"
           navButtonPress="onNavBack" title="{i18n>ApiSettingsTile}">
         <content>
-
-
-            <!--                        <Text text="{apisettings>/graphql/playground/page-title}"/>-->
-
-            <!--TODO toggle editable-->
-            <!--  <f:SimpleForm id="form"
-                            editable="false"
-                            layout="ResponsiveGridLayout"
-                            title="Address"
-                            labelSpanXL="4"
-                            labelSpanL="3"
-                            labelSpanM="4"
-                            labelSpanS="12"
-                            adjustLabelSpan="false"
-                            emptySpanXL="0"
-                            emptySpanL="4"
-                            emptySpanM="0"
-                            emptySpanS="0"
-                            columnsXL="2"
-                            columnsL="1"
-                            columnsM="1"
-                            singleContainerFullSize="false">
-                  <f:content>
-                      &lt;!&ndash;TODO set keys from json&ndash;&gt;
-                      <core:Title text="Playground"/>
-                      <Label text="Dummy Textfield 1" design="Bold">
-                      </Label>
-                      <MaskInput id="dummyTextfield1" value="{dummy_Textfield1}" placeholder="Enter number..."
-                                 mask="(CCC) CCC-CCCC"
-                                 placeholderSymbol="_">
-                          <rules>
-                              <MaskInputRule maskFormatSymbol="C" regex="[0-9]"/>
-                          </rules>
-                      </MaskInput>
-                      <Label text="Dummy Textfield 2" design="Bold">
-                      </Label>
-                      <Input id="dummyTextfield2" value="{dummy_Textfield2}">
-                      </Input>
-
-                      <Label text="Dummy Checkbox 1" design="Bold">
-                      </Label>
-                      <CheckBox id="cb1"/>
-                  </f:content>
-              </f:SimpleForm>
-              <f:SimpleForm id="configFormPart2" editable="true" layout="ResponsiveGridLayout">
-                  <f:content>
-                      <Title text="Dummy Header 2" level="H5"/>
-                      <Label text="Dummy Textfield 3" design="Bold">
-                          <layoutData>
-                              <l:GridData span="XL2 L2 M2 S6"/>
-                          </layoutData>
-                      </Label>
-                      <MaskInput id="dummyTextfield3" value="{dummy_Textfield3}" placeholder="Enter number..."
-                                 mask="(CCC) CCC-CCCC" placeholderSymbol="_">
-                          <rules>
-                              <MaskInputRule maskFormatSymbol="C" regex="[0-9]"/>
-                          </rules>
-                          <layoutData>
-                              <l:GridData span="XL4 L4 M4 S6"/>
-                          </layoutData>
-                      </MaskInput>
-                  </f:content>
-              </f:SimpleForm>-->
-
             <VBox class="sapUiSmallMargin">
                 <f:Form id="FormDisplay480_12120"
                         editable="false">
@@ -103,7 +38,7 @@
                     <!--                    TODO add ids-->
 
                     <f:formContainers>
-                        <f:FormContainer title="View">
+                        <f:FormContainer title="General">
                             <f:formElements>
                                 <f:FormElement label="{i18n>page-title}">
                                     <f:fields>
@@ -287,6 +222,51 @@
                                 <!-- <f:FormElement label="layers">
                                      <f:fields>
                                          <Text text="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers}"/>
+                                     </f:fields>
+                                 </f:FormElement>-->
+                            </f:formElements>
+                        </f:FormContainer>
+                        <f:FormContainer title="NEAREST_ADDRESSES">
+                            <f:formElements>
+                                <f:FormElement label="Name">
+                                    <f:fields>
+                                        <Text text="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/name}"/>
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement label="Query">
+                                    <f:fields>
+                                        <Text text="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/query}"/>
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement label="longitude">
+                                    <f:fields>
+                                        <Text text="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"/>
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement label="latitude">
+                                    <f:fields>
+                                        <Text text="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"/>
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement label="latitude">
+                                    <f:fields>
+                                        <Text text="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"/>
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement label="latitude">
+                                    <f:fields>
+                                        <Text text="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/language}"/>
+                                    </f:fields>
+                                </f:FormElement>
+                                <f:FormElement label="maxResults">
+                                    <f:fields>
+                                        <Text text="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/maxResults}"/>
+                                    </f:fields>
+                                </f:FormElement>
+                                <!--TODO is list-->
+                                <!-- <f:FormElement label="layers">
+                                     <f:fields>
+                                         <Text text="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/layers}"/>
                                      </f:fields>
                                  </f:FormElement>-->
                             </f:formElements>
