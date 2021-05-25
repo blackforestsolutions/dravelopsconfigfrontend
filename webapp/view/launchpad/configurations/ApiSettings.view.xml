@@ -2,6 +2,7 @@
 
 <mvc:View
         controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.ApiSettings"
+        xmlns:core="sap.ui.core"
         xmlns:mvc="sap.ui.core.mvc"
         xmlns="sap.m"
 >
@@ -15,7 +16,9 @@
             class="sapUiResponsivePadding--header sapUiResponsivePadding--content sapUiResponsivePadding--footer sapUiResponsivePadding--floatingFooter">
 
         <content>
-
+            <core:Fragment
+                    fragmentName="de.blackforestsolutions.dravelopsconfigfrontend.view.launchpad.configurations.FormApiSettingsForm"
+                    async="true"/>
         </content>
 
         <headerContent>

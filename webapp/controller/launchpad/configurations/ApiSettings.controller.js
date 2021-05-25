@@ -14,42 +14,40 @@ sap.ui.define([
     var URL_GET = "http://localhost:8081/config_backend/apisettings";
     var URL_UPDATE = "http://localhost:8081/config_backend/update";
     let oModelApiSettings = new JSONModel()
-    let EDIT_FRAGMENT_NAME = "EditApiSettingsForm";
-    let DISPLAY_FRAGMENT_NAME = "DisplayApiSettingsForm";
-    let PATH_TO_VIEWS = "de.blackforestsolutions.dravelopsconfigfrontend.view.launchpad.configurations.";
+    let oView;
 
     return BaseController.extend("de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.ApiSettings", {
 
         onInit: function () {
-            let oView = this.getView();
+            oView = this.getView();
+            // getting data from backend
+            this.getApiSettingsFromBackend(oView);
+
+            // creating configurations for views and fragments
+            var oViewModel = new JSONModel({isInputEnabled: false});
+            this.getView().setModel(oViewModel, "configuration");
+        },
+        getApiSettingsFromBackend: function (oView) {
             oModelApiSettings.loadData(URL_GET);
-            // oView.setBusy(true);
             oModelApiSettings.dataLoaded().then(() => {
-                // oView.setBusy(false);
                 oView.setModel(oModelApiSettings, "apisettings");
-                // console.log(oModelApiSettings);
                 console.log(oModelApiSettings.getData())
             })
-            this._formFragments = {};
-
-            // Set the initial form to be the display one
-            this._showFormFragment(DISPLAY_FRAGMENT_NAME);
-
         },
 
         handleEditPress: function () {
             this._oApiSettings = Object.assign({}, oModelApiSettings.getData());
-            this._toggleButtonsAndView(true);
+            // var oData = this.getView().getModel().getData();
 
+            this.toggleButtonsAndInputs(true);
         },
 
         handleCancelPress: function () {
-
             oModelApiSettings.loadData(URL_GET);
             oModelApiSettings.dataLoaded().then(() => {
                 this.getView().setModel(oModelApiSettings, "apisettings");
             })
-            this._toggleButtonsAndView(false);
+            this.toggleButtonsAndInputs(false);
         },
 
         handleSavePress: function () {
@@ -90,12 +88,12 @@ sap.ui.define([
             })
 
             const toggle = () => {
-                this._toggleButtonsAndView(false);
+                this.toggleButtonsAndInputs(false);
             }
 
         },
 
-        _toggleButtonsAndView: function (bEdit) {
+        toggleButtonsAndInputs: function (bEdit) {
             var oView = this.getView();
 
             // Show the appropriate action buttons
@@ -103,32 +101,8 @@ sap.ui.define([
             oView.byId("save").setVisible(bEdit);
             oView.byId("cancel").setVisible(bEdit);
 
-            // Set the right form type
-            this._showFormFragment(bEdit ? EDIT_FRAGMENT_NAME : DISPLAY_FRAGMENT_NAME);
-        },
-
-        _getFormFragment: function (sFragmentName) {
-            var pFormFragment = this._formFragments[sFragmentName],
-                oView = this.getView();
-
-            if (!pFormFragment) {
-                pFormFragment = Fragment.load({
-                    id: oView.getId(),
-                    name: PATH_TO_VIEWS + sFragmentName
-                });
-                this._formFragments[sFragmentName] = pFormFragment;
-            }
-
-            return pFormFragment;
-        },
-
-        _showFormFragment: function (sFragmentName) {
-            var oPage = this.byId("page");
-
-            oPage.removeAllContent();
-            this._getFormFragment(sFragmentName).then(function (oVBox) {
-                oPage.insertContent(oVBox);
-            });
+            // enable input
+            this.getView().getModel("configuration").setProperty("/isInputEnabled", bEdit);
         },
     });
 });
