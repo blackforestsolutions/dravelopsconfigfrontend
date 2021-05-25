@@ -26,6 +26,7 @@ sap.ui.define([
             // creating configurations for views and fragments
             var oViewModel = new JSONModel({isInputEnabled: false});
             this.getView().setModel(oViewModel, "configuration");
+
         },
         getApiSettingsFromBackend: function (oView) {
             oModelApiSettings.loadData(URL_GET);
@@ -104,5 +105,52 @@ sap.ui.define([
             // enable input
             this.getView().getModel("configuration").setProperty("/isInputEnabled", bEdit);
         },
+        onExit: function () {
+            Device.orientation.detachHandler(this.onOrientationChange, this);
+        },
+
+        onOrientationChange: function (mParams) {
+            var sMsg = "Orientation now is: " + (mParams.landscape ? "Landscape" : "Portrait");
+            MessageToast.show(sMsg, {duration: 5000});
+        },
+
+        onPressNavToDetail: function () {
+            this.getSplitAppObj().to(this.createId("detailDetail"));
+        },
+
+        onPressDetailBack: function () {
+            this.getSplitAppObj().backDetail();
+        },
+
+        onPressMasterBack: function () {
+            this.getSplitAppObj().backMaster();
+        },
+
+        onPressGoToMaster: function () {
+            this.getSplitAppObj().toMaster(this.createId("master2"));
+        },
+
+        onListItemPress: function (oEvent) {
+            var sToPageId = oEvent.getParameter("listItem").getCustomData()[0].getValue();
+
+            this.getSplitAppObj().toDetail(this.createId(sToPageId));
+        },
+
+        onPressModeBtn: function (oEvent) {
+            var sSplitAppMode = oEvent.getSource().getSelectedButton().getCustomData()[0].getValue();
+
+            this.getSplitAppObj().setMode(sSplitAppMode);
+            MessageToast.show("Split Container mode is changed to: " + sSplitAppMode, {duration: 5000});
+        },
+
+        getSplitAppObj: function () {
+            var result = this.byId("SplitAppDemo");
+            if (!result) {
+                Log.info("SplitApp object can't be found");
+            }
+            return result;
+        }
+
+
     });
 });
