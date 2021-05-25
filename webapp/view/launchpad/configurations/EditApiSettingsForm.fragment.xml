@@ -1,0 +1,342 @@
+<core:FragmentDefinition
+        xmlns="sap.m"
+        xmlns:f="sap.ui.layout.form"
+        xmlns:core="sap.ui.core"
+        height="100%">
+    <VBox class="sapUiSmallMargin">
+        <!--                    TODO add ids-->
+        <f:Form id="FormEdit480_12120"
+                editable="false">
+            <f:title>
+                <core:Title text="Playground"/>
+            </f:title>
+            <f:layout>
+                <f:ResponsiveGridLayout
+                        labelSpanXL="4"
+                        labelSpanL="4"
+                        labelSpanM="4"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="0"
+                        emptySpanL="0"
+                        emptySpanM="0"
+                        emptySpanS="0"
+                        columnsXL="3"
+                        columnsL="2"
+                        columnsM="2"
+                        singleContainerFullSize="false"/>
+            </f:layout>
+            <!--enabled="false"-->
+            <!--            editable="false"-->
+
+            <f:formContainers>
+                <f:FormContainer title="General">
+                    <f:formElements>
+                        <f:FormElement label="{i18n>page-title}">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/page-title}"
+                                       id="playgroundPageTitleEdit" required="true" editable="false"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="Theme">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/settings/editor/theme}" required="true"
+                                       editable="false"/>
+                            </f:fields>
+                        </f:FormElement>
+                    </f:formElements>
+                </f:FormContainer>
+                <f:FormContainer title="JOURNEY_QUERY">
+                    <f:formElements>
+                        <f:FormElement label="Name">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/name}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="Query">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/query}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="departureLatitude">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLatitude}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="departureLongitude">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLongitude}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="arrivalLatitude">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLatitude}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="arrivalLongitude">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLongitude}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="dateTime">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="isArrivalDateTime">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/isArrivalDateTime}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="language">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/language}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="maxResults">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/maxResults}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="departurePlaceholder">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/departurePlaceholder}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="arrivalPlaceholder">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/arrivalPlaceholder}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="maxPastDaysInCalendar">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/maxPastDaysInCalendar}"/>
+                            </f:fields>
+                        </f:FormElement>
+                    </f:formElements>
+                </f:FormContainer>
+                <f:FormContainer title="JOURNEY_SUBSCRIPTION">
+                    <f:formElements>
+                        <f:FormElement label="Name">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/name}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="Query">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/query}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="departureLatitude">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/departureLatitude}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="departureLongitude">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/departureLongitude}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="arrivalLatitude">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/arrivalLatitude}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="arrivalLongitude">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/arrivalLongitude}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="dateTime">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/dateTime}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="isArrivalDateTime">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/isArrivalDateTime}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="language">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/language}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="maxResults">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/maxResults}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="departurePlaceholder">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/departurePlaceholder}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="arrivalPlaceholder">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/arrivalPlaceholder}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="maxPastDaysInCalendar">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/maxPastDaysInCalendar}"/>
+                            </f:fields>
+                        </f:FormElement>
+                    </f:formElements>
+                </f:FormContainer>
+                <f:FormContainer title="ADDRESS_AUTOCOMPLETION">
+                    <f:formElements>
+                        <f:FormElement label="Name">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/name}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="Query">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/query}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="text">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/text}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="language">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/language}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="maxResults">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/maxResults}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <!--TODO is list-->
+                        <!-- <f:FormElement label="layers">
+                             <f:fields>
+                                 <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers}"/>
+                             </f:fields>
+                         </f:FormElement>-->
+                    </f:formElements>
+                </f:FormContainer>
+                <f:FormContainer title="NEAREST_ADDRESSES">
+                    <f:formElements>
+                        <f:FormElement label="Name">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/name}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="Query">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/query}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="longitude">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="latitude">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="latitude">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="latitude">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/language}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="maxResults">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/maxResults}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <!--TODO is list-->
+                        <!-- <f:FormElement label="layers">
+                             <f:fields>
+                                 <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/layers}"/>
+                             </f:fields>
+                         </f:FormElement>-->
+                    </f:formElements>
+                </f:FormContainer>
+                <f:FormContainer title="NEAREST_STATIONS">
+                    <f:formElements>
+                        <f:FormElement label="Name">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/name}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="Query">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/query}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="longitude">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/longitude}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="latitude">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/latitude}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="radiusInKilometers">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/radiusInKilometers}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="language">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/language}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="maxResults">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/maxResults}"/>
+                            </f:fields>
+                        </f:FormElement>
+                    </f:formElements>
+                </f:FormContainer>
+                <f:FormContainer title="ALL_STATIONS">
+                    <f:formElements>
+                        <f:FormElement label="Name">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/ALL_STATIONS/name}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="Query">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/ALL_STATIONS/query}"/>
+                            </f:fields>
+                        </f:FormElement>
+                    </f:formElements>
+                </f:FormContainer>
+                <f:FormContainer title="OPERATING_AREA">
+                    <f:formElements>
+                        <f:FormElement label="Name">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/OPERATING_AREA/name}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="Query">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/OPERATING_AREA/query}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="bufferInMetres">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/OPERATING_AREA/bufferInMetres}"/>
+                            </f:fields>
+                        </f:FormElement>
+                    </f:formElements>
+                </f:FormContainer>
+            </f:formContainers>
+        </f:Form>
+    </VBox>
+</core:FragmentDefinition>
