@@ -1,0 +1,51 @@
+<core:FragmentDefinition
+        xmlns:core="sap.ui.core"
+        xmlns:f="sap.ui.layout.form"
+        xmlns="sap.m">
+    <VBox class="sapUiSmallMargin">
+        <!--                    TODO add ids-->
+        <f:Form id="FormEdit480_121201"
+                editable="true">
+            <f:layout>
+                <f:ResponsiveGridLayout
+                        labelSpanXL="3"
+                        labelSpanL="3"
+                        labelSpanM="3"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="4"
+                        emptySpanL="4"
+                        emptySpanM="4"
+                        emptySpanS="0"
+                        columnsXL="1"
+                        columnsL="1"
+                        columnsM="1"
+                        singleContainerFullSize="true"
+                />
+            </f:layout>
+            <f:formContainers>
+                <f:FormContainer>
+                    <f:formElements>
+                        <f:FormElement label="{i18n>page-title}">
+                            <f:fields>
+                                <Input value="{apisettings>/calledObject/graphql/playground/page-title}"
+                                       id="playgroundPageTitleEdit"
+                                       required="true"
+                                       editable="{configuration>/isInputEnabled}"
+                                />
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="Theme">
+                            <f:fields>
+                                <Input value="{apisettings>/calledObject/graphql/playground/settings/editor/theme}"
+                                       required="true"
+                                       editable="{configuration>/isInputEnabled}"/>
+                            </f:fields>
+                        </f:FormElement>
+                    </f:formElements>
+                </f:FormContainer>
+            </f:formContainers>
+        </f:Form>
+    </VBox>
+
+</core:FragmentDefinition>

@@ -37,8 +37,6 @@ sap.ui.define([
 
         handleEditPress: function () {
             this._oApiSettings = Object.assign({}, oModelApiSettings.getData());
-            // var oData = this.getView().getModel().getData();
-
             this.toggleButtonsAndInputs(true);
         },
 
@@ -51,7 +49,6 @@ sap.ui.define([
         },
 
         handleSavePress: function () {
-
             /* TODO
                 check input
                 send json to backend - DONE
@@ -61,7 +58,6 @@ sap.ui.define([
                 if !error - DONE
                     save and go to display
                 */
-
             // check input
 
             // send update to backend
@@ -127,6 +123,7 @@ sap.ui.define([
             // enable input
             this.getView().getModel("configuration").setProperty("/isInputEnabled", bEdit);
         },
+
         onExit: function () {
             Device.orientation.detachHandler(this.onOrientationChange, this);
         },
