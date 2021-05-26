@@ -64,14 +64,13 @@
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <!--                        TODO not in JSON-->
-                        <!--                        <f:FormElement label="arrivalLongitude">-->
-                        <!--                            <f:fields>-->
-                        <!--                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/arrivalLongitude}"-->
-                        <!--                                       required="true"-->
-                        <!--                                       editable="{configuration>/isInputEnabled}"/>-->
-                        <!--                            </f:fields>-->
-                        <!--                        </f:FormElement>-->
+                        <f:FormElement label="arrivalLongitude">
+                            <f:fields>
+                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/arrivalLongitude}"
+                                       required="true"
+                                       editable="{configuration>/isInputEnabled}"/>
+                            </f:fields>
+                        </f:FormElement>
                         <f:FormElement label="dateTime">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/dateTime}"

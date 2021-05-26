@@ -25,7 +25,6 @@ sap.ui.define([
             // creating configurations for views and fragments
             var oViewModel = new JSONModel({isInputEnabled: false});
             this.getView().setModel(oViewModel, "configuration");
-
         },
         getApiSettingsFromBackend: function (oView) {
             oModelApiSettings.loadData(URL_GET);
@@ -48,19 +47,11 @@ sap.ui.define([
             this.toggleButtonsAndInputs(false);
         },
 
+        /**
+         * sending updated CallStatus to backend
+         * */
         handleSavePress: function () {
-            /* TODO
-                check input
-                send json to backend - DONE
-                wait for backend response - DONE
-                if error
-                    show error and not save
-                if !error - DONE
-                    save and go to display
-                */
-            // check input
 
-            // send update to backend
             $.ajax({
                 url: URL_PUT,
                 type: "PUT",
@@ -68,8 +59,18 @@ sap.ui.define([
                 contentType: "application/json",
                 data: oModelApiSettings.getJSON(),
                 success: function (response) {
-                    console.log(response)
-                    toggle();
+                    var responseModel = new JSONModel(response);
+                    if (responseModel.getProperty("/status")) {
+                        let status = responseModel.getProperty("/status");
+                        if (status === "SUCCESS") {
+                            MessageToast.show("Saved successfully.");
+                            toggle();
+                        } else if (status === "FAILED") {
+                            MessageToast.show("Please correct your input.");
+                        }
+                    }
+
+
                 },
                 error: function (error) {
                     if (error !== undefined) {
@@ -78,7 +79,7 @@ sap.ui.define([
                             duration: 6000
                         });*/
                     } else {
-                        sap.m.MessageToast.show("Unknown error!");
+                        MessageToast.show("Unknown error!");
                     }
                 }
             })
@@ -86,7 +87,7 @@ sap.ui.define([
             const toggle = () => {
                 this.toggleButtonsAndInputs(false);
             }
-            MessageToast.show("Saved successfully");
+
         },
 
         toggleButtonsAndInputs: function (bEdit) {
@@ -124,25 +125,10 @@ sap.ui.define([
             this.getView().getModel("configuration").setProperty("/isInputEnabled", bEdit);
         },
 
-        onExit: function () {
-            Device.orientation.detachHandler(this.onOrientationChange, this);
-        },
-
-        onOrientationChange: function (mParams) {
-            var sMsg = "Orientation now is: " + (mParams.landscape ? "Landscape" : "Portrait");
-            MessageToast.show(sMsg, {duration: 5000});
-        },
         onListItemPress: function (oEvent) {
             var sToPageId = oEvent.getParameter("listItem").getCustomData()[0].getValue();
 
             this.getSplitAppObj().toDetail(this.createId(sToPageId));
-        },
-
-        onPressModeBtn: function (oEvent) {
-            var sSplitAppMode = oEvent.getSource().getSelectedButton().getCustomData()[0].getValue();
-
-            this.getSplitAppObj().setMode(sSplitAppMode);
-            MessageToast.show("Split Container mode is changed to: " + sSplitAppMode, {duration: 5000});
         },
 
         getSplitAppObj: function () {
