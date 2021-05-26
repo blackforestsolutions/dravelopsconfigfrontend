@@ -10,8 +10,8 @@ sap.ui.define([
 
     // TODO base url
 
-    var URL_GET = "http://localhost:8081/config_backend/apisettings";
-    var URL_UPDATE = "http://localhost:8081/config_backend/update";
+    var URL_GET = "http://localhost:8091/config_backend";
+    var URL_PUT = "http://localhost:8091/config_backend";
     let oModelApiSettings = new JSONModel()
     let oView;
 
@@ -62,7 +62,7 @@ sap.ui.define([
 
             // send update to backend
             $.ajax({
-                url: URL_UPDATE,
+                url: URL_PUT,
                 type: "PUT",
                 dataType: 'json',
                 contentType: "application/json",
