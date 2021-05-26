@@ -11,8 +11,10 @@
         <mvc:XMLView viewName="de.blackforestsolutions.dravelopsconfigfrontend.view.shared.Logotoolbar" async="true"/>
 
         <SplitContainer id="SplitAppDemo"
+                        defaultTransitionNameDetail="fade"
                         initialDetail="detail"
-                        initialMaster="master">
+                        initialMaster="master"
+        >
             <detailPages>
                 <Page id="general"
                       title="General"
