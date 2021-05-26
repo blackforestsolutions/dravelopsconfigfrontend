@@ -10,8 +10,8 @@ sap.ui.define([
 
     // TODO base url
 
-    var URL_GET = "http://localhost:8091/configbackend";
-    var URL_PUT = "http://localhost:8091/configbackend";
+    var URL_GET = "http://localhost:8092/configbackend";
+    var URL_PUT = "http://localhost:8092/configbackend";
     let oModelApiSettings = new JSONModel()
     let oView;
 
