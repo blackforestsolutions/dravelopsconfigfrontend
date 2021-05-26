@@ -11,14 +11,14 @@
         <mvc:XMLView viewName="de.blackforestsolutions.dravelopsconfigfrontend.view.shared.Logotoolbar" async="true"/>
 
         <SplitContainer id="SplitAppDemo"
-                        defaultTransitionNameDetail="fade"
+                        defaultTransitionNameDetail="show"
                         initialDetail="detail"
                         initialMaster="master"
         >
             <detailPages>
                 <Page id="general"
                       title="General"
-                      backgroundDesign="List"
+                      backgroundDesign="{configuration>/page/backgroundDesign}"
                       showFooter="true"
                       class="sapUiResponsivePadding--header sapUiResponsivePadding--content sapUiResponsivePadding--footer sapUiResponsivePadding--floatingFooter">
                     <content>
@@ -37,7 +37,7 @@
                 </Page>
                 <Page id="JOURNEY_QUERY"
                       title="JOURNEY_QUERY"
-                      backgroundDesign="Solid"
+                      backgroundDesign="{configuration>/page/backgroundDesign}"
                 >
                     <content>
                         <core:Fragment
@@ -56,7 +56,7 @@
                 </Page>
                 <Page id="JOURNEY_SUBSCRIPTION"
                       title="JOURNEY_SUBSCRIPTION"
-                      backgroundDesign="Solid">
+                      backgroundDesign="{configuration>/page/backgroundDesign}">
                     <content>
                         <core:Fragment
                                 fragmentName="de.blackforestsolutions.dravelopsconfigfrontend.fragment.JourneySubscription"
@@ -75,7 +75,7 @@
                 </Page>
                 <Page id="ADDRESS_AUTOCOMPLETION"
                       title="ADDRESS_AUTOCOMPLETION"
-                      backgroundDesign="Solid"
+                      backgroundDesign="{configuration>/page/backgroundDesign}"
                 >
                     <content>
                         <core:Fragment
@@ -95,7 +95,7 @@
                 </Page>
                 <Page id="NEAREST_ADDRESSES"
                       title="NEAREST_ADDRESSES"
-                      backgroundDesign="Solid">
+                      backgroundDesign="{configuration>/page/backgroundDesign}">
                     <content>
                         <core:Fragment
                                 fragmentName="de.blackforestsolutions.dravelopsconfigfrontend.fragment.NearestAdress"
@@ -113,7 +113,7 @@
                 </Page>
                 <Page id="NEAREST_STATIONS"
                       title="NEAREST_STATIONS"
-                      backgroundDesign="Solid">
+                      backgroundDesign="{configuration>/page/backgroundDesign}">
                     <content>
                         <core:Fragment
                                 fragmentName="de.blackforestsolutions.dravelopsconfigfrontend.fragment.NearestStations"
@@ -131,7 +131,7 @@
                 </Page>
                 <Page id="ALL_STATIONS"
                       title="ALL_STATIONS"
-                      backgroundDesign="Solid">
+                      backgroundDesign="{configuration>/page/backgroundDesign}">
                     <content>
                         <core:Fragment
                                 fragmentName="de.blackforestsolutions.dravelopsconfigfrontend.fragment.AllStations"
@@ -149,7 +149,7 @@
                 </Page>
                 <Page id="OPERATING_AREA"
                       title="OPERATING_AREA"
-                      backgroundDesign="Solid">
+                      backgroundDesign="{configuration>/page/backgroundDesign}">
                     <content>
                         <core:Fragment
                                 fragmentName="de.blackforestsolutions.dravelopsconfigfrontend.fragment.OperatingArea"

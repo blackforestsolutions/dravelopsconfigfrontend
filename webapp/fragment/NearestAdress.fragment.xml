@@ -24,9 +24,6 @@
                         columnsM="1"
                         singleContainerFullSize="true"/>
             </f:layout>
-            <!--enabled="false"-->
-            <!--            editable="true"-->
-
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>

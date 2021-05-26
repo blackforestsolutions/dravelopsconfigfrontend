@@ -23,8 +23,12 @@ sap.ui.define([
             this.getApiSettingsFromBackend(oView);
 
             // creating configurations for views and fragments
-            var oViewModel = new JSONModel({isInputEnabled: false});
-            this.getView().setModel(oViewModel, "configuration");
+            var configurationModel = new JSONModel({
+                isInputEnabled: false, page: {
+                    backgroundDesign: "List"
+                }
+            });
+            this.getView().setModel(configurationModel, "configuration");
         },
         getApiSettingsFromBackend: function (oView) {
             oModelApiSettings.loadData(URL_GET);
