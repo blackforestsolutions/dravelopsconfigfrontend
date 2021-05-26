@@ -4,9 +4,8 @@
 sap.ui.define([
     "de/blackforestsolutions/dravelopsconfigfrontend/controller/BaseController",
     "sap/ui/model/json/JSONModel",
-    'sap/ui/core/Fragment',
-
-], function (BaseController, JSONModel, Fragment) {
+    'sap/m/MessageToast'
+], function (BaseController, JSONModel, MessageToast) {
     "use strict";
 
     // TODO base url
@@ -91,16 +90,39 @@ sap.ui.define([
             const toggle = () => {
                 this.toggleButtonsAndInputs(false);
             }
-
+            MessageToast.show("Saved successfully");
         },
 
         toggleButtonsAndInputs: function (bEdit) {
             var oView = this.getView();
 
             // Show the appropriate action buttons
-            oView.byId("edit").setVisible(!bEdit);
-            oView.byId("save").setVisible(bEdit);
-            oView.byId("cancel").setVisible(bEdit);
+            oView.byId("editGeneral").setVisible(!bEdit);
+            oView.byId("editJourneyQuery").setVisible(!bEdit);
+            oView.byId("editGeneralJourneySubsription").setVisible(!bEdit);
+            oView.byId("editAdressAutocompletion").setVisible(!bEdit);
+            oView.byId("editNearestAdresses").setVisible(!bEdit);
+            oView.byId("editNearestStations").setVisible(!bEdit);
+            oView.byId("editAllStations").setVisible(!bEdit);
+            oView.byId("editOperatingArea").setVisible(!bEdit);
+
+            oView.byId("saveGeneral").setVisible(bEdit);
+            oView.byId("saveJourneyQuery").setVisible(bEdit);
+            oView.byId("saveGeneralJourneySubsription").setVisible(bEdit);
+            oView.byId("saveAdressAutocompletion").setVisible(bEdit);
+            oView.byId("saveNearestAdresses").setVisible(bEdit);
+            oView.byId("saveNearestStations").setVisible(bEdit);
+            oView.byId("saveAllStations").setVisible(bEdit);
+            oView.byId("saveOperatingArea").setVisible(bEdit);
+
+            oView.byId("cancelGeneral").setVisible(bEdit);
+            oView.byId("cancelJourneyQuery").setVisible(bEdit);
+            oView.byId("cancelGeneralJourneySubsription").setVisible(bEdit);
+            oView.byId("cancelAdressAutocompletion").setVisible(bEdit);
+            oView.byId("cancelNearestAdresses").setVisible(bEdit);
+            oView.byId("cancelNearestStations").setVisible(bEdit);
+            oView.byId("cancelAllStations").setVisible(bEdit);
+            oView.byId("cancelOperatingArea").setVisible(bEdit);
 
             // enable input
             this.getView().getModel("configuration").setProperty("/isInputEnabled", bEdit);
@@ -113,23 +135,6 @@ sap.ui.define([
             var sMsg = "Orientation now is: " + (mParams.landscape ? "Landscape" : "Portrait");
             MessageToast.show(sMsg, {duration: 5000});
         },
-
-        onPressNavToDetail: function () {
-            this.getSplitAppObj().to(this.createId("detailDetail"));
-        },
-
-        onPressDetailBack: function () {
-            this.getSplitAppObj().backDetail();
-        },
-
-        onPressMasterBack: function () {
-            this.getSplitAppObj().backMaster();
-        },
-
-        onPressGoToMaster: function () {
-            this.getSplitAppObj().toMaster(this.createId("master2"));
-        },
-
         onListItemPress: function (oEvent) {
             var sToPageId = oEvent.getParameter("listItem").getCustomData()[0].getValue();
 

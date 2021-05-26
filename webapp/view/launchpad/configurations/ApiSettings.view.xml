@@ -6,27 +6,31 @@
         xmlns="sap.m"
         xmlns:f="sap.ui.layout.form"
         xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
->
-    <mvc:XMLView viewName="de.blackforestsolutions.dravelopsconfigfrontend.view.shared.Logotoolbar" async="true"/>
 
-    <SplitApp
+>
+    <!--    <mvc:XMLView viewName="de.blackforestsolutions.dravelopsconfigfrontend.view.shared.Logotoolbar" async="true"/>-->
+
+    <!--            <mvc:XMLView viewName="de.blackforestsolutions.dravelopsconfigfrontend.view.shared.Logotoolbar" async="true"/>-->
+
+    <SplitContainer
             id="SplitAppDemo"
             initialDetail="detail"
-            initialMaster="master">
+            initialMaster="master"
+    >
+        <!--                    <mvc:XMLView viewName="de.blackforestsolutions.dravelopsconfigfrontend.view.shared.Logotoolbar" async="true"/>-->
         <detailPages>
             <Page
                     id="general"
                     title="General"
                     backgroundDesign="List"
                     showFooter="true"
-                    floatingFooter="true"
                     class="sapUiResponsivePadding--header sapUiResponsivePadding--content sapUiResponsivePadding--footer sapUiResponsivePadding--floatingFooter"
             >
-                <headerContent>
-                    <Button id="edit" text="Edit" press="handleEditPress"/>
-                    <Button id="save" text="Save" type="Emphasized" visible="false" press="handleSavePress"/>
-                    <Button id="cancel" text="Cancel" visible="false" press="handleCancelPress"/>
-                </headerContent>
+                <!--  <headerContent>
+                      <Button id="edit" text="Edit" press="handleEditPress"/>
+                      <Button id="save" text="Save" type="Emphasized" visible="false" press="handleSavePress"/>
+                      <Button id="cancel" text="Cancel" visible="false" press="handleCancelPress"/>
+                  </headerContent>-->
 
                 <content>
                     <VBox class="sapUiSmallMargin">
@@ -81,8 +85,9 @@
                 <footer>
                     <OverflowToolbar>
                         <ToolbarSpacer/>
-                        <Button type="Accept" text="Accept"/>
-                        <Button type="Reject" text="Reject"/>
+                        <Button id="editGeneral" text="Edit" press="handleEditPress"/>
+                        <Button id="saveGeneral" text="Save" type="Emphasized" visible="false" press="handleSavePress"/>
+                        <Button id="cancelGeneral" text="Cancel" visible="false" press="handleCancelPress"/>
                     </OverflowToolbar>
                 </footer>
             </Page>
@@ -92,129 +97,140 @@
                     backgroundDesign="Solid"
                     showNavButton="true"
                     navButtonPress=".onPressDetailBack">
-                <VBox class="sapUiSmallMargin">
-                    <!--                    TODO add ids-->
-                    <f:Form id="FormEdit480_121202"
-                            editable="false">
+                <content>
+                    <VBox class="sapUiSmallMargin">
+                        <!--                    TODO add ids-->
+                        <f:Form id="FormEdit480_121202"
+                                editable="false">
 
-                        <f:layout>
-                            <f:ResponsiveGridLayout
-                                    labelSpanXL="4"
-                                    labelSpanL="4"
-                                    labelSpanM="4"
-                                    labelSpanS="12"
-                                    adjustLabelSpan="false"
-                                    emptySpanXL="0"
-                                    emptySpanL="0"
-                                    emptySpanM="0"
-                                    emptySpanS="0"
-                                    columnsXL="3"
-                                    columnsL="2"
-                                    columnsM="2"
-                                    singleContainerFullSize="false"/>
-                        </f:layout>
-                        <!--enabled="false"-->
-                        <!--            editable="false"-->
+                            <f:layout>
+                                <f:ResponsiveGridLayout
+                                        labelSpanXL="4"
+                                        labelSpanL="4"
+                                        labelSpanM="4"
+                                        labelSpanS="12"
+                                        adjustLabelSpan="false"
+                                        emptySpanXL="0"
+                                        emptySpanL="0"
+                                        emptySpanM="0"
+                                        emptySpanS="0"
+                                        columnsXL="3"
+                                        columnsL="2"
+                                        columnsM="2"
+                                        singleContainerFullSize="false"/>
+                            </f:layout>
+                            <!--enabled="false"-->
+                            <!--            editable="false"-->
 
-                        <f:formContainers>
-                            <f:FormContainer>
-                                <f:formElements>
-                                    <f:FormElement label="Name">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/name}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="Query">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/query}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="departureLatitude">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLatitude}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="departureLongitude">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLongitude}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="arrivalLatitude">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLatitude}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="arrivalLongitude">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLongitude}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="dateTime">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="isArrivalDateTime">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/isArrivalDateTime}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="language">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/language}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="maxResults">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/maxResults}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="departurePlaceholder">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/departurePlaceholder}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="arrivalPlaceholder">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/arrivalPlaceholder}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="maxPastDaysInCalendar">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/maxPastDaysInCalendar}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                </f:formElements>
-                            </f:FormContainer>
-                        </f:formContainers>
-                    </f:Form>
-                </VBox>
+                            <f:formContainers>
+                                <f:FormContainer>
+                                    <f:formElements>
+                                        <f:FormElement label="Name">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/name}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="Query">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/query}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="departureLatitude">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLatitude}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="departureLongitude">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLongitude}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="arrivalLatitude">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLatitude}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="arrivalLongitude">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLongitude}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="dateTime">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="isArrivalDateTime">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/isArrivalDateTime}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="language">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/language}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="maxResults">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/maxResults}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="departurePlaceholder">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/departurePlaceholder}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="arrivalPlaceholder">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/arrivalPlaceholder}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="maxPastDaysInCalendar">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/maxPastDaysInCalendar}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                    </f:formElements>
+                                </f:FormContainer>
+                            </f:formContainers>
+                        </f:Form>
+                    </VBox>
+                </content>
+                <footer>
+                    <OverflowToolbar>
+                        <ToolbarSpacer/>
+                        <Button id="editJourneyQuery" text="Edit" press="handleEditPress"/>
+                        <Button id="saveJourneyQuery" text="Save" type="Emphasized" visible="false"
+                                press="handleSavePress"/>
+                        <Button id="cancelJourneyQuery" text="Cancel" visible="false" press="handleCancelPress"/>
+                    </OverflowToolbar>
+                </footer>
             </Page>
             <Page
                     id="JOURNEY_SUBSCRIPTION"
@@ -222,131 +238,143 @@
                     backgroundDesign="Solid"
                     showNavButton="true"
                     navButtonPress=".onPressDetailBack">
-                <VBox class="sapUiSmallMargin">
-                    <!--                    TODO add ids-->
-                    <f:Form id="FormEdit480_121203"
-                            editable="false">
+                <content>
+                    <VBox class="sapUiSmallMargin">
+                        <!--                    TODO add ids-->
+                        <f:Form id="FormEdit480_121203"
+                                editable="false">
 
-                        <f:layout>
-                            <f:ResponsiveGridLayout
-                                    labelSpanXL="4"
-                                    labelSpanL="4"
-                                    labelSpanM="4"
-                                    labelSpanS="12"
-                                    adjustLabelSpan="false"
-                                    emptySpanXL="0"
-                                    emptySpanL="0"
-                                    emptySpanM="0"
-                                    emptySpanS="0"
-                                    columnsXL="3"
-                                    columnsL="2"
-                                    columnsM="2"
-                                    singleContainerFullSize="false"/>
-                        </f:layout>
-                        <!--enabled="false"-->
-                        <!--            editable="false"-->
+                            <f:layout>
+                                <f:ResponsiveGridLayout
+                                        labelSpanXL="4"
+                                        labelSpanL="4"
+                                        labelSpanM="4"
+                                        labelSpanS="12"
+                                        adjustLabelSpan="false"
+                                        emptySpanXL="0"
+                                        emptySpanL="0"
+                                        emptySpanM="0"
+                                        emptySpanS="0"
+                                        columnsXL="3"
+                                        columnsL="2"
+                                        columnsM="2"
+                                        singleContainerFullSize="false"/>
+                            </f:layout>
+                            <!--enabled="false"-->
+                            <!--            editable="false"-->
 
-                        <f:formContainers>
-                            <f:FormContainer>
-                                <f:formElements>
-                                    <f:FormElement label="Name">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/name}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="Query">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/query}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="departureLatitude">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/departureLatitude}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="departureLongitude">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/departureLongitude}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="arrivalLatitude">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/arrivalLatitude}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <!--                        TODO not in JSON-->
-                                    <!--                        <f:FormElement label="arrivalLongitude">-->
-                                    <!--                            <f:fields>-->
-                                    <!--                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/arrivalLongitude}"-->
-                                    <!--                                       required="true"-->
-                                    <!--                                       editable="{configuration>/isInputEnabled}"/>-->
-                                    <!--                            </f:fields>-->
-                                    <!--                        </f:FormElement>-->
-                                    <f:FormElement label="dateTime">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/dateTime}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="isArrivalDateTime">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/isArrivalDateTime}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="language">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/language}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="maxResults">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/maxResults}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="departurePlaceholder">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/departurePlaceholder}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="arrivalPlaceholder">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/arrivalPlaceholder}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="maxPastDaysInCalendar">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/maxPastDaysInCalendar}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                </f:formElements>
-                            </f:FormContainer>
+                            <f:formContainers>
+                                <f:FormContainer>
+                                    <f:formElements>
+                                        <f:FormElement label="Name">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/name}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="Query">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/query}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="departureLatitude">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/departureLatitude}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="departureLongitude">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/departureLongitude}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="arrivalLatitude">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/arrivalLatitude}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <!--                        TODO not in JSON-->
+                                        <!--                        <f:FormElement label="arrivalLongitude">-->
+                                        <!--                            <f:fields>-->
+                                        <!--                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/arrivalLongitude}"-->
+                                        <!--                                       required="true"-->
+                                        <!--                                       editable="{configuration>/isInputEnabled}"/>-->
+                                        <!--                            </f:fields>-->
+                                        <!--                        </f:FormElement>-->
+                                        <f:FormElement label="dateTime">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/dateTime}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="isArrivalDateTime">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/isArrivalDateTime}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="language">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/language}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="maxResults">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/maxResults}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="departurePlaceholder">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/departurePlaceholder}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="arrivalPlaceholder">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/arrivalPlaceholder}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="maxPastDaysInCalendar">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/maxPastDaysInCalendar}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                    </f:formElements>
+                                </f:FormContainer>
 
-                        </f:formContainers>
-                    </f:Form>
-                </VBox>
+                            </f:formContainers>
+                        </f:Form>
+                    </VBox>
+                </content>
+                <footer>
+                    <OverflowToolbar>
+                        <ToolbarSpacer/>
+                        <Button id="editGeneralJourneySubsription" text="Edit" press="handleEditPress"/>
+                        <Button id="saveGeneralJourneySubsription" text="Save" type="Emphasized" visible="false"
+                                press="handleSavePress"/>
+                        <Button id="cancelGeneralJourneySubsription" text="Cancel" visible="false"
+                                press="handleCancelPress"/>
+                    </OverflowToolbar>
+                </footer>
             </Page>
             <Page
                     id="ADDRESS_AUTOCOMPLETION"
@@ -354,80 +382,92 @@
                     backgroundDesign="Solid"
                     showNavButton="true"
                     navButtonPress=".onPressDetailBack">
-                <VBox class="sapUiSmallMargin">
-                    <!--                    TODO add ids-->
-                    <f:Form id="FormEdit480_121204"
-                            editable="false">
+                <content>
+                    <VBox class="sapUiSmallMargin">
+                        <!--                    TODO add ids-->
+                        <f:Form id="FormEdit480_121204"
+                                editable="false">
 
-                        <f:layout>
-                            <f:ResponsiveGridLayout
-                                    labelSpanXL="4"
-                                    labelSpanL="4"
-                                    labelSpanM="4"
-                                    labelSpanS="12"
-                                    adjustLabelSpan="false"
-                                    emptySpanXL="0"
-                                    emptySpanL="0"
-                                    emptySpanM="0"
-                                    emptySpanS="0"
-                                    columnsXL="3"
-                                    columnsL="2"
-                                    columnsM="2"
-                                    singleContainerFullSize="false"/>
-                        </f:layout>
-                        <!--enabled="false"-->
-                        <!--            editable="false"-->
+                            <f:layout>
+                                <f:ResponsiveGridLayout
+                                        labelSpanXL="4"
+                                        labelSpanL="4"
+                                        labelSpanM="4"
+                                        labelSpanS="12"
+                                        adjustLabelSpan="false"
+                                        emptySpanXL="0"
+                                        emptySpanL="0"
+                                        emptySpanM="0"
+                                        emptySpanS="0"
+                                        columnsXL="3"
+                                        columnsL="2"
+                                        columnsM="2"
+                                        singleContainerFullSize="false"/>
+                            </f:layout>
+                            <!--enabled="false"-->
+                            <!--            editable="false"-->
 
-                        <f:formContainers>
-                            <f:FormContainer>
-                                <f:formElements>
-                                    <f:FormElement label="Name">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/name}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="Query">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/query}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="text">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/text}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="language">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/language}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="maxResults">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/maxResults}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <!--TODO is list-->
-                                    <!-- <f:FormElement label="layers">
-                                         <f:fields>
-                                             <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers}"       required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                         </f:fields>
-                                     </f:FormElement>-->
-                                </f:formElements>
-                            </f:FormContainer>
-                        </f:formContainers>
-                    </f:Form>
-                </VBox>
+                            <f:formContainers>
+                                <f:FormContainer>
+                                    <f:formElements>
+                                        <f:FormElement label="Name">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/name}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="Query">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/query}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="text">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/text}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="language">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/language}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="maxResults">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/maxResults}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <!--TODO is list-->
+                                        <!-- <f:FormElement label="layers">
+                                             <f:fields>
+                                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers}"       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                             </f:fields>
+                                         </f:FormElement>-->
+                                    </f:formElements>
+                                </f:FormContainer>
+                            </f:formContainers>
+                        </f:Form>
+                    </VBox>
+                </content>
+                <footer>
+                    <OverflowToolbar>
+                        <ToolbarSpacer/>
+                        <Button id="editAdressAutocompletion" text="Edit" press="handleEditPress"/>
+                        <Button id="saveAdressAutocompletion" text="Save" type="Emphasized" visible="false"
+                                press="handleSavePress"/>
+                        <Button id="cancelAdressAutocompletion" text="Cancel" visible="false"
+                                press="handleCancelPress"/>
+                    </OverflowToolbar>
+                </footer>
             </Page>
             <Page
                     id="NEAREST_ADDRESSES"
@@ -435,94 +475,105 @@
                     backgroundDesign="Solid"
                     showNavButton="true"
                     navButtonPress=".onPressDetailBack">
-                <VBox class="sapUiSmallMargin">
-                    <!--                    TODO add ids-->
-                    <f:Form id="FormEdit480_121205"
-                            editable="false">
+                <content>
+                    <VBox class="sapUiSmallMargin">
+                        <!--                    TODO add ids-->
+                        <f:Form id="FormEdit480_121205"
+                                editable="false">
 
-                        <f:layout>
-                            <f:ResponsiveGridLayout
-                                    labelSpanXL="4"
-                                    labelSpanL="4"
-                                    labelSpanM="4"
-                                    labelSpanS="12"
-                                    adjustLabelSpan="false"
-                                    emptySpanXL="0"
-                                    emptySpanL="0"
-                                    emptySpanM="0"
-                                    emptySpanS="0"
-                                    columnsXL="3"
-                                    columnsL="2"
-                                    columnsM="2"
-                                    singleContainerFullSize="false"/>
-                        </f:layout>
-                        <!--enabled="false"-->
-                        <!--            editable="false"-->
+                            <f:layout>
+                                <f:ResponsiveGridLayout
+                                        labelSpanXL="4"
+                                        labelSpanL="4"
+                                        labelSpanM="4"
+                                        labelSpanS="12"
+                                        adjustLabelSpan="false"
+                                        emptySpanXL="0"
+                                        emptySpanL="0"
+                                        emptySpanM="0"
+                                        emptySpanS="0"
+                                        columnsXL="3"
+                                        columnsL="2"
+                                        columnsM="2"
+                                        singleContainerFullSize="false"/>
+                            </f:layout>
+                            <!--enabled="false"-->
+                            <!--            editable="false"-->
 
-                        <f:formContainers>
-                            <f:FormContainer>
-                                <f:formElements>
-                                    <f:FormElement label="Name">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/name}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="Query">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/query}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="longitude">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="latitude">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="latitude">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="latitude">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/language}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="maxResults">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/maxResults}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <!--TODO is list-->
-                                    <!-- <f:FormElement label="layers">
-                                         <f:fields>
-                                             <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/layers}"       required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                         </f:fields>
-                                     </f:FormElement>-->
-                                </f:formElements>
-                            </f:FormContainer>
-                        </f:formContainers>
-                    </f:Form>
-                </VBox>
+                            <f:formContainers>
+                                <f:FormContainer>
+                                    <f:formElements>
+                                        <f:FormElement label="Name">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/name}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="Query">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/query}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="longitude">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="latitude">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="latitude">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="latitude">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/language}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="maxResults">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/maxResults}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <!--TODO is list-->
+                                        <!-- <f:FormElement label="layers">
+                                             <f:fields>
+                                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/layers}"       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                             </f:fields>
+                                         </f:FormElement>-->
+                                    </f:formElements>
+                                </f:FormContainer>
+                            </f:formContainers>
+                        </f:Form>
+                    </VBox>
+                </content>
+                <footer>
+                    <OverflowToolbar>
+                        <ToolbarSpacer/>
+                        <Button id="editNearestAdresses" text="Edit" press="handleEditPress"/>
+                        <Button id="saveNearestAdresses" text="Save" type="Emphasized" visible="false"
+                                press="handleSavePress"/>
+                        <Button id="cancelNearestAdresses" text="Cancel" visible="false" press="handleCancelPress"/>
+                    </OverflowToolbar>
+                </footer>
             </Page>
             <Page
                     id="NEAREST_STATIONS"
@@ -530,87 +581,98 @@
                     backgroundDesign="Solid"
                     showNavButton="true"
                     navButtonPress=".onPressDetailBack">
-                <VBox class="sapUiSmallMargin">
-                    <!--                    TODO add ids-->
-                    <f:Form id="FormEdit480_121206"
-                            editable="false">
+                <content>
+                    <VBox class="sapUiSmallMargin">
+                        <!--                    TODO add ids-->
+                        <f:Form id="FormEdit480_121206"
+                                editable="false">
 
-                        <f:layout>
-                            <f:ResponsiveGridLayout
-                                    labelSpanXL="4"
-                                    labelSpanL="4"
-                                    labelSpanM="4"
-                                    labelSpanS="12"
-                                    adjustLabelSpan="false"
-                                    emptySpanXL="0"
-                                    emptySpanL="0"
-                                    emptySpanM="0"
-                                    emptySpanS="0"
-                                    columnsXL="3"
-                                    columnsL="2"
-                                    columnsM="2"
-                                    singleContainerFullSize="false"/>
-                        </f:layout>
-                        <!--enabled="false"-->
-                        <!--            editable="false"-->
+                            <f:layout>
+                                <f:ResponsiveGridLayout
+                                        labelSpanXL="4"
+                                        labelSpanL="4"
+                                        labelSpanM="4"
+                                        labelSpanS="12"
+                                        adjustLabelSpan="false"
+                                        emptySpanXL="0"
+                                        emptySpanL="0"
+                                        emptySpanM="0"
+                                        emptySpanS="0"
+                                        columnsXL="3"
+                                        columnsL="2"
+                                        columnsM="2"
+                                        singleContainerFullSize="false"/>
+                            </f:layout>
+                            <!--enabled="false"-->
+                            <!--            editable="false"-->
 
-                        <f:formContainers>
-                            <f:FormContainer>
-                                <f:formElements>
-                                    <f:FormElement label="Name">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/name}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="Query">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/query}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="longitude">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/longitude}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="latitude">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/latitude}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="radiusInKilometers">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/radiusInKilometers}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="language">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/language}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="maxResults">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/maxResults}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                </f:formElements>
-                            </f:FormContainer>
-                        </f:formContainers>
-                    </f:Form>
-                </VBox>
+                            <f:formContainers>
+                                <f:FormContainer>
+                                    <f:formElements>
+                                        <f:FormElement label="Name">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/name}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="Query">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/query}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="longitude">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/longitude}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="latitude">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/latitude}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="radiusInKilometers">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/radiusInKilometers}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="language">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/language}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="maxResults">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/maxResults}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                    </f:formElements>
+                                </f:FormContainer>
+                            </f:formContainers>
+                        </f:Form>
+                    </VBox>
+                </content>
+                <footer>
+                    <OverflowToolbar>
+                        <ToolbarSpacer/>
+                        <Button id="editNearestStations" text="Edit" press="handleEditPress"/>
+                        <Button id="saveNearestStations" text="Save" type="Emphasized" visible="false"
+                                press="handleSavePress"/>
+                        <Button id="cancelNearestStations" text="Cancel" visible="false" press="handleCancelPress"/>
+                    </OverflowToolbar>
+                </footer>
             </Page>
             <Page
                     id="ALL_STATIONS"
@@ -618,52 +680,63 @@
                     backgroundDesign="Solid"
                     showNavButton="true"
                     navButtonPress=".onPressDetailBack">
-                <VBox class="sapUiSmallMargin">
-                    <!--                    TODO add ids-->
-                    <f:Form id="FormEdit480_121207"
-                            editable="false">
+                <content>
+                    <VBox class="sapUiSmallMargin">
+                        <!--                    TODO add ids-->
+                        <f:Form id="FormEdit480_121207"
+                                editable="false">
 
-                        <f:layout>
-                            <f:ResponsiveGridLayout
-                                    labelSpanXL="4"
-                                    labelSpanL="4"
-                                    labelSpanM="4"
-                                    labelSpanS="12"
-                                    adjustLabelSpan="false"
-                                    emptySpanXL="0"
-                                    emptySpanL="0"
-                                    emptySpanM="0"
-                                    emptySpanS="0"
-                                    columnsXL="3"
-                                    columnsL="2"
-                                    columnsM="2"
-                                    singleContainerFullSize="false"/>
-                        </f:layout>
-                        <!--enabled="false"-->
-                        <!--            editable="false"-->
+                            <f:layout>
+                                <f:ResponsiveGridLayout
+                                        labelSpanXL="4"
+                                        labelSpanL="4"
+                                        labelSpanM="4"
+                                        labelSpanS="12"
+                                        adjustLabelSpan="false"
+                                        emptySpanXL="0"
+                                        emptySpanL="0"
+                                        emptySpanM="0"
+                                        emptySpanS="0"
+                                        columnsXL="3"
+                                        columnsL="2"
+                                        columnsM="2"
+                                        singleContainerFullSize="false"/>
+                            </f:layout>
+                            <!--enabled="false"-->
+                            <!--            editable="false"-->
 
-                        <f:formContainers>
-                            <f:FormContainer>
-                                <f:formElements>
-                                    <f:FormElement label="Name">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/ALL_STATIONS/name}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="Query">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/ALL_STATIONS/query}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                </f:formElements>
-                            </f:FormContainer>
-                        </f:formContainers>
-                    </f:Form>
-                </VBox>
+                            <f:formContainers>
+                                <f:FormContainer>
+                                    <f:formElements>
+                                        <f:FormElement label="Name">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ALL_STATIONS/name}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="Query">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ALL_STATIONS/query}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                    </f:formElements>
+                                </f:FormContainer>
+                            </f:formContainers>
+                        </f:Form>
+                    </VBox>
+                </content>
+                <footer>
+                    <OverflowToolbar>
+                        <ToolbarSpacer/>
+                        <Button id="editAllStations" text="Edit" press="handleEditPress"/>
+                        <Button id="saveAllStations" text="Save" type="Emphasized" visible="false"
+                                press="handleSavePress"/>
+                        <Button id="cancelAllStations" text="Cancel" visible="false" press="handleCancelPress"/>
+                    </OverflowToolbar>
+                </footer>
             </Page>
             <Page
                     id="OPERATING_AREA"
@@ -671,59 +744,70 @@
                     backgroundDesign="Solid"
                     showNavButton="true"
                     navButtonPress=".onPressDetailBack">
-                <VBox class="sapUiSmallMargin">
-                    <!--                    TODO add ids-->
-                    <f:Form id="FormEdit480_121208"
-                            editable="false">
+                <content>
+                    <VBox class="sapUiSmallMargin">
+                        <!--                    TODO add ids-->
+                        <f:Form id="FormEdit480_121208"
+                                editable="false">
 
-                        <f:layout>
-                            <f:ResponsiveGridLayout
-                                    labelSpanXL="4"
-                                    labelSpanL="4"
-                                    labelSpanM="4"
-                                    labelSpanS="12"
-                                    adjustLabelSpan="false"
-                                    emptySpanXL="0"
-                                    emptySpanL="0"
-                                    emptySpanM="0"
-                                    emptySpanS="0"
-                                    columnsXL="3"
-                                    columnsL="2"
-                                    columnsM="2"
-                                    singleContainerFullSize="false"/>
-                        </f:layout>
-                        <!--enabled="false"-->
-                        <!--            editable="false"-->
+                            <f:layout>
+                                <f:ResponsiveGridLayout
+                                        labelSpanXL="4"
+                                        labelSpanL="4"
+                                        labelSpanM="4"
+                                        labelSpanS="12"
+                                        adjustLabelSpan="false"
+                                        emptySpanXL="0"
+                                        emptySpanL="0"
+                                        emptySpanM="0"
+                                        emptySpanS="0"
+                                        columnsXL="3"
+                                        columnsL="2"
+                                        columnsM="2"
+                                        singleContainerFullSize="false"/>
+                            </f:layout>
+                            <!--enabled="false"-->
+                            <!--            editable="false"-->
 
-                        <f:formContainers>
-                            <f:FormContainer>
-                                <f:formElements>
-                                    <f:FormElement label="Name">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/OPERATING_AREA/name}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="Query">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/OPERATING_AREA/query}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                    <f:FormElement label="bufferInMetres">
-                                        <f:fields>
-                                            <Input value="{apisettings>/calledObject/graphql/playground/tabs/OPERATING_AREA/bufferInMetres}"
-                                                   required="true"
-                                                   editable="{configuration>/isInputEnabled}"/>
-                                        </f:fields>
-                                    </f:FormElement>
-                                </f:formElements>
-                            </f:FormContainer>
-                        </f:formContainers>
-                    </f:Form>
-                </VBox>
+                            <f:formContainers>
+                                <f:FormContainer>
+                                    <f:formElements>
+                                        <f:FormElement label="Name">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/OPERATING_AREA/name}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="Query">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/OPERATING_AREA/query}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                        <f:FormElement label="bufferInMetres">
+                                            <f:fields>
+                                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/OPERATING_AREA/bufferInMetres}"
+                                                       required="true"
+                                                       editable="{configuration>/isInputEnabled}"/>
+                                            </f:fields>
+                                        </f:FormElement>
+                                    </f:formElements>
+                                </f:FormContainer>
+                            </f:formContainers>
+                        </f:Form>
+                    </VBox>
+                </content>
+                <footer>
+                    <OverflowToolbar>
+                        <ToolbarSpacer/>
+                        <Button id="editOperatingArea" text="Edit" press="handleEditPress"/>
+                        <Button id="saveOperatingArea" text="Save" type="Emphasized" visible="false"
+                                press="handleSavePress"/>
+                        <Button id="cancelOperatingArea" text="Cancel" visible="false" press="handleCancelPress"/>
+                    </OverflowToolbar>
+                </footer>
             </Page>
         </detailPages>
         <masterPages>
@@ -738,7 +822,8 @@
                                       icon="sap-icon://developer-settings"/>
                     <StandardListItem title="JOURNEY_SUBSCRIPTION" type="Active" custom:to="JOURNEY_SUBSCRIPTION"
                                       icon="sap-icon://developer-settings"/>
-                    <StandardListItem title="ADDRESS_AUTOCOMPLETION" type="Active" custom:to="ADDRESS_AUTOCOMPLETION"
+                    <StandardListItem title="ADDRESS_AUTOCOMPLETION" type="Active"
+                                      custom:to="ADDRESS_AUTOCOMPLETION"
                                       icon="sap-icon://developer-settings"/>
                     <StandardListItem title="NEAREST_ADDRESSES" type="Active" custom:to="NEAREST_ADDRESSES"
                                       icon="sap-icon://developer-settings"/>
@@ -751,8 +836,7 @@
                 </List>
             </Page>
         </masterPages>
-    </SplitApp>
-
+    </SplitContainer>
 
     <!--  <Page
               id="page"
