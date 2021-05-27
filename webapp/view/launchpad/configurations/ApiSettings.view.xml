@@ -1,5 +1,4 @@
 <!--the yaml can be read and edited here-->
-
 <mvc:View
         controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.ApiSettings"
         xmlns:mvc="sap.ui.core.mvc"
@@ -13,14 +12,12 @@
         <SplitContainer id="SplitAppDemo"
                         defaultTransitionNameDetail="show"
                         initialDetail="detail"
-                        initialMaster="master"
-        >
+                        initialMaster="master">
             <detailPages>
                 <Page id="general"
                       title="{i18n>general}"
                       backgroundDesign="{configuration>/page/backgroundDesign}"
-                      showFooter="true"
-                >
+                      showFooter="true">
                     <content>
                         <core:Fragment fragmentName="de.blackforestsolutions.dravelopsconfigfrontend.fragment.General"
                                        type="XML"/>
@@ -28,10 +25,11 @@
                     <footer>
                         <OverflowToolbar>
                             <ToolbarSpacer/>
-                            <Button id="editGeneral" text="Edit" press="handleEditPress"/>
-                            <Button id="saveGeneral" text="Save" type="Emphasized" visible="false"
+                            <Button id="editGeneral" text="{i18n>btn.edit}" press="handleEditPress"/>
+                            <Button id="saveGeneral" text="{i18n>btn.save}" type="Emphasized" visible="false"
                                     press="handleSavePress"/>
-                            <Button id="cancelGeneral" text="Cancel" visible="false" press="handleCancelPress"/>
+                            <Button id="cancelGeneral" text="{i18n>btn.cancel}" visible="false"
+                                    press="handleCancelPress"/>
                         </OverflowToolbar>
                     </footer>
                 </Page>
@@ -47,10 +45,11 @@
                     <footer>
                         <OverflowToolbar>
                             <ToolbarSpacer/>
-                            <Button id="editJourneyQuery" text="Edit" press="handleEditPress"/>
-                            <Button id="saveJourneyQuery" text="Save" type="Emphasized" visible="false"
+                            <Button id="editJourneyQuery" text="{i18n>btn.edit}" press="handleEditPress"/>
+                            <Button id="saveJourneyQuery" text="{i18n>btn.save}" type="Emphasized" visible="false"
                                     press="handleSavePress"/>
-                            <Button id="cancelJourneyQuery" text="Cancel" visible="false" press="handleCancelPress"/>
+                            <Button id="cancelJourneyQuery" text="{i18n>btn.cancel}" visible="false"
+                                    press="handleCancelPress"/>
                         </OverflowToolbar>
                     </footer>
                 </Page>
@@ -65,10 +64,11 @@
                     <footer>
                         <OverflowToolbar>
                             <ToolbarSpacer/>
-                            <Button id="editGeneralJourneySubsription" text="Edit" press="handleEditPress"/>
-                            <Button id="saveGeneralJourneySubsription" text="Save" type="Emphasized" visible="false"
+                            <Button id="editGeneralJourneySubsription" text="{i18n>btn.edit}" press="handleEditPress"/>
+                            <Button id="saveGeneralJourneySubsription" text="{i18n>btn.save}" type="Emphasized"
+                                    visible="false"
                                     press="handleSavePress"/>
-                            <Button id="cancelGeneralJourneySubsription" text="Cancel" visible="false"
+                            <Button id="cancelGeneralJourneySubsription" text="{i18n>btn.cancel}" visible="false"
                                     press="handleCancelPress"/>
                         </OverflowToolbar>
                     </footer>
@@ -85,10 +85,11 @@
                     <footer>
                         <OverflowToolbar>
                             <ToolbarSpacer/>
-                            <Button id="editAdressAutocompletion" text="Edit" press="handleEditPress"/>
-                            <Button id="saveAdressAutocompletion" text="Save" type="Emphasized" visible="false"
+                            <Button id="editAdressAutocompletion" text="{i18n>btn.edit}" press="handleEditPress"/>
+                            <Button id="saveAdressAutocompletion" text="{i18n>btn.save}" type="Emphasized"
+                                    visible="false"
                                     press="handleSavePress"/>
-                            <Button id="cancelAdressAutocompletion" text="Cancel" visible="false"
+                            <Button id="cancelAdressAutocompletion" text="{i18n>btn.cancel}" visible="false"
                                     press="handleCancelPress"/>
                         </OverflowToolbar>
                     </footer>
@@ -104,10 +105,11 @@
                     <footer>
                         <OverflowToolbar>
                             <ToolbarSpacer/>
-                            <Button id="editNearestAdresses" text="Edit" press="handleEditPress"/>
-                            <Button id="saveNearestAdresses" text="Save" type="Emphasized" visible="false"
+                            <Button id="editNearestAdresses" text="{i18n>btn.edit}" press="handleEditPress"/>
+                            <Button id="saveNearestAdresses" text="{i18n>btn.save}" type="Emphasized" visible="false"
                                     press="handleSavePress"/>
-                            <Button id="cancelNearestAdresses" text="Cancel" visible="false" press="handleCancelPress"/>
+                            <Button id="cancelNearestAdresses" text="{i18n>btn.cancel}" visible="false"
+                                    press="handleCancelPress"/>
                         </OverflowToolbar>
                     </footer>
                 </Page>
@@ -122,10 +124,11 @@
                     <footer>
                         <OverflowToolbar>
                             <ToolbarSpacer/>
-                            <Button id="editNearestStations" text="Edit" press="handleEditPress"/>
-                            <Button id="saveNearestStations" text="Save" type="Emphasized" visible="false"
+                            <Button id="editNearestStations" text="{i18n>btn.edit}" press="handleEditPress"/>
+                            <Button id="saveNearestStations" text="{i18n>btn.save}" type="Emphasized" visible="false"
                                     press="handleSavePress"/>
-                            <Button id="cancelNearestStations" text="Cancel" visible="false" press="handleCancelPress"/>
+                            <Button id="cancelNearestStations" text="{i18n>btn.cancel}" visible="false"
+                                    press="handleCancelPress"/>
                         </OverflowToolbar>
                     </footer>
                 </Page>
@@ -140,10 +143,11 @@
                     <footer>
                         <OverflowToolbar>
                             <ToolbarSpacer/>
-                            <Button id="editAllStations" text="Edit" press="handleEditPress"/>
-                            <Button id="saveAllStations" text="Save" type="Emphasized" visible="false"
+                            <Button id="editAllStations" text="{i18n>btn.edit}" press="handleEditPress"/>
+                            <Button id="saveAllStations" text="{i18n>btn.save}" type="Emphasized" visible="false"
                                     press="handleSavePress"/>
-                            <Button id="cancelAllStations" text="Cancel" visible="false" press="handleCancelPress"/>
+                            <Button id="cancelAllStations" text="{i18n>btn.cancel}" visible="false"
+                                    press="handleCancelPress"/>
                         </OverflowToolbar>
                     </footer>
                 </Page>
@@ -158,10 +162,11 @@
                     <footer>
                         <OverflowToolbar>
                             <ToolbarSpacer/>
-                            <Button id="editOperatingArea" text="Edit" press="handleEditPress"/>
-                            <Button id="saveOperatingArea" text="Save" type="Emphasized" visible="false"
+                            <Button id="editOperatingArea" text="{i18n>btn.edit}" press="handleEditPress"/>
+                            <Button id="saveOperatingArea" text="{i18n>btn.save}" type="Emphasized" visible="false"
                                     press="handleSavePress"/>
-                            <Button id="cancelOperatingArea" text="Cancel" visible="false" press="handleCancelPress"/>
+                            <Button id="cancelOperatingArea" text="{i18n>btn.cancel}" visible="false"
+                                    press="handleCancelPress"/>
                         </OverflowToolbar>
                     </footer>
                 </Page>

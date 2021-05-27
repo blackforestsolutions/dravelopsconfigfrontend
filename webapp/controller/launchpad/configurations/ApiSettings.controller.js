@@ -30,6 +30,7 @@ sap.ui.define([
             });
             this.getView().setModel(configurationModel, "configuration");
         },
+
         getApiSettingsFromBackend: function (oView) {
             oModelApiSettings.loadData(URL_GET);
             oModelApiSettings.dataLoaded().then(() => {
@@ -55,7 +56,6 @@ sap.ui.define([
          * sending updated CallStatus to backend
          * */
         handleSavePress: function () {
-
             $.ajax({
                 url: URL_PUT,
                 type: "PUT",
@@ -73,8 +73,6 @@ sap.ui.define([
                             MessageToast.show("Please correct your input.");
                         }
                     }
-
-
                 },
                 error: function (error) {
                     if (error !== undefined) {
@@ -87,11 +85,9 @@ sap.ui.define([
                     }
                 }
             })
-
             const toggle = () => {
                 this.toggleButtonsAndInputs(false);
             }
-
         },
 
         toggleButtonsAndInputs: function (bEdit) {
