@@ -30,35 +30,35 @@
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>
-                        <f:FormElement label="Name">
+                        <f:FormElement label="{i18n>AdressAutocompletion.name}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/name}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="Query">
+                        <f:FormElement label="{i18n>AdressAutocompletion.query}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/query}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="text">
+                        <f:FormElement label="{i18n>AdressAutocompletion.text}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/text}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="language">
+                        <f:FormElement label="{i18n>AdressAutocompletion.language}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/language}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="maxResults">
+                        <f:FormElement label="{i18n>AdressAutocompletion.maxResults}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/maxResults}"
                                        required="true"
@@ -66,7 +66,7 @@
                             </f:fields>
                         </f:FormElement>
                         <!--TODO is list-->
-                        <!-- <f:FormElement label="layers">
+                        <!-- <f:FormElement label="{i18n>AdressAutocompletion.layers}">
                              <f:fields>
                                  <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers}"       required="true"
                                        editable="{configuration>/isInputEnabled}"/>
