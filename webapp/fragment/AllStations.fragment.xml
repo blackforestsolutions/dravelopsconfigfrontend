@@ -33,14 +33,14 @@
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/ALL_STATIONS/name}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isAllStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="Query">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/ALL_STATIONS/query}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isAllStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>

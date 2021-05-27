@@ -33,21 +33,21 @@
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/OPERATING_AREA/name}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isOperatingAreaInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="Query">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/OPERATING_AREA/query}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isOperatingAreaInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="bufferInMetres">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/OPERATING_AREA/bufferInMetres}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isOperatingAreaInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>

@@ -5,10 +5,16 @@
         xmlns="sap.m"
         xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
         xmlns:core="sap.ui.core"
+        xmlns:f="sap.f"
 >
-    <Page showHeader="false">
-        <mvc:XMLView viewName="de.blackforestsolutions.dravelopsconfigfrontend.view.shared.Logotoolbar" async="true"/>
-
+    <Page showHeader="true">
+        <customHeader>
+            <f:ShellBar
+                    homeIcon="./img/corporate-logo.jpg"
+                    title=""
+                    homeIconPressed="onHomeIconPressed">
+            </f:ShellBar>
+        </customHeader>
         <SplitContainer id="SplitAppDemo"
                         defaultTransitionNameDetail="show"
                         initialDetail="detail"
@@ -64,11 +70,11 @@
                     <footer>
                         <OverflowToolbar>
                             <ToolbarSpacer/>
-                            <Button id="editGeneralJourneySubsription" text="{i18n>btn.edit}" press="handleEditPress"/>
-                            <Button id="saveGeneralJourneySubsription" text="{i18n>btn.save}" type="Emphasized"
+                            <Button id="editGeneralJourneySubscription" text="{i18n>btn.edit}" press="handleEditPress"/>
+                            <Button id="saveGeneralJourneySubscription" text="{i18n>btn.save}" type="Emphasized"
                                     visible="false"
                                     press="handleSavePress"/>
-                            <Button id="cancelGeneralJourneySubsription" text="{i18n>btn.cancel}" visible="false"
+                            <Button id="cancelGeneralJourneySubscription" text="{i18n>btn.cancel}" visible="false"
                                     press="handleCancelPress"/>
                         </OverflowToolbar>
                     </footer>

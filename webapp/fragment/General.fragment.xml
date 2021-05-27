@@ -31,7 +31,7 @@
                                 <Input value="{apisettings>/calledObject/graphql/playground/page-title}"
                                        id="playgroundPageTitleEdit"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"
+                                       editable="{configuration>/input/isGeneralInputEnabled}"
                                 />
                             </f:fields>
                         </f:FormElement>
@@ -39,7 +39,7 @@
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/settings/editor/theme}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isGeneralInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>

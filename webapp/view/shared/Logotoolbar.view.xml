@@ -1,10 +1,10 @@
 <mvc:View
-        controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.shared.Logotoolbar"
+        controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.BaseController"
         xmlns:mvc="sap.ui.core.mvc"
-        xmlns="sap.f">
-    <ShellBar
+        xmlns:f="sap.f">
+    <f:ShellBar
             homeIcon="./img/corporate-logo.jpg"
             title=""
             homeIconPressed="onHomeIconPressed">
-    </ShellBar>
+    </f:ShellBar>
 </mvc:View>

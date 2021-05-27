@@ -34,42 +34,42 @@
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/name}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="Query">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/query}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="text">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/text}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="language">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/language}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="maxResults">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/maxResults}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <!--TODO is list-->
                         <!-- <f:FormElement label="layers">
                              <f:fields>
                                  <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers}"       required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                              </f:fields>
                          </f:FormElement>-->
                     </f:formElements>
