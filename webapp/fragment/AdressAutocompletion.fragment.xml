@@ -53,16 +53,28 @@
                         </f:FormElement>
                         <f:FormElement label="language">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/language}"
-                                       required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                <MaskInput mask="CC"
+                                    placeholderSymbol="_"
+                                    value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/language}}"
+                                    required="true"
+                                    editable="{configuration>/isInputEnabled}">
+                                    <rules>
+                                        <MaskInputRule maskFormatSymbol="C" regex="[a-z]"/>
+                                    </rules>
+                                </MaskInput>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="maxResults">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/maxResults}"
-                                       required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                               <MaskInput mask="CC"
+                                    placeholderSymbol="_"
+                                    value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/maxResults}"
+                                    required="true"
+                                    editable="{configuration>/isInputEnabled}">
+                                    <rules>
+                                        <MaskInputRule maskFormatSymbol="C" regex="^([1-9]|[0-1][0-9])$"/>
+                                    </rules>
+                                </MaskInput>
                             </f:fields>
                         </f:FormElement>
                         <!--TODO is list-->
