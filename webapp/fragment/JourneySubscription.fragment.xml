@@ -29,91 +29,91 @@
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>
-                        <f:FormElement label="Name">
+                        <f:FormElement label="{i18n>JourneySubscription.name}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/name}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="Query">
+                        <f:FormElement label="{i18n>JourneySubscription.query}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/query}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="departureLatitude">
+                        <f:FormElement label="{i18n>JourneySubscription.departureLatitude}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/departureLatitude}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="departureLongitude">
+                        <f:FormElement label="{i18n>JourneySubscription.departureLongitude}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/departureLongitude}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="arrivalLatitude">
+                        <f:FormElement label="{i18n>JourneySubscription.arrivalLatitude}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/arrivalLatitude}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="arrivalLongitude">
+                        <f:FormElement label="{i18n>JourneySubscription.arrivalLongitude}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/arrivalLongitude}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="dateTime">
+                        <f:FormElement label="{i18n>JourneySubscription.dateTime}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/dateTime}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="isArrivalDateTime">
+                        <f:FormElement label="{i18n>JourneySubscription.isArrivalDateTime}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/isArrivalDateTime}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="language">
+                        <f:FormElement label="{i18n>JourneySubscription.language}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/language}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="maxResults">
+                        <f:FormElement label="{i18n>JourneySubscription.maxResults}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/maxResults}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="departurePlaceholder">
+                        <f:FormElement label="{i18n>JourneySubscription.departurePlaceholder}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/departurePlaceholder}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="arrivalPlaceholder">
+                        <f:FormElement label="{i18n>JourneySubscription.arrivalPlaceholder}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/arrivalPlaceholder}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="maxPastDaysInCalendar">
+                        <f:FormElement label="{i18n>JourneySubscription.maxPastDaysInCalendar}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/maxPastDaysInCalendar}"
                                        required="true"
