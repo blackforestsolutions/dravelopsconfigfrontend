@@ -29,21 +29,21 @@
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>
-                        <f:FormElement label="Name">
+                        <f:FormElement label="{i18n>OperatingArea.name}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/OPERATING_AREA/name}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="Query">
+                        <f:FormElement label="{i18n>OperatingArea.query}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/OPERATING_AREA/query}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="bufferInMetres">
+                        <f:FormElement label="{i18n>OperatingArea.bufferInMetres}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/OPERATING_AREA/bufferInMetres}"
                                        required="true"
