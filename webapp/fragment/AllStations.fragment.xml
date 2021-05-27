@@ -29,14 +29,14 @@
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>
-                        <f:FormElement label="Name">
+                        <f:FormElement label="{i18n>AllStations.name}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/ALL_STATIONS/name}"
                                        required="true"
                                        editable="{configuration>/isInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="Query">
+                        <f:FormElement label="{i18n>AllStations.query}">
                             <f:fields>
                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/ALL_STATIONS/query}"
                                        required="true"
