@@ -165,18 +165,35 @@ sap.ui.define([
             } else {
                 MessageToast.show("Saved successfully.");
                 this.toggleButtonsAndInputs(false, pressedButtonId);
+
             }
         },
 
         toggleButtonsAndInputs: function (isEdit, pressedButtonId) {
             var oView = this.getView();
+            if (isEdit) {
+                this.byId("configurationTabs").getItems().forEach(function (item) {
+                    item.setType("Inactive");
+                });
+                this.byId("configurationTabs").setMode("None");
+            } else {
+                this.byId("configurationTabs").getItems().forEach(function (item) {
+                    item.setType("Active");
+                });
+                this.byId("configurationTabs").setMode("SingleSelectMaster");
+            }
 
             // Show the appropriate action buttons
             if (pressedButtonId == "editGeneral" || pressedButtonId == "saveGeneral" || pressedButtonId == "cancelGeneral") {
                 oView.byId("editGeneral").setVisible(!isEdit);
                 oView.byId("saveGeneral").setVisible(isEdit);
                 oView.byId("cancelGeneral").setVisible(isEdit);
-                this.getView().getModel("configuration").setProperty("/input/isGeneralInputEnabled", isEdit)
+                this.getView().getModel("configuration").setProperty("/input/isGeneralInputEnabled", isEdit);
+                /* this.byId("configurationTabs").getItems().forEach(function (item) {
+                     item.setSelectedItem("journeyQueryTab", "true")
+                 });*/
+
+                // this.byId("configurationTabs").setSelectedItem("container-dravelopsconfigfrontend---apisettings--journeyQueryTab", "true")
             }
 
             if (pressedButtonId == "editJourneyQuery" || pressedButtonId == "saveJourneyQuery" || pressedButtonId == "cancelJourneyQuery") {
@@ -185,7 +202,6 @@ sap.ui.define([
                 oView.byId("cancelJourneyQuery").setVisible(isEdit);
                 this.getView().getModel("configuration").setProperty("/input/isJourneyQueryInputEnabled", isEdit);
             }
-
 
             if (pressedButtonId == "editGeneralJourneySubscription" || pressedButtonId == "saveGeneralJourneySubscription" || pressedButtonId == "cancelGeneralJourneySubscription") {
                 oView.byId("editGeneralJourneySubscription").setVisible(!isEdit);
@@ -233,7 +249,6 @@ sap.ui.define([
 
         onListItemPress: function (oEvent) {
             var sToPageId = oEvent.getParameter("listItem").getCustomData()[0].getValue();
-
             this.getSplitAppObj().toDetail(this.createId(sToPageId));
         },
 
@@ -243,8 +258,13 @@ sap.ui.define([
                 Log.info("SplitApp object can't be found");
             }
             return result;
-        }
+        },
 
+        handleSelectChange: function (oEvent) {
+            var mode = oEvent.getParameter("selectedItem").getKey();
+
+            this.byId("ProductList").setMode(mode);
+        }
 
     });
 });
