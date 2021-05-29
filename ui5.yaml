@@ -14,5 +14,5 @@ framework:
     - name: sap.uxap
 server:
   settings:
-    httpPort: 4200
+    httpPort: 8089
     httpsPort: 8081
