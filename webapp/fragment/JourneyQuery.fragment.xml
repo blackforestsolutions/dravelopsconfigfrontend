@@ -4,7 +4,7 @@
         xmlns="sap.m">
 
     <VBox class="sapUiSmallMargin">
-        <!--                    TODO add ids-->
+        <!--TODO add ids-->
         <f:Form id="FormEdit480_121202"
                 editable="true">
 
@@ -85,7 +85,7 @@
                         </f:FormElement>
                         <f:FormElement label="arrivalLongitude">
                             <f:fields>
-                                <MaskInput mask="CCC.C"
+                                <MaskInput mask="CCCC.C"
                                     placeholderSymbol="_"
                                     value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLongitude}"
                                     required="true"
@@ -119,9 +119,15 @@
                         </f:FormElement>
                         <f:FormElement label="language">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/language}"
-                                       required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                <MaskInput mask="CC"
+                                    placeholderSymbol="_"
+                                    value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/language}"
+                                    required="true"
+                                    editable="{configuration>/isInputEnabled}">
+                                     <rules>
+                                         <MaskInputRule maskFormatSymbol="C" regex="[a-z]"/>
+                                    </rules>
+                                </MaskInput>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="maxResults">

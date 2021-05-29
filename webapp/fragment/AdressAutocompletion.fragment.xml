@@ -4,7 +4,7 @@
         xmlns="sap.m">
 
     <VBox class="sapUiSmallMargin">
-        <!--                    TODO add ids-->
+        <!--TODO add ids-->
         <f:Form id="FormEdit480_121204"
                 editable="true">
 
@@ -25,7 +25,7 @@
                         singleContainerFullSize="true"/>
             </f:layout>
             <!--enabled="false"-->
-            <!--            editable="true"-->
+            <!--editable="true"-->
 
             <f:formContainers>
                 <f:FormContainer>
@@ -55,7 +55,7 @@
                             <f:fields>
                                 <MaskInput mask="CC"
                                     placeholderSymbol="_"
-                                    value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/language}}"
+                                    value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/language}"
                                     required="true"
                                     editable="{configuration>/isInputEnabled}">
                                     <rules>
