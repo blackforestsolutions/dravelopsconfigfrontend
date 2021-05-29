@@ -10,12 +10,13 @@ sap.ui.define([
     "sap/m/DialogType",
     "sap/m/Button",
     "sap/m/ButtonType",
-    "sap/m/Text"
-], function (BaseController, JSONModel, MessageToast, ValueState, Dialog, DialogType, Button, ButtonType, Text) {
+    "sap/m/Text",
+    "sap/base/Log"
+], function (BaseController, JSONModel, MessageToast, ValueState, Dialog, DialogType, Button, ButtonType, Text, Log) {
     "use strict";
 
     const URL = "http://localhost:8092/configbackend";
-    let oModelApiSettings = new JSONModel()
+    let oModelApiSettings = new JSONModel();
     const CONFIGURATION_MODEL = "configuration";
     let oView;
 
@@ -35,7 +36,7 @@ sap.ui.define([
                     isNearestAdressesInputEnabled: false,
                     isNearestStationsInputEnabled: false,
                     isAllStationsInputEnabled: false,
-                    isOperatingAreaInputEnabled: false,
+                    isOperatingAreaInputEnabled: false
                 }, page: {
                     backgroundDesign: "List"
                 }
@@ -43,13 +44,13 @@ sap.ui.define([
             this.getView().setModel(oModelConfiguration, CONFIGURATION_MODEL);
         },
 
-        // TODO test if when write, save, error, cancel still there
-        /**retrieves current api settings from backend */
+
+        // retrieves current api settings from backend
         getApiSettingsFromBackend: function (oView) {
             oModelApiSettings.loadData(URL);
             oModelApiSettings.dataLoaded().then(() => {
                 oView.setModel(oModelApiSettings, "apisettings");
-            })
+            });
         },
 
         handleEditPress: function (oEvent) {
@@ -63,7 +64,7 @@ sap.ui.define([
             oModelApiSettings.loadData(URL);
             oModelApiSettings.dataLoaded().then(() => {
                 this.getView().setModel(oModelApiSettings, "apisettings");
-            })
+            });
             this.toggleButtonsAndInputs(false, pressedButtonId);
         },
 
@@ -71,9 +72,12 @@ sap.ui.define([
             return oEvent.getSource().getId().split("-").slice(-1);
         },
 
-        /**sending updated CallStatus to backend*/
+        // sending updated CallStatus to backend and verify response
         handleSavePress: function (oEvent) {
             const pressedButtonId = this.getButtonId(oEvent);
+            const checkPutResponse = (responseModel, pressedButtonId) => {
+                this.checkPutResponse(responseModel, pressedButtonId);
+            };
             $.ajax({
                 url: URL,
                 type: "PUT",
@@ -82,7 +86,7 @@ sap.ui.define([
                 data: oModelApiSettings.getJSON(),
                 success: function (response) {
                     let responseModel = new JSONModel(response);
-                    checkPutResponse(responseModel, pressedButtonId)
+                    checkPutResponse(responseModel, pressedButtonId);
                 },
                 error: function (error) {
                     if (error !== undefined) {
@@ -93,21 +97,18 @@ sap.ui.define([
                         MessageToast.show("Unknown error!");
                     }
                 }
-            })
-
-            const checkPutResponse = (responseModel, pressedButtonId) => {
-                this.checkPutResponse(responseModel, pressedButtonId);
-            }
+            });
         },
 
         checkPutResponse: function (responseModel, pressedButtonId) {
             let callStatuses = responseModel.getProperty("/");
             let isFailed = true;
-            let errorContent = "";
-
+            let errorContent = "Please correct your input for ";
+            let errorInResponse = false;
             for (let callStatusEntry = 0; callStatusEntry < callStatuses.length; callStatusEntry++) {
                 if (callStatuses[callStatusEntry].status == "FAILED") {
                     isFailed = false;
+
                     if (callStatusEntry !== callStatuses.length - 1) {
                         switch (callStatuses[callStatusEntry].calledObject) {
                             case "NEAREST_ADDRESSES":
@@ -122,6 +123,9 @@ sap.ui.define([
                             case "NEAREST_STATIONS":
                                 errorContent += "Nearest stations" + ", ";
                                 break;
+                            default:
+                                errorInResponse = true;
+                                break;
                         }
                     } else {
                         switch (callStatuses[callStatusEntry].calledObject) {
@@ -135,11 +139,17 @@ sap.ui.define([
                                 errorContent += "Adress autocompletion";
                                 break;
                             case "NEAREST_STATIONS":
-                                errorContent += "Nearest stations"
+                                errorContent += "Nearest stations";
+                                break;
+                            default:
+                                errorInResponse = true;
                                 break;
                         }
                     }
                 }
+            }
+            if (errorInResponse) {
+                errorContent = "Response could not be computed.";
             }
 
             if (!isFailed) {
@@ -148,7 +158,7 @@ sap.ui.define([
                         type: DialogType.Message,
                         title: "Error",
                         state: ValueState.Error,
-                        content: new Text({text: "Please correct your input for " + errorContent}),
+                        content: new Text({text: errorContent}),
                         beginButton: new Button({
                             type: ButtonType.Emphasized,
                             text: "OK",
