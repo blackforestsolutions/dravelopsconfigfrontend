@@ -44,7 +44,6 @@ sap.ui.define([
             this.getView().setModel(oModelConfiguration, CONFIGURATION_MODEL);
         },
 
-
         // retrieves current api settings from backend
         getApiSettingsFromBackend: function (oView) {
             oModelApiSettings.loadData(URL);
@@ -55,7 +54,6 @@ sap.ui.define([
 
         handleEditPress: function (oEvent) {
             const pressedButtonId = this.getButtonId(oEvent);
-            this._oApiSettings = Object.assign({}, oModelApiSettings.getData());
             this.toggleButtonsAndInputs(true, pressedButtonId);
         },
 
@@ -177,7 +175,7 @@ sap.ui.define([
         },
 
         toggleButtonsAndInputs: function (isEdit, pressedButtonId) {
-            var oView = this.getView();
+            let oView = this.getView();
             if (isEdit) {
                 this.byId("configurationTabs").getItems().forEach(function (item) {
                     item.setType("Inactive");
@@ -234,10 +232,10 @@ sap.ui.define([
                 this.getView().getModel(CONFIGURATION_MODEL).setProperty("/input/isNearestStationsInputEnabled", isEdit);
             }
 
-            if (pressedButtonId == "editNearestStations" || pressedButtonId == "saveNearestStations" || pressedButtonId == "cancelNearestStations") {
-                oView.byId("editNearestStations").setVisible(!isEdit);
-                oView.byId("saveNearestStations").setVisible(isEdit);
-                oView.byId("cancelNearestStations").setVisible(isEdit);
+            if (pressedButtonId == "editAllStations" || pressedButtonId == "saveAllStations" || pressedButtonId == "cancelAllStations") {
+                oView.byId("editAllStations").setVisible(!isEdit);
+                oView.byId("saveAllStations").setVisible(isEdit);
+                oView.byId("cancelAllStations").setVisible(isEdit);
                 this.getView().getModel(CONFIGURATION_MODEL).setProperty("/input/isAllStationsInputEnabled", isEdit);
             }
 
@@ -260,13 +258,6 @@ sap.ui.define([
                 Log.info("SplitApp object can't be found");
             }
             return result;
-        },
-
-        handleSelectChange: function (oEvent) {
-            const mode = oEvent.getParameter("selectedItem").getKey();
-
-            this.byId("ProductList").setMode(mode);
         }
-
     });
 });

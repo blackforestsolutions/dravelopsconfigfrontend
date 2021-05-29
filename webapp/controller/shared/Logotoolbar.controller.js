@@ -6,7 +6,7 @@ sap.ui.define([
     "use strict";
     return Basecontroller.extend("de.blackforestsolutions.dravelopsconfigfrontend.controller.shared.Logotoolbar", {
         onHomeIconPressed: function () {
-            var oRouter = this.getOwnerComponent().getRouter();
+            let oRouter = this.getOwnerComponent().getRouter();
             oRouter.navTo("appLaunchpad", {}, true);
         }
     });

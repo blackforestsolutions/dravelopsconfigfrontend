@@ -14,11 +14,9 @@ sap.ui.define([
             return UIComponent.getRouterFor(this);
         },
 
-        /**
-         * To get back to last viewed page
-         * */
+        /**To get back to last viewed page*/
         onNavBack: function () {
-            var oHistory, sPreviousHash;
+            let oHistory, sPreviousHash;
 
             oHistory = History.getInstance();
             sPreviousHash = oHistory.getPreviousHash();
@@ -31,7 +29,7 @@ sap.ui.define([
         },
         /**when upper right icon is pressed -> routed to Launchpad* */
         onHomeIconPressed: function () {
-            var oRouter = this.getOwnerComponent().getRouter();
+            let oRouter = this.getOwnerComponent().getRouter();
             oRouter.navTo("appLaunchpad", {}, true);
         }
 
