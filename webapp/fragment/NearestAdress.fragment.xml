@@ -4,7 +4,6 @@
         xmlns="sap.m">
 
     <VBox class="sapUiSmallMargin">
-        <!--                    TODO add ids-->
         <f:Form id="FormEdit480_121205"
                 editable="true">
 
@@ -76,13 +75,14 @@
                                        editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <!--TODO is list-->
-                        <!-- <f:FormElement label="layers">
-                             <f:fields>
-                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/layers}"       required="true"
+                        <!--cannot access values without key for now-->
+                        <!--<f:FormElement label="layers">
+                            <f:fields>
+                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/layers}"
+                                       required="true"
                                        editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
-                             </f:fields>
-                         </f:FormElement>-->
+                            </f:fields>
+                        </f:FormElement>-->
                     </f:formElements>
                 </f:FormContainer>
             </f:formContainers>

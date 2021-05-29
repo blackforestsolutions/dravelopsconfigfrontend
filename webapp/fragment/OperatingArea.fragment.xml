@@ -3,7 +3,6 @@
         xmlns:f="sap.ui.layout.form"
         xmlns="sap.m">
     <VBox class="sapUiSmallMargin">
-        <!--                    TODO add ids-->
         <f:Form id="FormEdit480_121208"
                 editable="true">
 
@@ -23,9 +22,6 @@
                         columnsM="1"
                         singleContainerFullSize="true"/>
             </f:layout>
-            <!--enabled="false"-->
-            <!--            editable="true"-->
-
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>
@@ -55,5 +51,4 @@
             </f:formContainers>
         </f:Form>
     </VBox>
-
 </core:FragmentDefinition>

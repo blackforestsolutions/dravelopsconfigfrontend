@@ -4,7 +4,6 @@
         xmlns="sap.m">
 
     <VBox class="sapUiSmallMargin">
-        <!--                    TODO add ids-->
         <f:Form id="FormEdit480_121202"
                 editable="true">
 

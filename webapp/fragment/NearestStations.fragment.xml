@@ -4,7 +4,6 @@
         xmlns="sap.m">
 
     <VBox class="sapUiSmallMargin">
-        <!--                    TODO add ids-->
         <f:Form id="FormEdit480_121206"
                 editable="true">
 
@@ -24,9 +23,6 @@
                         columnsM="1"
                         singleContainerFullSize="true"/>
             </f:layout>
-            <!--enabled="false"-->
-            <!--            editable="true"-->
-
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>
