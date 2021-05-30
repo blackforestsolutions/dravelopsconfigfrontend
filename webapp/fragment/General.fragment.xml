@@ -37,7 +37,8 @@
                         </f:FormElement>
                          <f:FormElement label="{i18n>general.theme}">
                             <f:fields>
-                                <RadioButtonGroup id="playgroundPageThemeEdit">
+                                <RadioButtonGroup id="playgroundPageThemeEdit"
+                                    editable="{configuration>/isInputEnabled}">
                                     <RadioButton text="{i18n>general.theme-light}" selected="{apisettings>/calledObject/graphql/playground/settings/editor/theme}"/>
                                     <RadioButton text="{i18n>general.theme-dark}" selected="{apisettings>/calledObject/graphql/playground/settings/editor/theme}"/>
                                 </RadioButtonGroup>

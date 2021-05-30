@@ -47,10 +47,10 @@
                             <f:fields>
                                 <MaskInput mask="CCC.C"
                                     placeholderSymbol="_"
+                                    placeholder="Enter Lalitude like: -05.0"
                                     value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/departureLatitude}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}"
-                                    type="Number">
+                                    editable="{configuration>/isInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
                                     </rules>
@@ -61,10 +61,10 @@
                             <f:fields>
                                 <MaskInput mask="CCCC.C"
                                     placeholderSymbol="_"
+                                    placeholder="Enter Longitude like: -005.0"
                                     value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/departureLongitude}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}"
-                                    type="Number">
+                                    editable="{configuration>/isInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
                                     </rules>
@@ -75,10 +75,10 @@
                             <f:fields>
                                 <MaskInput mask="CCC.C"
                                     placeholderSymbol="_"
+                                    placeholder="Enter Lalitude like: -05.0"
                                     value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/arrivalLatitude}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}"
-                                    type="Number">
+                                    editable="{configuration>/isInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
                                     </rules>
@@ -89,10 +89,10 @@
                             <f:fields>
                                 <MaskInput mask="CCCC.C"
                                     placeholderSymbol="_"
+                                    placeholder="Enter Longitude like: -005.0"
                                     value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/arrivalLongitude}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}"
-                                    type="Number">
+                                    editable="{configuration>/isInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
                                     </rules>
@@ -114,9 +114,11 @@
                         </f:FormElement>
                         <f:FormElement label="isArrivalDateTime">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/isArrivalDateTime}"
-                                       required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                <RadioButtonGroup id="isArrivalDateTime-sub"
+                                editable="{configuration>/isInputEnabled}">
+                                    <RadioButton text="{i18n>JOURNEY_isArrivalDateTime-true}" selected="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/isArrivalDateTime}"/>
+                                    <RadioButton text="{i18n>JOURNEY_isArrivalDateTime-false}" selected="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/isArrivalDateTime}"/>
+                                </RadioButtonGroup>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="language">

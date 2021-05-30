@@ -50,8 +50,7 @@
                                     placeholderSymbol="_"
                                     value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/longitude}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}"
-                                    type="Number">
+                                    editable="{configuration>/isInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
                                     </rules>
@@ -64,8 +63,7 @@
                                     placeholderSymbol="_"
                                     value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/latitude}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}"
-                                    type="Number">
+                                    editable="{configuration>/isInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
                                     </rules>
@@ -78,8 +76,7 @@
                                     placeholderSymbol="_"
                                     value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/radiusInKilometers}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}"
-                                     type="Number">
+                                    editable="{configuration>/isInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-5]"/>
                                     </rules>
@@ -89,7 +86,7 @@
                         <f:FormElement label="language">
                             <f:fields>
                                  <MaskInput mask="CC"
-                                    placeholderSymbol="__"
+                                    placeholderSymbol="_"
                                     value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/language}"
                                     required="true"
                                     editable="{configuration>/isInputEnabled}">
