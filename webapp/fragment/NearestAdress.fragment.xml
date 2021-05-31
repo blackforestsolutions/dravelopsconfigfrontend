@@ -4,7 +4,6 @@
         xmlns="sap.m">
 
     <VBox class="sapUiSmallMargin">
-        <!--TODO add ids-->
         <f:Form id="FormEdit480_121205"
                 editable="true">
 
@@ -29,25 +28,25 @@
                     <f:formElements>
                         <f:FormElement label="Name">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/name}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/name}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="Query">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/query}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/query}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="longitude">
                             <f:fields>
                                 <MaskInput mask="CCCC.C"
                                     placeholderSymbol="_"
-                                    value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"
+                                    value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}">
+                                           editable="{configuration>/input/isJourneySubscriptionInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
                                     </rules>
@@ -58,9 +57,9 @@
                             <f:fields>
                                 <MaskInput mask="CCC.C"
                                     placeholderSymbol="_"
-                                    value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"
+                                    value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}">
+                                           editable="{configuration>/input/isJourneySubscriptionInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
                                     </rules>
@@ -71,9 +70,9 @@
                             <f:fields>
                                 <MaskInput mask="C.C"
                                     placeholderSymbol="_"
-                                    value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"
+                                    value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}">
+                                           editable="{configuration>/input/isJourneySubscriptionInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-5]"/>
                                     </rules>
@@ -84,9 +83,9 @@
                             <f:fields>
                                 <MaskInput mask="CC"
                                     placeholderSymbol="_"
-                                    value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/language}"
+                                    value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/language}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}">
+                                           editable="{configuration>/input/isJourneySubscriptionInputEnabled}">
                                     <rules>
                                          <MaskInputRule maskFormatSymbol="C" regex="[a-z]"/>
                                     </rules>
@@ -97,22 +96,23 @@
                             <f:fields>
                                 <MaskInput mask="CC"
                                     placeholderSymbol="_"
-                                    value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/maxResults}"
+                                    value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/maxResults}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}">
+                                           editable="{configuration>/input/isJourneySubscriptionInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="^(?:[1-9]|0[1-9]|1[0-9]|20)$"/>
                                     </rules>
                                 </MaskInput>
                             </f:fields>
                         </f:FormElement>
-                        <!--TODO is list-->
-                        <!-- <f:FormElement label="layers">
-                             <f:fields>
-                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/layers}"       required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
-                             </f:fields>
-                         </f:FormElement>-->
+                        <!--cannot access values without key for now-->
+                        <!--<f:FormElement label="layers">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/layers}"
+                                       required="true"
+                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
+                            </f:fields>
+                        </f:FormElement>-->
                     </f:formElements>
                 </f:FormContainer>
             </f:formContainers>

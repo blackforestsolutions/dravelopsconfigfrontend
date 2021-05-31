@@ -4,4 +4,4 @@ services:
   app:
     image: blackforestsolutions/dravelopsconfigfrontend:latest
     ports:
-      - "8080:80"
+      - "8089:89"

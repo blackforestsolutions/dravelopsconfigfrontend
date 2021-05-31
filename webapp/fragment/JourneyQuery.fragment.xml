@@ -4,7 +4,6 @@
         xmlns="sap.m">
 
     <VBox class="sapUiSmallMargin">
-        <!--TODO add ids-->
         <f:Form id="FormEdit480_121202"
                 editable="true">
 
@@ -29,16 +28,16 @@
                     <f:formElements>
                         <f:FormElement label="Name">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/name}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/name}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="Query">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/query}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/query}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="departureLatitude">
@@ -46,9 +45,9 @@
                                 <MaskInput mask="CCC.C"
                                     placeholderSymbol="_"
                                     placeholder="Enter Lalitude like: -05.0"
-                                    value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLatitude}"
+                                    value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLatitude}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}">
+                                    editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
                                     </rules>
@@ -60,9 +59,9 @@
                                 <MaskInput mask="CCCC.C"
                                     placeholderSymbol="_"
                                     placeholder="Enter Longitude like: -005.0"
-                                    value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLongitude}"
+                                    value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLongitude}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}">
+                                           editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
                                     </rules>
@@ -74,9 +73,9 @@
                                 <MaskInput mask="CCC.C"
                                     placeholderSymbol="_"
                                     placeholder="Enter Lalitude like: -05.0"
-                                    value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLatitude}"
+                                    value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLatitude}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}">
+                                           editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
                                     </rules>
@@ -88,9 +87,9 @@
                                 <MaskInput mask="CCCC.C"
                                     placeholderSymbol="_"
                                     placeholder="Enter Longitude like: -005.0"
-                                    value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLongitude}"
+                                    value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLongitude}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}">
+                                           editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
                                     </rules>
@@ -100,10 +99,10 @@
                         <f:FormElement label="dateTime">
                             <f:fields>
                                 <MaskInput mask="CCCC-CC-CCTCC:CC:CC+CC:CC"
-                                    placeholderSymbol="_" 
+                                    placeholderSymbol="_"
                                     value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}">
+                                           editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9]"/>
                                     </rules>
@@ -113,7 +112,7 @@
                         <f:FormElement label="isArrivalDateTime">
                             <f:fields>
                                 <RadioButtonGroup id="isArrivalDateTime-querry"
-                                editable="{configuration>/isInputEnabled}">
+                                                  editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                     <RadioButton text="{i18n>JOURNEY_isArrivalDateTime-true}" selected="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/isArrivalDateTime}"/>
                                     <RadioButton text="{i18n>JOURNEY_isArrivalDateTime-false}" selected="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/isArrivalDateTime}"/>
                                 </RadioButtonGroup>
@@ -125,7 +124,7 @@
                                     placeholderSymbol="_"
                                     value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/language}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}">
+                                           editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                      <rules>
                                          <MaskInputRule maskFormatSymbol="C" regex="[a-z]"/>
                                     </rules>
@@ -138,7 +137,7 @@
                                     placeholderSymbol="_"
                                     value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/maxResults}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}">
+                                           editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                      <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="^([1-9]|[0-1][0-5])$"/>
                                     </rules>
@@ -147,23 +146,23 @@
                         </f:FormElement>
                         <f:FormElement label="departurePlaceholder">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/departurePlaceholder}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/departurePlaceholder}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="arrivalPlaceholder">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/arrivalPlaceholder}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/arrivalPlaceholder}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="maxPastDaysInCalendar">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/maxPastDaysInCalendar}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/maxPastDaysInCalendar}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>

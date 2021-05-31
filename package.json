@@ -10,7 +10,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@ui5/cli": "^2.10.2",
+    "@ui5/cli": "^2.10.4",
     "eslint": "^7.23.0",
     "local-web-server": "^4.2.1"
   }

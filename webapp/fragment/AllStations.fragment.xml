@@ -3,10 +3,9 @@
         xmlns:f="sap.ui.layout.form"
         xmlns="sap.m">
     <VBox class="sapUiSmallMargin">
-        <!--TODO add ids-->
+        <!--                    TODO add ids-->
         <f:Form id="FormEdit480_121207"
                 editable="true">
-
             <f:layout>
                 <f:ResponsiveGridLayout
                         labelSpanXL="3"
@@ -23,24 +22,21 @@
                         columnsM="1"
                         singleContainerFullSize="true"/>
             </f:layout>
-            <!--enabled="false"-->
-            <!--editable="true"-->
-
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>
                         <f:FormElement label="Name">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ALL_STATIONS/name}"
+                                <Input value="{apisettings>/graphql/playground/tabs/ALL_STATIONS/name}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isAllStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="Query">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ALL_STATIONS/query}"
+                                <Input value="{apisettings>/graphql/playground/tabs/ALL_STATIONS/query}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isAllStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>
@@ -48,5 +44,4 @@
             </f:formContainers>
         </f:Form>
     </VBox>
-
 </core:FragmentDefinition>

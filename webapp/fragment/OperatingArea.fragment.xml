@@ -3,7 +3,6 @@
         xmlns:f="sap.ui.layout.form"
         xmlns="sap.m">
     <VBox class="sapUiSmallMargin">
-        <!--TODO add ids-->
         <f:Form id="FormEdit480_121208"
                 editable="true">
 
@@ -23,31 +22,28 @@
                         columnsM="1"
                         singleContainerFullSize="true"/>
             </f:layout>
-            <!--enabled="false"-->
-            <!--editable="true"-->
-
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>
                         <f:FormElement label="Name">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/OPERATING_AREA/name}"
+                                <Input value="{apisettings>/graphql/playground/tabs/OPERATING_AREA/name}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isOperatingAreaInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="Query">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/OPERATING_AREA/query}"
+                                <Input value="{apisettings>/graphql/playground/tabs/OPERATING_AREA/query}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isOperatingAreaInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="bufferInMetres">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/OPERATING_AREA/bufferInMetres}"
+                                <Input value="{apisettings>/graphql/playground/tabs/OPERATING_AREA/bufferInMetres}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isOperatingAreaInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>
@@ -55,5 +51,4 @@
             </f:formContainers>
         </f:Form>
     </VBox>
-
 </core:FragmentDefinition>
