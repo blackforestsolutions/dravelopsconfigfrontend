@@ -38,8 +38,14 @@
                             <f:fields>
                                 <RadioButtonGroup id="playgroundPageThemeEdit"
                                                   editable="{configuration>/input/isGeneralInputEnabled}">
-                                    <RadioButton text="{i18n>general.theme-light}" selected="{apisettings>/graphql/playground/settings/editor/theme}"/>
-                                    <RadioButton text="{i18n>general.theme-dark}" selected="{apisettings>/graphql/playground/settings/editor/theme}"/>
+                                    <!--                                    selected="{apisettings>/graphql/playground/settings/editor/theme}"-->
+                                    <RadioButton text="{i18n>general.theme-light}"
+                                                 selected="true"
+                                    />
+                                    <!--                                    selected="{apisettings>/graphql/playground/settings/editor/theme}"-->
+                                    <RadioButton text="{i18n>general.theme-dark}"
+                                                 selected="false"
+                                    />
                                 </RadioButtonGroup>
                             </f:fields>
                         </f:FormElement>
