@@ -28,49 +28,49 @@
                     <f:formElements>
                         <f:FormElement label="Name">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/name}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/name}"
                                        required="true"
                                        editable="{configuration>/input/isNearestStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="Query">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/query}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/query}"
                                        required="true"
                                        editable="{configuration>/input/isNearestStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="longitude">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/longitude}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/longitude}"
                                        required="true"
                                        editable="{configuration>/input/isNearestStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="latitude">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/latitude}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/latitude}"
                                        required="true"
                                        editable="{configuration>/input/isNearestStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="radiusInKilometers">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/radiusInKilometers}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/radiusInKilometers}"
                                        required="true"
                                        editable="{configuration>/input/isNearestStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="language">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/language}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/language}"
                                        required="true"
                                        editable="{configuration>/input/isNearestStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="maxResults">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/maxResults}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/maxResults}"
                                        required="true"
                                        editable="{configuration>/input/isNearestStationsInputEnabled}"/>
                             </f:fields>

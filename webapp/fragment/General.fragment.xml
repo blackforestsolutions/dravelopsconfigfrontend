@@ -27,7 +27,7 @@
                     <f:formElements>
                         <f:FormElement label="{i18n>general.page-title}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/page-title}"
+                                <Input value="{apisettings>/graphql/playground/page-title}"
                                        id="playgroundPageTitleEdit"
                                        required="true"
                                        editable="{configuration>/input/isGeneralInputEnabled}"
@@ -36,7 +36,7 @@
                         </f:FormElement>
                         <f:FormElement label="{i18n>general.theme}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/settings/editor/theme}"
+                                <Input value="{apisettings>/graphql/playground/settings/editor/theme}"
                                        required="true"
                                        editable="{configuration>/input/isGeneralInputEnabled}"/>
                             </f:fields>

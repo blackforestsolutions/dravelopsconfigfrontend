@@ -27,35 +27,35 @@
                     <f:formElements>
                         <f:FormElement label="Name">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/name}"
+                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/name}"
                                        required="true"
                                        editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="Query">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/query}"
+                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/query}"
                                        required="true"
                                        editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="text">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/text}"
+                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/text}"
                                        required="true"
                                        editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="language">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/language}"
+                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/language}"
                                        required="true"
                                        editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="maxResults">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/maxResults}"
+                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/maxResults}"
                                        required="true"
                                        editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                             </f:fields>
@@ -64,17 +64,17 @@
                         <!--<f:FormElement label="layers">
                             <f:fields>
                                 <List id="layers"
-                                      items="{path: 'apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers', templateShareable:false}">
-                                    <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers}"
+                                      items="{path: 'apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers', templateShareable:false}">
+                                    <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers}"
                                            required="true"
                                            editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
-                                    <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers}"
+                                    <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers}"
                                            required="true"
                                            editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
-                                    <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers/[2]}"
+                                    <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers/[2]}"
                                            required="true"
                                            editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
-                                    <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers/[3]}"
+                                    <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers/[3]}"
                                            required="true"
                                            editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                                 </List>

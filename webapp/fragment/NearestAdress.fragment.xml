@@ -28,49 +28,49 @@
                     <f:formElements>
                         <f:FormElement label="Name">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/name}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/name}"
                                        required="true"
                                        editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="Query">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/query}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/query}"
                                        required="true"
                                        editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="longitude">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"
                                        required="true"
                                        editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="latitude">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"
                                        required="true"
                                        editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="latitude">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"
                                        required="true"
                                        editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="latitude">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/language}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/language}"
                                        required="true"
                                        editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="maxResults">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/maxResults}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/maxResults}"
                                        required="true"
                                        editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
@@ -78,7 +78,7 @@
                         <!--cannot access values without key for now-->
                         <!--<f:FormElement label="layers">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/layers}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/layers}"
                                        required="true"
                                        editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
