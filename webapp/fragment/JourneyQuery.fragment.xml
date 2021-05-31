@@ -61,7 +61,7 @@
                                     placeholder="Enter Longitude like: -005.0"
                                     value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLongitude}"
                                     required="true"
-                                           editable="{configuration>/input/isJourneyQueryInputEnabled}">
+                                    editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
                                     </rules>
@@ -124,7 +124,7 @@
                                     placeholderSymbol="_"
                                     value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/language}"
                                     required="true"
-                                           editable="{configuration>/input/isJourneyQueryInputEnabled}">
+                                    editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                      <rules>
                                          <MaskInputRule maskFormatSymbol="C" regex="[a-z]"/>
                                     </rules>
@@ -137,7 +137,7 @@
                                     placeholderSymbol="_"
                                     value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/maxResults}"
                                     required="true"
-                                           editable="{configuration>/input/isJourneyQueryInputEnabled}">
+                                    editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                      <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="^([1-9]|[0-1][0-5])$"/>
                                     </rules>

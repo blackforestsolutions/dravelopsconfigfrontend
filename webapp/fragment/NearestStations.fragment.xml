@@ -98,7 +98,7 @@
                                     placeholderSymbol="_"
                                     value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/maxResults}"
                                     required="true"
-                                           editable="{configuration>/input/isJourneySubscriptionInputEnabled}">
+                                           editable="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>

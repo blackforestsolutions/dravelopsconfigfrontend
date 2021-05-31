@@ -52,7 +52,7 @@
                                     placeholderSymbol="_"
                                     value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/language}"
                                     required="true"
-                                    editable="{configuration>/isInputEnabled}">
+                                    editable="{configuration>/input/isAdressAutocompletionInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[a-z]"/>
                                     </rules>
