@@ -19,6 +19,7 @@ sap.ui.define([
     let oModelApiSettings = new JSONModel();
     const CONFIGURATION_MODEL = "configuration";
     let oView;
+    const nameList = ["General", "JourneyQuery", "JourneySubscription", "AdressAutocompletion", "NearestAdresses", "NearestStations", "AllStations", "OperatingArea"];
 
     return BaseController.extend("de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.ApiSettings", {
 
@@ -107,45 +108,30 @@ sap.ui.define([
                 if (callStatuses[callStatusEntry].status == "FAILED") {
                     isFailed = false;
 
+
+                    switch (callStatuses[callStatusEntry].calledObject) {
+                        case "NEAREST_ADDRESSES":
+                            errorContent += "Nearest adress";
+                            break;
+                        case "JOURNEY_QUERY":
+                            errorContent += "Journey query";
+                            break;
+                        case "ADDRESS_AUTOCOMPLETION":
+                            errorContent += "Adress autocompletion";
+                            break;
+                        case "NEAREST_STATIONS":
+                            errorContent += "Nearest stations";
+                            break;
+                        default:
+                            errorInResponse = true;
+                            break;
+                    }
                     if (callStatusEntry !== callStatuses.length - 1) {
-                        switch (callStatuses[callStatusEntry].calledObject) {
-                            case "NEAREST_ADDRESSES":
-                                errorContent += "Nearest adress" + ", ";
-                                break;
-                            case "JOURNEY_QUERY":
-                                errorContent += "Journey query" + ", ";
-                                break;
-                            case "ADDRESS_AUTOCOMPLETION":
-                                errorContent += "Adress autocompletion" + ", ";
-                                break;
-                            case "NEAREST_STATIONS":
-                                errorContent += "Nearest stations" + ", ";
-                                break;
-                            default:
-                                errorInResponse = true;
-                                break;
-                        }
-                    } else {
-                        switch (callStatuses[callStatusEntry].calledObject) {
-                            case "NEAREST_ADDRESSES":
-                                errorContent += "Nearest adress";
-                                break;
-                            case "JOURNEY_QUERY":
-                                errorContent += "Journey query";
-                                break;
-                            case "ADDRESS_AUTOCOMPLETION":
-                                errorContent += "Adress autocompletion";
-                                break;
-                            case "NEAREST_STATIONS":
-                                errorContent += "Nearest stations";
-                                break;
-                            default:
-                                errorInResponse = true;
-                                break;
-                        }
+                        errorContent += ", ";
                     }
                 }
             }
+
             if (errorInResponse) {
                 errorContent = "Response could not be computed.";
             }
@@ -174,8 +160,8 @@ sap.ui.define([
             }
         },
 
-        toggleButtonsAndInputs: function (isEdit, pressedButtonId) {
-            let oView = this.getView();
+        toggleButtonsAndInputs: function (isEdit, pressedButtonIdArray) {
+            let pressedButtonId = pressedButtonIdArray[0];
             if (isEdit) {
                 this.byId("configurationTabs").getItems().forEach(function (item) {
                     item.setType("Inactive");
@@ -188,63 +174,21 @@ sap.ui.define([
                 this.byId("configurationTabs").setMode("SingleSelectMaster");
             }
 
-            // Show the appropriate action buttons
-            if (pressedButtonId == "editGeneral" || pressedButtonId == "saveGeneral" || pressedButtonId == "cancelGeneral") {
-                oView.byId("editGeneral").setVisible(!isEdit);
-                oView.byId("saveGeneral").setVisible(isEdit);
-                oView.byId("cancelGeneral").setVisible(isEdit);
-                this.getView().getModel(CONFIGURATION_MODEL).setProperty("/input/isGeneralInputEnabled", isEdit);
-            }
 
-            if (pressedButtonId == "editJourneyQuery" || pressedButtonId == "saveJourneyQuery" || pressedButtonId == "cancelJourneyQuery") {
-                oView.byId("editJourneyQuery").setVisible(!isEdit);
-                oView.byId("saveJourneyQuery").setVisible(isEdit);
-                oView.byId("cancelJourneyQuery").setVisible(isEdit);
-                this.getView().getModel(CONFIGURATION_MODEL).setProperty("/input/isJourneyQueryInputEnabled", isEdit);
+            for (let i = 0; i < nameList.length; i++) {
+                if (pressedButtonId.includes(nameList[i])) {
+                    this.toggleVisibilityAndEditability(nameList[i], isEdit);
+                    break;
+                }
             }
+        },
 
-            if (pressedButtonId == "editGeneralJourneySubscription" || pressedButtonId == "saveGeneralJourneySubscription" || pressedButtonId == "cancelGeneralJourneySubscription") {
-                oView.byId("editGeneralJourneySubscription").setVisible(!isEdit);
-                oView.byId("saveGeneralJourneySubscription").setVisible(isEdit);
-                oView.byId("cancelGeneralJourneySubscription").setVisible(isEdit);
-
-                this.getView().getModel(CONFIGURATION_MODEL).setProperty("/input/isJourneySubscriptionInputEnabled", isEdit);
-            }
-
-            if (pressedButtonId == "editAdressAutocompletion" || pressedButtonId == "saveAdressAutocompletion" || pressedButtonId == "cancelAdressAutocompletion") {
-                oView.byId("editAdressAutocompletion").setVisible(!isEdit);
-                oView.byId("saveAdressAutocompletion").setVisible(isEdit);
-                oView.byId("cancelAdressAutocompletion").setVisible(isEdit);
-                this.getView().getModel(CONFIGURATION_MODEL).setProperty("/input/isAdressAutocompletionInputEnabled", isEdit);
-            }
-
-            if (pressedButtonId == "editNearestAdresses" || pressedButtonId == "saveNearestAdresses" || pressedButtonId == "cancelNearestAdresses") {
-                oView.byId("editNearestAdresses").setVisible(!isEdit);
-                oView.byId("saveNearestAdresses").setVisible(isEdit);
-                oView.byId("cancelNearestAdresses").setVisible(isEdit);
-                this.getView().getModel(CONFIGURATION_MODEL).setProperty("/input/isNearestAdressesInputEnabled", isEdit);
-            }
-
-            if (pressedButtonId == "editNearestStations" || pressedButtonId == "saveNearestStations" || pressedButtonId == "cancelNearestStations") {
-                oView.byId("editNearestStations").setVisible(!isEdit);
-                oView.byId("saveNearestStations").setVisible(isEdit);
-                oView.byId("cancelNearestStations").setVisible(isEdit);
-                this.getView().getModel(CONFIGURATION_MODEL).setProperty("/input/isNearestStationsInputEnabled", isEdit);
-            }
-
-            if (pressedButtonId == "editAllStations" || pressedButtonId == "saveAllStations" || pressedButtonId == "cancelAllStations") {
-                oView.byId("editAllStations").setVisible(!isEdit);
-                oView.byId("saveAllStations").setVisible(isEdit);
-                oView.byId("cancelAllStations").setVisible(isEdit);
-                this.getView().getModel(CONFIGURATION_MODEL).setProperty("/input/isAllStationsInputEnabled", isEdit);
-            }
-
-            if (pressedButtonId == "editOperatingArea" || pressedButtonId == "saveOperatingArea" || pressedButtonId == "cancelOperatingArea") {
-                oView.byId("editOperatingArea").setVisible(!isEdit);
-                oView.byId("saveOperatingArea").setVisible(isEdit);
-                oView.byId("cancelOperatingArea").setVisible(isEdit);
-                this.getView().getModel(CONFIGURATION_MODEL).setProperty("/input/isOperatingAreaInputEnabled", isEdit);
-            }
+        toggleVisibilityAndEditability: function (tabName, isEdit) {
+            console.log(tabName);
+            oView.byId("edit" + tabName).setVisible(!isEdit);
+            oView.byId("save" + tabName).setVisible(isEdit);
+            oView.byId("cancel" + tabName).setVisible(isEdit);
+            this.getView().getModel(CONFIGURATION_MODEL).setProperty("/input/is" + tabName + "InputEnabled", isEdit);
         },
 
         onListItemPress: function (oEvent) {
