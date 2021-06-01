@@ -1,0 +1,88 @@
+<core:FragmentDefinition
+        xmlns:core="sap.ui.core"
+        xmlns:f="sap.ui.layout.form"
+        xmlns="sap.m">
+
+    <VBox class="sapUiSmallMargin">
+        <f:Form id="FormEdit480_121204"
+                editable="true">
+            <f:layout>
+                <f:ResponsiveGridLayout
+                        labelSpanXL="3"
+                        labelSpanL="3"
+                        labelSpanM="3"
+                        labelSpanS="12"
+                        adjustLabelSpan="false"
+                        emptySpanXL="4"
+                        emptySpanL="4"
+                        emptySpanM="4"
+                        emptySpanS="0"
+                        columnsXL="1"
+                        columnsL="1"
+                        columnsM="1"
+                        singleContainerFullSize="true"/>
+            </f:layout>
+            <f:formContainers>
+                <f:FormContainer>
+                    <f:formElements>
+                        <f:FormElement label="Name">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/name}"
+                                       required="true"
+                                       editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="Query">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/query}"
+                                       required="true"
+                                       editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="text">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/text}"
+                                       required="true"
+                                       editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="language">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/language}"
+                                       required="true"
+                                       editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <f:FormElement label="maxResults">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/maxResults}"
+                                       required="true"
+                                       editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
+                            </f:fields>
+                        </f:FormElement>
+                        <!--cannot access values without key for now-->
+                        <!--<f:FormElement label="layers">
+                            <f:fields>
+                                <List id="layers"
+                                      items="{path: 'apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers', templateShareable:false}">
+                                    <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers}"
+                                           required="true"
+                                           editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
+                                    <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers}"
+                                           required="true"
+                                           editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
+                                    <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers/[2]}"
+                                           required="true"
+                                           editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
+                                    <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers/[3]}"
+                                           required="true"
+                                           editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
+                                </List>
+                            </f:fields>
+                        </f:FormElement>-->
+                    </f:formElements>
+                </f:FormContainer>
+            </f:formContainers>
+        </f:Form>
+    </VBox>
+</core:FragmentDefinition>

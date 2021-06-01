@@ -2,23 +2,32 @@
 
 sap.ui.define(
     ["de/blackforestsolutions/dravelopsconfigfrontend/controller/BaseController"],
-    function (BaseController) {
+    function (BaseController
+    ) {
         "use strict";
         const apiSettingsTileId = "container-dravelopsconfigfrontend---launchpad--apiSettingsTile";
         const routeApiSettingsTile = "apisettings";
+        const errorMessage = "Routing to API Settings was not possible.";
         return BaseController.extend(
             "de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.Launchpad",
             {
                 onInit: function () {
                 },
 
+                /*when tile is clicked on launchpad a request is sent to backend and user is routed to suitable view
+                 * which is filled by backend response*/
                 tileClicked(oEvent) {
                     const pressedTileId = oEvent.getSource().getId();
                     const oRouter = this.getOwnerComponent().getRouter();
 
-                    pressedTileId === apiSettingsTileId
-                        ? oRouter.navTo(routeApiSettingsTile, {}, true)
-                        : console.log("Routing to API Settings was not possible.");
+                    if (pressedTileId === apiSettingsTileId) {
+                        this.routeToApiSettings(oRouter);
+                    } else {
+                        console.log(errorMessage);
+                    }
+                },
+                routeToApiSettings: async (oRouter) => {
+                    oRouter.navTo(routeApiSettingsTile, {}, true);
                 }
             }
         );
