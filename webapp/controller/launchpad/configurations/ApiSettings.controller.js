@@ -105,7 +105,7 @@ sap.ui.define([
             let errorContent = "Please correct your input for ";
             let errorInResponse = false;
             for (let callStatusEntry = 0; callStatusEntry < callStatuses.length; callStatusEntry++) {
-                if (callStatuses[callStatusEntry].status == "FAILED") {
+                if (callStatuses[callStatusEntry].status === "FAILED") {
                     isFailed = false;
 
 
@@ -184,7 +184,6 @@ sap.ui.define([
         },
 
         toggleVisibilityAndEditability: function (tabName, isEdit) {
-            console.log(tabName);
             oView.byId("edit" + tabName).setVisible(!isEdit);
             oView.byId("save" + tabName).setVisible(isEdit);
             oView.byId("cancel" + tabName).setVisible(isEdit);
