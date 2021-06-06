@@ -100,7 +100,7 @@
                             <f:fields>
                                 <MaskInput mask="CCCC-CC-CCTCC:CC:CC+CC:CC"
                                     placeholderSymbol="_"
-                                    value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"
+                                    value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"
                                     required="true"
                                            editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                     <rules>
@@ -113,8 +113,8 @@
                             <f:fields>
                                 <RadioButtonGroup id="isArrivalDateTime-querry"
                                                   editable="{configuration>/input/isJourneyQueryInputEnabled}">
-                                    <RadioButton text="{i18n>JOURNEY_isArrivalDateTime-true}" selected="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/isArrivalDateTime}"/>
-                                    <RadioButton text="{i18n>JOURNEY_isArrivalDateTime-false}" selected="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/isArrivalDateTime}"/>
+                                    <RadioButton text="{i18n>JOURNEY_isArrivalDateTime-true}" selected="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/isArrivalDateTime}"/>
+                                    <RadioButton text="{i18n>JOURNEY_isArrivalDateTime-false}" selected="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/isArrivalDateTime}"/>
                                 </RadioButtonGroup>
                             </f:fields>
                         </f:FormElement>
@@ -122,7 +122,7 @@
                             <f:fields>
                                 <MaskInput mask="CC"
                                     placeholderSymbol="_"
-                                    value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/language}"
+                                    value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/language}"
                                     required="true"
                                     editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                      <rules>
@@ -135,7 +135,7 @@
                             <f:fields>
                                 <MaskInput mask="CC"
                                     placeholderSymbol="_"
-                                    value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/maxResults}"
+                                    value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/maxResults}"
                                     required="true"
                                     editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                      <rules>
