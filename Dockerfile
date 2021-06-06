@@ -1,4 +1,4 @@
-FROM nginx
+FROM nginx:alpine
 
 LABEL maintainer="John Budnik <to.johnybudnik@gmail.com>"
 
