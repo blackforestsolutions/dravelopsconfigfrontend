@@ -24,8 +24,7 @@ sap.ui.define([
     return BaseController.extend("de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.ApiSettings", {
 
         onInit: function () {
-            oView = this.getView();
-            this.getApiSettingsFromBackend(oView);
+            this.getRouter().getRoute('apisettings').attachMatched(this.onRouteMatched, this);
 
             // global configuration model for views and fragments
             let oModelConfiguration = new JSONModel({
@@ -43,13 +42,15 @@ sap.ui.define([
                 }
             });
             this.getView().setModel(oModelConfiguration, CONFIGURATION_MODEL);
+
+
         },
 
-        // retrieves current api settings from backend
-        getApiSettingsFromBackend: function (oView) {
+        /**Handle matched route and request current configuration from backend.*/
+        onRouteMatched: function (oEvent) {
             oModelApiSettings.loadData(URL);
             oModelApiSettings.dataLoaded().then(() => {
-                oView.setModel(oModelApiSettings, "apisettings");
+                this.getView().setModel(oModelApiSettings, "apisettings");
             });
         },
 
