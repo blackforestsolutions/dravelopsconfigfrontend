@@ -4,7 +4,6 @@
         xmlns="sap.m">
 
     <VBox class="sapUiSmallMargin">
-        <!--                    TODO add ids-->
         <f:Form id="FormEdit480_121202"
                 editable="true">
 
@@ -29,93 +28,93 @@
                     <f:formElements>
                         <f:FormElement label="{i18n>JourneyQuery.name}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/name}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/name}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>JourneyQuery.query}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/query}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/query}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>JourneyQuery.departureLatitude}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLatitude}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLatitude}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>JourneyQuery.departureLongitude}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLongitude}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLongitude}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>JourneyQuery.arrivalLatitude}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLatitude}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLatitude}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>JourneyQuery.arrivalLongitude}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLongitude}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLongitude}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>JourneyQuery.dateTime}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>JourneyQuery.isArrivalDateTime}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/isArrivalDateTime}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/isArrivalDateTime}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>JourneyQuery.language}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/variables/language}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/language}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>JourneyQuery.maxResults}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/maxResults}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/maxResults}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>JourneyQuery.departurePlaceholder}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/departurePlaceholder}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/departurePlaceholder}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>JourneyQuery.arrivalPlaceholder}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/arrivalPlaceholder}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/arrivalPlaceholder}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>JourneyQuery.maxPastDaysInCalendar}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/JOURNEY_QUERY/maxPastDaysInCalendar}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/maxPastDaysInCalendar}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>

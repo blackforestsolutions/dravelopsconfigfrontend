@@ -4,145 +4,214 @@
 sap.ui.define([
     "de/blackforestsolutions/dravelopsconfigfrontend/controller/BaseController",
     "sap/ui/model/json/JSONModel",
-    'sap/m/MessageToast'
-], function (BaseController, JSONModel, MessageToast) {
+    'sap/m/MessageToast',
+    "sap/ui/core/ValueState",
+    "sap/m/Dialog",
+    "sap/m/DialogType",
+    "sap/m/Button",
+    "sap/m/ButtonType",
+    "sap/m/Text",
+    "sap/base/Log"
+], function (BaseController, JSONModel, MessageToast, ValueState, Dialog, DialogType, Button, ButtonType, Text, Log) {
     "use strict";
 
-    // TODO base url
-
-    var URL_GET = "http://localhost:8092/configbackend";
-    var URL_PUT = "http://localhost:8092/configbackend";
-    let oModelApiSettings = new JSONModel()
+    const URL = "http://localhost:8092/configbackend";
+    let oModelApiSettings = new JSONModel();
+    const CONFIGURATION_MODEL = "configuration";
     let oView;
+    const nameList = ["General", "JourneyQuery", "JourneySubscription", "AdressAutocompletion", "NearestAdresses", "NearestStations", "AllStations", "OperatingArea"];
+    let oModelConfiguration;
 
     return BaseController.extend("de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.ApiSettings", {
 
         onInit: function () {
             oView = this.getView();
-            // getting data from backend
-            this.getApiSettingsFromBackend(oView);
+            this.getRouter().getRoute('apisettings').attachMatched(this.onRouteMatched, this);
 
-            // creating configurations for views and fragments
-            var configurationModel = new JSONModel({
-                isInputEnabled: false, page: {
+            // global configuration model for views and fragments
+            oModelConfiguration = this.setInitialConfigurations();
+            oView.setModel(oModelConfiguration, CONFIGURATION_MODEL);
+
+        },
+
+        setInitialConfigurations: function () {
+            return new JSONModel({
+                input: {
+                    isGeneralInputEnabled: false,
+                    isJourneyQueryInputEnabled: false,
+                    isJourneySubscriptionInputEnabled: false,
+                    isAdressAutocompletionInputEnabled: false,
+                    isNearestAdressesInputEnabled: false,
+                    isNearestStationsInputEnabled: false,
+                    isAllStationsInputEnabled: false,
+                    isOperatingAreaInputEnabled: false
+                }, page: {
                     backgroundDesign: "List"
                 }
             });
-            this.getView().setModel(configurationModel, "configuration");
         },
-        getApiSettingsFromBackend: function (oView) {
-            oModelApiSettings.loadData(URL_GET);
+
+        /**Handle matched route and request current configuration from backend.*/
+        onRouteMatched: function (oEvent) {
+            oModelApiSettings.loadData(URL);
             oModelApiSettings.dataLoaded().then(() => {
                 oView.setModel(oModelApiSettings, "apisettings");
-                console.log(oModelApiSettings.getData())
-            })
+            });
         },
 
-        handleEditPress: function () {
-            this._oApiSettings = Object.assign({}, oModelApiSettings.getData());
-            this.toggleButtonsAndInputs(true);
+        handleEditPress: function (oEvent) {
+            const pressedButtonId = this.getButtonId(oEvent);
+            this.toggleButtonsAndInputs(true, pressedButtonId);
         },
 
-        handleCancelPress: function () {
-            oModelApiSettings.loadData(URL_GET);
+        handleCancelPress: function (oEvent) {
+            const pressedButtonId = this.getButtonId(oEvent);
+            oModelApiSettings.loadData(URL);
             oModelApiSettings.dataLoaded().then(() => {
                 this.getView().setModel(oModelApiSettings, "apisettings");
-            })
-            this.toggleButtonsAndInputs(false);
+            });
+            this.toggleButtonsAndInputs(false, pressedButtonId);
         },
 
-        /**
-         * sending updated CallStatus to backend
-         * */
-        handleSavePress: function () {
+        getButtonId: function (oEvent) {
+            return oEvent.getSource().getId().split("-").slice(-1);
+        },
 
+        // sending updated CallStatus to backend and verify response
+        handleSavePress: function (oEvent) {
+            const pressedButtonId = this.getButtonId(oEvent);
+            const checkPutResponse = (responseModel, pressedButtonId) => {
+                this.checkPutResponse(responseModel, pressedButtonId);
+            };
             $.ajax({
-                url: URL_PUT,
+                url: URL,
                 type: "PUT",
                 dataType: 'json',
                 contentType: "application/json",
                 data: oModelApiSettings.getJSON(),
                 success: function (response) {
-                    var responseModel = new JSONModel(response);
-                    if (responseModel.getProperty("/status")) {
-                        let status = responseModel.getProperty("/status");
-                        if (status === "SUCCESS") {
-                            MessageToast.show("Saved successfully.");
-                            toggle();
-                        } else if (status === "FAILED") {
-                            MessageToast.show("Please correct your input.");
-                        }
-                    }
-
-
+                    let responseModel = new JSONModel(response);
+                    checkPutResponse(responseModel, pressedButtonId);
                 },
                 error: function (error) {
                     if (error !== undefined) {
-                        /*var oErrorResponse = $.parseJSON(error.responseText);
-                        sap.m.MessageToast.show(oErrorResponse.message, {
+                        sap.m.MessageToast.show("An error occurred", {
                             duration: 6000
-                        });*/
+                        });
                     } else {
                         MessageToast.show("Unknown error!");
                     }
                 }
-            })
-
-            const toggle = () => {
-                this.toggleButtonsAndInputs(false);
-            }
-
+            });
         },
 
-        toggleButtonsAndInputs: function (bEdit) {
-            var oView = this.getView();
+        checkPutResponse: function (responseModel, pressedButtonId) {
+            let callStatuses = responseModel.getProperty("/");
+            let isFailed = true;
+            let errorContent = "Please correct your input for ";
+            let errorInResponse = false;
+            for (let callStatusEntry = 0; callStatusEntry < callStatuses.length; callStatusEntry++) {
+                if (callStatuses[callStatusEntry].status === "FAILED") {
+                    isFailed = false;
 
-            // Show the appropriate action buttons
-            oView.byId("editGeneral").setVisible(!bEdit);
-            oView.byId("editJourneyQuery").setVisible(!bEdit);
-            oView.byId("editGeneralJourneySubsription").setVisible(!bEdit);
-            oView.byId("editAdressAutocompletion").setVisible(!bEdit);
-            oView.byId("editNearestAdresses").setVisible(!bEdit);
-            oView.byId("editNearestStations").setVisible(!bEdit);
-            oView.byId("editAllStations").setVisible(!bEdit);
-            oView.byId("editOperatingArea").setVisible(!bEdit);
 
-            oView.byId("saveGeneral").setVisible(bEdit);
-            oView.byId("saveJourneyQuery").setVisible(bEdit);
-            oView.byId("saveGeneralJourneySubsription").setVisible(bEdit);
-            oView.byId("saveAdressAutocompletion").setVisible(bEdit);
-            oView.byId("saveNearestAdresses").setVisible(bEdit);
-            oView.byId("saveNearestStations").setVisible(bEdit);
-            oView.byId("saveAllStations").setVisible(bEdit);
-            oView.byId("saveOperatingArea").setVisible(bEdit);
+                    switch (callStatuses[callStatusEntry].calledObject) {
+                        case "NEAREST_ADDRESSES":
+                            errorContent += "Nearest adress";
+                            break;
+                        case "JOURNEY_QUERY":
+                            errorContent += "Journey query";
+                            break;
+                        case "ADDRESS_AUTOCOMPLETION":
+                            errorContent += "Adress autocompletion";
+                            break;
+                        case "NEAREST_STATIONS":
+                            errorContent += "Nearest stations";
+                            break;
+                        default:
+                            errorInResponse = true;
+                            break;
+                    }
+                    if (callStatusEntry !== callStatuses.length - 1) {
+                        errorContent += ", ";
+                    }
+                }
+            }
 
-            oView.byId("cancelGeneral").setVisible(bEdit);
-            oView.byId("cancelJourneyQuery").setVisible(bEdit);
-            oView.byId("cancelGeneralJourneySubsription").setVisible(bEdit);
-            oView.byId("cancelAdressAutocompletion").setVisible(bEdit);
-            oView.byId("cancelNearestAdresses").setVisible(bEdit);
-            oView.byId("cancelNearestStations").setVisible(bEdit);
-            oView.byId("cancelAllStations").setVisible(bEdit);
-            oView.byId("cancelOperatingArea").setVisible(bEdit);
+            if (errorInResponse) {
+                errorContent = "Response could not be computed.";
+            }
 
-            // enable input
-            this.getView().getModel("configuration").setProperty("/isInputEnabled", bEdit);
+            if (!isFailed) {
+                if (!this.oErrorMessageDialog) {
+                    this.oErrorMessageDialog = new Dialog({
+                        type: DialogType.Message,
+                        title: "Error",
+                        state: ValueState.Error,
+                        content: new Text({text: errorContent}),
+                        beginButton: new Button({
+                            type: ButtonType.Emphasized,
+                            text: "OK",
+                            press: function () {
+                                this.oErrorMessageDialog.close();
+                            }.bind(this)
+                        })
+                    });
+                }
+                this.oErrorMessageDialog.open();
+            } else {
+                MessageToast.show("Saved successfully.");
+                this.toggleButtonsAndInputs(false, pressedButtonId);
+
+            }
+        },
+
+        toggleButtonsAndInputs: function (isEdit, pressedButtonIdArray) {
+            let pressedButtonId = pressedButtonIdArray[0];
+            if (isEdit) {
+                this.byId("configurationTabs").getItems().forEach(function (item) {
+                    item.setType("Inactive");
+                });
+                this.byId("configurationTabs").setMode("None");
+            } else {
+                this.byId("configurationTabs").getItems().forEach(function (item) {
+                    item.setType("Active");
+                });
+                this.byId("configurationTabs").setMode("SingleSelectMaster");
+                let list = this.byId("configurationTabs");
+                for (let i = 0; i < nameList.length; i++) {
+                    if (pressedButtonId.includes(nameList[i])) {
+                        list.setSelectedItem(list.getItems()[i], true, true);
+                    }
+                }
+            }
+
+            for (let i = 0; i < nameList.length; i++) {
+                if (pressedButtonId.includes(nameList[i])) {
+                    this.toggleVisibilityAndEditability(nameList[i], isEdit);
+                    break;
+                }
+            }
+        },
+
+        toggleVisibilityAndEditability: function (tabName, isEdit) {
+            oView.byId("edit" + tabName).setVisible(!isEdit);
+            oView.byId("save" + tabName).setVisible(isEdit);
+            oView.byId("cancel" + tabName).setVisible(isEdit);
+            this.getView().getModel(CONFIGURATION_MODEL).setProperty("/input/is" + tabName + "InputEnabled", isEdit);
         },
 
         onListItemPress: function (oEvent) {
-            var sToPageId = oEvent.getParameter("listItem").getCustomData()[0].getValue();
-
+            const sToPageId = oEvent.getParameter("listItem").getCustomData()[0].getValue();
             this.getSplitAppObj().toDetail(this.createId(sToPageId));
         },
 
         getSplitAppObj: function () {
-            var result = this.byId("SplitAppDemo");
+            const result = this.byId("SplitAppDemo");
             if (!result) {
                 Log.info("SplitApp object can't be found");
             }
             return result;
         }
-
-
     });
 });

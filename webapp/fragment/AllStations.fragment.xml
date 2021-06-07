@@ -6,7 +6,6 @@
         <!--                    TODO add ids-->
         <f:Form id="FormEdit480_121207"
                 editable="true">
-
             <f:layout>
                 <f:ResponsiveGridLayout
                         labelSpanXL="3"
@@ -23,24 +22,21 @@
                         columnsM="1"
                         singleContainerFullSize="true"/>
             </f:layout>
-            <!--enabled="false"-->
-            <!--            editable="true"-->
-
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>
                         <f:FormElement label="{i18n>AllStations.name}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ALL_STATIONS/name}"
+                                <Input value="{apisettings>/graphql/playground/tabs/ALL_STATIONS/name}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isAllStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>AllStations.query}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/ALL_STATIONS/query}"
+                                <Input value="{apisettings>/graphql/playground/tabs/ALL_STATIONS/query}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isAllStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>
@@ -48,5 +44,4 @@
             </f:formContainers>
         </f:Form>
     </VBox>
-
 </core:FragmentDefinition>

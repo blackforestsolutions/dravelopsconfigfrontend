@@ -4,7 +4,6 @@
         xmlns="sap.m">
 
     <VBox class="sapUiSmallMargin">
-        <!--                    TODO add ids-->
         <f:Form id="FormEdit480_121205"
                 editable="true">
 
@@ -29,60 +28,61 @@
                     <f:formElements>
                         <f:FormElement label="{i18n>NearestAdress.name}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/name}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/name}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>NearestAdress.query}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/query}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/query}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>NearestAdress.longitude}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>NearestAdress.latitude}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>NearestAdress.latitude}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>NearestAdress.latitude}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/variables/language}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/language}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>NearestAdress.maxResults}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/maxResults}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/maxResults}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <!--TODO is list-->
-                        <!-- <f:FormElement label="{i18n>NearestAdress.layers}">
-                             <f:fields>
-                                 <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_ADDRESSES/layers}"       required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
-                             </f:fields>
-                         </f:FormElement>-->
+                        <!--cannot access values without key for now-->
+                        <!--<f:FormElement label="{i18n>NearestAdress.layers}">
+                            <f:fields>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/layers}"
+                                       required="true"
+                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
+                            </f:fields>
+                        </f:FormElement>-->
                     </f:formElements>
                 </f:FormContainer>
             </f:formContainers>

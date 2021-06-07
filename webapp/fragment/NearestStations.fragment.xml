@@ -4,7 +4,6 @@
         xmlns="sap.m">
 
     <VBox class="sapUiSmallMargin">
-        <!--                    TODO add ids-->
         <f:Form id="FormEdit480_121206"
                 editable="true">
 
@@ -24,59 +23,56 @@
                         columnsM="1"
                         singleContainerFullSize="true"/>
             </f:layout>
-            <!--enabled="false"-->
-            <!--            editable="true"-->
-
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>
                         <f:FormElement label="{i18n>NearestStations.name}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/name}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/name}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isNearestStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>NearestStations.query}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/query}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/query}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isNearestStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>NearestStations.longitude}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/longitude}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/longitude}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isNearestStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>NearestStations.latitude}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/latitude}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/latitude}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isNearestStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>NearestStations.radiusInKilometers}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/radiusInKilometers}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/radiusInKilometers}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isNearestStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>NearestStations.language}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/variables/language}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/language}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isNearestStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>NearestStations.maxResults}">
                             <f:fields>
-                                <Input value="{apisettings>/calledObject/graphql/playground/tabs/NEAREST_STATIONS/maxResults}"
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/maxResults}"
                                        required="true"
-                                       editable="{configuration>/isInputEnabled}"/>
+                                       editable="{configuration>/input/isNearestStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>
