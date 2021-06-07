@@ -20,7 +20,7 @@
                         initialDetail="detail"
                         initialMaster="master">
             <detailPages>
-                <Page id="general"
+                <Page id="GENERAL"
                       title="{i18n>general}"
                       backgroundDesign="{configuration>/page/backgroundDesign}"
                       showFooter="true">
@@ -184,31 +184,31 @@
                         backgroundDesign="List" navButtonPress="onNavBack" showNavButton="true">
                     <List id="configurationTabs" itemPress=".onListItemPress" mode="SingleSelectMaster"
                           includeItemInSelection="true">
-                        <StandardListItem id="generalTab"
+                        <StandardListItem id="general"
                                           title="{i18n>general}" type="Active" custom:to="general"
                                           icon="sap-icon://developer-settings"
                                           iconInset="false" selected="true"/>
-                        <StandardListItem id="journeyQueryTab"
+                        <StandardListItem id="journeyQuery"
                                           title="{i18n>JOURNEY_QUERY}" type="Active" custom:to="JOURNEY_QUERY"
                                           icon="sap-icon://developer-settings" iconInset="false"/>
-                        <StandardListItem id="journeySubscriptionTab"
+                        <StandardListItem id="journeySubscription"
                                           title="{i18n>JOURNEY_SUBSCRIPTION}" type="Active"
                                           custom:to="JOURNEY_SUBSCRIPTION"
                                           icon="sap-icon://developer-settings" iconInset="false"/>
-                        <StandardListItem id="AadressAutocompletionTab"
+                        <StandardListItem id="adressAutocompletion"
                                           title="{i18n>ADDRESS_AUTOCOMPLETION}" type="Active"
                                           custom:to="ADDRESS_AUTOCOMPLETION"
                                           icon="sap-icon://developer-settings" iconInset="false"/>
-                        <StandardListItem id="nearestAdressesTab"
+                        <StandardListItem id="nearestAdresses"
                                           title="{i18n>NEAREST_ADDRESSES}" type="Active" custom:to="NEAREST_ADDRESSES"
                                           icon="sap-icon://developer-settings" iconInset="false"/>
-                        <StandardListItem id="nearestStationsTab"
+                        <StandardListItem id="nearestStations"
                                           title="{i18n>NEAREST_STATIONS}" type="Active" custom:to="NEAREST_STATIONS"
                                           icon="sap-icon://developer-settings" iconInset="false"/>
-                        <StandardListItem id="allStationsTab"
+                        <StandardListItem id="allStations"
                                           title="{i18n>ALL_STATIONS}" type="Active" custom:to="ALL_STATIONS"
                                           icon="sap-icon://developer-settings" iconInset="false"/>
-                        <StandardListItem id="operatingAreaTab"
+                        <StandardListItem id="operatingArea"
                                           title="{i18n>OPERATING_AREA}" type="Active" custom:to="OPERATING_AREA"
                                           icon="sap-icon://developer-settings" iconInset="false"/>
                     </List>

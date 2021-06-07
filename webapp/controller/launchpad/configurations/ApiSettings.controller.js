@@ -174,6 +174,12 @@ sap.ui.define([
                     item.setType("Active");
                 });
                 this.byId("configurationTabs").setMode("SingleSelectMaster");
+                let list = this.byId("configurationTabs");
+                for (let i = 0; i < nameList.length; i++) {
+                    if (pressedButtonId.includes(nameList[i])) {
+                        list.setSelectedItem(list.getItems()[i], true, true);
+                    }
+                }
             }
 
 
