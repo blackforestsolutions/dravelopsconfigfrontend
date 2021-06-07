@@ -20,15 +20,22 @@ sap.ui.define([
     const CONFIGURATION_MODEL = "configuration";
     let oView;
     const nameList = ["General", "JourneyQuery", "JourneySubscription", "AdressAutocompletion", "NearestAdresses", "NearestStations", "AllStations", "OperatingArea"];
+    let oModelConfiguration;
 
     return BaseController.extend("de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.ApiSettings", {
 
         onInit: function () {
             oView = this.getView();
-            this.getApiSettingsFromBackend(oView);
+            this.getRouter().getRoute('apisettings').attachMatched(this.onRouteMatched, this);
 
             // global configuration model for views and fragments
-            let oModelConfiguration = new JSONModel({
+            oModelConfiguration = this.setInitialConfigurations();
+            oView.setModel(oModelConfiguration, CONFIGURATION_MODEL);
+
+        },
+
+        setInitialConfigurations: function () {
+            return new JSONModel({
                 input: {
                     isGeneralInputEnabled: false,
                     isJourneyQueryInputEnabled: false,
@@ -42,11 +49,10 @@ sap.ui.define([
                     backgroundDesign: "List"
                 }
             });
-            this.getView().setModel(oModelConfiguration, CONFIGURATION_MODEL);
         },
 
-        // retrieves current api settings from backend
-        getApiSettingsFromBackend: function (oView) {
+        /**Handle matched route and request current configuration from backend.*/
+        onRouteMatched: function (oEvent) {
             oModelApiSettings.loadData(URL);
             oModelApiSettings.dataLoaded().then(() => {
                 oView.setModel(oModelApiSettings, "apisettings");
@@ -172,8 +178,13 @@ sap.ui.define([
                     item.setType("Active");
                 });
                 this.byId("configurationTabs").setMode("SingleSelectMaster");
+                let list = this.byId("configurationTabs");
+                for (let i = 0; i < nameList.length; i++) {
+                    if (pressedButtonId.includes(nameList[i])) {
+                        list.setSelectedItem(list.getItems()[i], true, true);
+                    }
+                }
             }
-
 
             for (let i = 0; i < nameList.length; i++) {
                 if (pressedButtonId.includes(nameList[i])) {
