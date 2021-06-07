@@ -24,6 +24,7 @@ sap.ui.define([
     return BaseController.extend("de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.ApiSettings", {
 
         onInit: function () {
+            oView = this.getView();
             this.getRouter().getRoute('apisettings').attachMatched(this.onRouteMatched, this);
 
             // global configuration model for views and fragments
@@ -41,7 +42,7 @@ sap.ui.define([
                     backgroundDesign: "List"
                 }
             });
-            this.getView().setModel(oModelConfiguration, CONFIGURATION_MODEL);
+            oView.setModel(oModelConfiguration, CONFIGURATION_MODEL);
 
 
         },
@@ -50,7 +51,7 @@ sap.ui.define([
         onRouteMatched: function (oEvent) {
             oModelApiSettings.loadData(URL);
             oModelApiSettings.dataLoaded().then(() => {
-                this.getView().setModel(oModelApiSettings, "apisettings");
+                oView.setModel(oModelApiSettings, "apisettings");
             });
         },
 
