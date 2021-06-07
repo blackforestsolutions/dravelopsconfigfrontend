@@ -21,6 +21,7 @@ sap.ui.define([
     let oView;
     const nameList = ["General", "JourneyQuery", "JourneySubscription", "AdressAutocompletion", "NearestAdresses", "NearestStations", "AllStations", "OperatingArea"];
     let oModelConfiguration;
+
     return BaseController.extend("de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.ApiSettings", {
 
         onInit: function () {
