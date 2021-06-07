@@ -20,7 +20,7 @@ sap.ui.define([
     const CONFIGURATION_MODEL = "configuration";
     let oView;
     const nameList = ["General", "JourneyQuery", "JourneySubscription", "AdressAutocompletion", "NearestAdresses", "NearestStations", "AllStations", "OperatingArea"];
-
+    let oModelConfiguration;
     return BaseController.extend("de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.ApiSettings", {
 
         onInit: function () {
@@ -28,7 +28,13 @@ sap.ui.define([
             this.getRouter().getRoute('apisettings').attachMatched(this.onRouteMatched, this);
 
             // global configuration model for views and fragments
-            let oModelConfiguration = new JSONModel({
+            oModelConfiguration = this.setInitialConfigurations();
+            oView.setModel(oModelConfiguration, CONFIGURATION_MODEL);
+
+        },
+
+        setInitialConfigurations: function () {
+            return new JSONModel({
                 input: {
                     isGeneralInputEnabled: false,
                     isJourneyQueryInputEnabled: false,
@@ -42,9 +48,6 @@ sap.ui.define([
                     backgroundDesign: "List"
                 }
             });
-            oView.setModel(oModelConfiguration, CONFIGURATION_MODEL);
-
-
         },
 
         /**Handle matched route and request current configuration from backend.*/
@@ -181,7 +184,6 @@ sap.ui.define([
                     }
                 }
             }
-
 
             for (let i = 0; i < nameList.length; i++) {
                 if (pressedButtonId.includes(nameList[i])) {
