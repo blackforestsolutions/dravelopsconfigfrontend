@@ -51,8 +51,10 @@ sap.ui.define([
             });
         },
 
-        /**Handle matched route and request current configuration from backend.*/
-        onRouteMatched: function (oEvent) {
+        /**
+         * Handle matched route and request current configuration from backend.
+         */
+        onRouteMatched: function () {
             oModelApiSettings.loadData(URL);
             oModelApiSettings.dataLoaded().then(() => {
                 oView.setModel(oModelApiSettings, "apisettings");
