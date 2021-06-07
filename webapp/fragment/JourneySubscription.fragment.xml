@@ -31,94 +31,9 @@
                                        editable="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="Query">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/query}"
-                                       required="true"
-                                       editable="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="departureLatitude">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/departureLatitude}"
-                                       required="true"
-                                       editable="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="departureLongitude">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/departureLongitude}"
-                                       required="true"
-                                       editable="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="arrivalLatitude">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/arrivalLatitude}"
-                                       required="true"
-                                       editable="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="arrivalLongitude">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/arrivalLongitude}"
-                                       required="true"
-                                       editable="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="dateTime">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/dateTime}"
-                                       required="true"
-                                       editable="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="isArrivalDateTime">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/isArrivalDateTime}"
-                                       required="true"
-                                       editable="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="language">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/variables/language}"
-                                       required="true"
-                                       editable="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="maxResults">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/maxResults}"
-                                       required="true"
-                                       editable="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="departurePlaceholder">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/departurePlaceholder}"
-                                       required="true"
-                                       editable="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="arrivalPlaceholder">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/arrivalPlaceholder}"
-                                       required="true"
-                                       editable="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="maxPastDaysInCalendar">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/maxPastDaysInCalendar}"
-                                       required="true"
-                                       editable="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
                     </f:formElements>
                 </f:FormContainer>
             </f:formContainers>
         </f:Form>
     </VBox>
-
 </core:FragmentDefinition>
