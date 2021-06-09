@@ -14,30 +14,6 @@ jobs:
         with:
           fetch-depth: '0'
 
-      - name: Use Node.js 14.x
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14.x
-
-      - name: Cache Node Modules
-        id: yarn-cache
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-            
-      - name: Install Dependencies
-        run: yarn install
-
-      - name: Run Checkstyle Tests
-        run: yarn run lint
-        
-      - name: Build projects
-        run: yarn run build
-      
-      #what is the token
       - name: Bump version and push tag
         uses: ChloePlanet/github-tag-action@master
         id: tag-version
@@ -52,8 +28,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASS }}
-          
-          
+
       - name: Build Docker Image
         run: docker build . --file Dockerfile --tag ${{ github.repository }}:${{ steps.tag-version.outputs.new_tag }} --tag ${{ github.repository }}:latest
 
