@@ -42,41 +42,23 @@
                         </f:FormElement>
                         <f:FormElement label="longitude">
                             <f:fields>
-                                <MaskInput mask="CCCC.C"
-                                           placeholderSymbol="_"
-                                           value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"
-                                           required="true"
-                                           editable="{configuration>/input/isJourneySubscriptionInputEnabled}">
-                                    <rules>
-                                        <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
-                                    </rules>
-                                </MaskInput>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"
+                                       required="true"
+                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="latitude">
                             <f:fields>
-                                <MaskInput mask="CCC.C"
-                                           placeholderSymbol="_"
-                                           value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"
-                                           required="true"
-                                           editable="{configuration>/input/isJourneySubscriptionInputEnabled}">
-                                    <rules>
-                                        <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
-                                    </rules>
-                                </MaskInput>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"
+                                       required="true"
+                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="radiusInKilometers">
                             <f:fields>
-                                <MaskInput mask="C.C"
-                                           placeholderSymbol="_"
-                                           value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"
-                                           required="true"
-                                           editable="{configuration>/input/isJourneySubscriptionInputEnabled}">
-                                    <rules>
-                                        <MaskInputRule maskFormatSymbol="C" regex="[0-5]"/>
-                                    </rules>
-                                </MaskInput>
+                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"
+                                       required="true"
+                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="language">
