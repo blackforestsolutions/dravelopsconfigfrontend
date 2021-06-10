@@ -41,9 +41,14 @@
                         </f:FormElement>
                         <f:FormElement label="bufferInMetres">
                             <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/OPERATING_AREA/bufferInMetres}"
-                                       required="true"
-                                       editable="{configuration>/input/isOperatingAreaInputEnabled}"/>
+                                <StepInput
+                                        value="{apisettings>/graphql/playground/tabs/OPERATING_AREA/bufferInMetres}"
+                                        min="0"
+                                        width="40%"
+                                        description="meters"
+                                        editable="{configuration>/input/isOperatingAreaInputEnabled}"
+                                        textAlign="Center"
+                                        validationMode="FocusOut"/>
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>

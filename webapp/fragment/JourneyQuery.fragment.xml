@@ -42,14 +42,14 @@
                         </f:FormElement>
                         <f:FormElement label="departureLatitude">
                             <f:fields>
-                                <MaskInput mask="CCC.C"
-                                    placeholderSymbol="_"
-                                    placeholder="Enter Lalitude like: -05.0"
-                                    value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLatitude}"
-                                    required="true"
-                                    editable="{configuration>/input/isJourneyQueryInputEnabled}">
+                                <MaskInput mask="p"
+                                           placeholderSymbol="_"
+                                           value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLatitude}"
+                                           required="true"
+                                           editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                     <rules>
-                                        <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
+                                        <MaskInputRule maskFormatSymbol="p"
+                                                       regex="[^(-?\d+(\.\d+)?),\s*(-?\d+(\.\d+)?)$]"/>
                                     </rules>
                                 </MaskInput>
                             </f:fields>
@@ -57,11 +57,11 @@
                         <f:FormElement label="departureLongitude">
                             <f:fields>
                                 <MaskInput mask="CCCC.C"
-                                    placeholderSymbol="_"
-                                    placeholder="Enter Longitude like: -005.0"
-                                    value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLongitude}"
-                                    required="true"
-                                    editable="{configuration>/input/isJourneyQueryInputEnabled}">
+                                           placeholderSymbol="_"
+                                           placeholder="Enter Longitude like: -005.0"
+                                           value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLongitude}"
+                                           required="true"
+                                           editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
                                     </rules>
@@ -71,10 +71,10 @@
                         <f:FormElement label="arrivalLatitude">
                             <f:fields>
                                 <MaskInput mask="CCC.C"
-                                    placeholderSymbol="_"
-                                    placeholder="Enter Lalitude like: -05.0"
-                                    value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLatitude}"
-                                    required="true"
+                                           placeholderSymbol="_"
+                                           placeholder="Enter Lalitude like: -05.0"
+                                           value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLatitude}"
+                                           required="true"
                                            editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
@@ -85,10 +85,10 @@
                         <f:FormElement label="arrivalLongitude">
                             <f:fields>
                                 <MaskInput mask="CCCC.C"
-                                    placeholderSymbol="_"
-                                    placeholder="Enter Longitude like: -005.0"
-                                    value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLongitude}"
-                                    required="true"
+                                           placeholderSymbol="_"
+                                           placeholder="Enter Longitude like: -005.0"
+                                           value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLongitude}"
+                                           required="true"
                                            editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
@@ -99,9 +99,9 @@
                         <f:FormElement label="dateTime">
                             <f:fields>
                                 <MaskInput mask="CCCC-CC-CCTCC:CC:CC+CC:CC"
-                                    placeholderSymbol="_"
-                                    value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"
-                                    required="true"
+                                           placeholderSymbol="_"
+                                           value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"
+                                           required="true"
                                            editable="{configuration>/input/isJourneyQueryInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9]"/>
@@ -111,37 +111,37 @@
                         </f:FormElement>
                         <f:FormElement label="isArrivalDateTime">
                             <f:fields>
-                                <RadioButtonGroup id="isArrivalDateTime-querry"
-                                                  editable="{configuration>/input/isJourneyQueryInputEnabled}">
-                                    <RadioButton text="{i18n>JOURNEY_isArrivalDateTime-true}" selected="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/isArrivalDateTime}"/>
-                                    <RadioButton text="{i18n>JOURNEY_isArrivalDateTime-false}" selected="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/isArrivalDateTime}"/>
-                                </RadioButtonGroup>
+                                <Switch id="isArrivalDateTime-querry"
+                                        customTextOn="yes" customTextOff="no"
+                                        state="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/isArrivalDateTime}"
+                                        enabled="{configuration>/input/isJourneyQueryInputEnabled}">
+                                </Switch>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="language">
                             <f:fields>
                                 <MaskInput mask="CC"
-                                    placeholderSymbol="_"
-                                    value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/language}"
-                                    required="true"
-                                    editable="{configuration>/input/isJourneyQueryInputEnabled}">
-                                     <rules>
-                                         <MaskInputRule maskFormatSymbol="C" regex="[a-z]"/>
+                                           placeholderSymbol="_"
+                                           value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/language}"
+                                           required="true"
+                                           editable="{configuration>/input/isJourneyQueryInputEnabled}">
+                                    <rules>
+                                        <MaskInputRule maskFormatSymbol="C" regex="[a-z]"/>
                                     </rules>
                                 </MaskInput>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="maxResults">
                             <f:fields>
-                                <MaskInput mask="CC"
-                                    placeholderSymbol="_"
-                                    value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/maxResults}"
-                                    required="true"
-                                    editable="{configuration>/input/isJourneyQueryInputEnabled}">
-                                     <rules>
-                                        <MaskInputRule maskFormatSymbol="C" regex="^([1-9]|[0-1][0-5])$"/>
-                                    </rules>
-                                </MaskInput>
+                                <Slider value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/maxResults}"
+                                        width="100%"
+                                        min="1" max="15"
+                                        showAdvancedTooltip="true"
+                                        showHandleTooltip="false"
+                                        inputsAsTooltips="true"
+                                        enableTickmarks="true"
+                                        class="sapUiMediumMarginBottom"
+                                        enabled="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="departurePlaceholder">
@@ -160,10 +160,16 @@
                         </f:FormElement>
                         <f:FormElement label="maxPastDaysInCalendar">
                             <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/maxPastDaysInCalendar}"
-                                       required="true"
-                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
+                                <StepInput
+                                        value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/maxPastDaysInCalendar}"
+                                        min="0"
+                                        width="40%"
+                                        editable="{configuration>/input/isJourneyQueryInputEnabled}"
+                                        textAlign="Center"
+                                        validationMode="FocusOut"/>
                             </f:fields>
+
+                            <!--                            fieldWidth="{fieldWidth}"-->
                         </f:FormElement>
                     </f:formElements>
                 </f:FormContainer>

@@ -32,7 +32,18 @@ sap.ui.define([
             oModelConfiguration = this.setInitialConfigurations();
             oView.setModel(oModelConfiguration, CONFIGURATION_MODEL);
 
+
+            oView.byId("theme-switch").attachChange(() => {
+                // maybe löschen
+            });
+
         },
+
+
+        update: function () {
+            alert("what up");
+        },
+
 
         setInitialConfigurations: function () {
             return new JSONModel({
@@ -57,8 +68,15 @@ sap.ui.define([
         onRouteMatched: function () {
             oModelApiSettings.loadData(URL);
             oModelApiSettings.dataLoaded().then(() => {
-                oView.setModel(oModelApiSettings, "apisettings");
-            });
+                    oView.setModel(oModelApiSettings, "apisettings");
+                    setSwitchGeneral(oModelApiSettings.getProperty("/").graphql.playground.settings.editor.theme);
+                }
+            );
+            // graphql/playground/settings/editor/theme
+            const setSwitchGeneral = (theme) => {
+                theme === "light" ? oView.byId("theme-switch").setState(true) : oView.byId("theme-switch").setState(false);
+
+            }
         },
 
         handleEditPress: function (oEvent) {
@@ -82,6 +100,7 @@ sap.ui.define([
         // sending updated CallStatus to backend and verify response
         handleSavePress: function (oEvent) {
             const pressedButtonId = this.getButtonId(oEvent);
+
             const checkPutResponse = (responseModel, pressedButtonId) => {
                 this.checkPutResponse(responseModel, pressedButtonId);
             };

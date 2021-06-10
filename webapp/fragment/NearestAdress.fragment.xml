@@ -43,9 +43,9 @@
                         <f:FormElement label="longitude">
                             <f:fields>
                                 <MaskInput mask="CCCC.C"
-                                    placeholderSymbol="_"
-                                    value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"
-                                    required="true"
+                                           placeholderSymbol="_"
+                                           value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"
+                                           required="true"
                                            editable="{configuration>/input/isJourneySubscriptionInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
@@ -56,9 +56,9 @@
                         <f:FormElement label="latitude">
                             <f:fields>
                                 <MaskInput mask="CCC.C"
-                                    placeholderSymbol="_"
-                                    value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"
-                                    required="true"
+                                           placeholderSymbol="_"
+                                           value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"
+                                           required="true"
                                            editable="{configuration>/input/isJourneySubscriptionInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9 --]"/>
@@ -69,9 +69,9 @@
                         <f:FormElement label="radiusInKilometers">
                             <f:fields>
                                 <MaskInput mask="C.C"
-                                    placeholderSymbol="_"
-                                    value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"
-                                    required="true"
+                                           placeholderSymbol="_"
+                                           value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"
+                                           required="true"
                                            editable="{configuration>/input/isJourneySubscriptionInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[0-5]"/>
@@ -82,27 +82,27 @@
                         <f:FormElement label="language">
                             <f:fields>
                                 <MaskInput mask="CC"
-                                    placeholderSymbol="_"
-                                    value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/language}"
-                                    required="true"
+                                           placeholderSymbol="_"
+                                           value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/language}"
+                                           required="true"
                                            editable="{configuration>/input/isJourneySubscriptionInputEnabled}">
                                     <rules>
-                                         <MaskInputRule maskFormatSymbol="C" regex="[a-z]"/>
+                                        <MaskInputRule maskFormatSymbol="C" regex="[a-z]"/>
                                     </rules>
                                 </MaskInput>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="maxResults">
                             <f:fields>
-                                <MaskInput mask="CC"
-                                    placeholderSymbol="_"
-                                    value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/maxResults}"
-                                    required="true"
-                                           editable="{configuration>/input/isJourneySubscriptionInputEnabled}">
-                                    <rules>
-                                        <MaskInputRule maskFormatSymbol="C" regex="^(?:[1-9]|0[1-9]|1[0-9]|20)$"/>
-                                    </rules>
-                                </MaskInput>
+                                <Slider value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/maxResults}"
+                                        width="100%"
+                                        min="1" max="15"
+                                        showAdvancedTooltip="true"
+                                        showHandleTooltip="false"
+                                        inputsAsTooltips="true"
+                                        enableTickmarks="true"
+                                        class="sapUiMediumMarginBottom"
+                                        enabled="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <!--cannot access values without key for now-->

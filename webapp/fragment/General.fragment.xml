@@ -1,5 +1,4 @@
 <core:FragmentDefinition
-        controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.launchpad.configurations.General"
         xmlns:core="sap.ui.core"
         xmlns:f="sap.ui.layout.form"
         xmlns="sap.m">
@@ -35,19 +34,30 @@
                                 />
                             </f:fields>
                         </f:FormElement>
-                         <f:FormElement label="{i18n>general.theme}">
+                        <f:FormElement label="{i18n>general.theme}">
                             <f:fields>
-                                <CheckBox selected="{selected}"
-                                select="checkBoxChanged"
-                                editable="{configuration>/input/isGeneralInputEnabled}"
-                                ></CheckBox>
-                         <!--   <RadioButtonGroup id="playgroundPageThemeEdit"
-                                                  editable="{configuration>/input/isGeneralInputEnabled}">
-                                                                       selected="{apisettings>/graphql/playground/settings/editor/theme}"
-                                    <RadioButton text="{i18n>general.theme-light}"
-                                                 selected="true"
-                                    />
-                                </RadioButtonGroup>-->
+                                <!-- <CheckBox selected="{selected}"
+                                           select="checkBoxChanged"
+                                           editable="{configuration>/input/isGeneralInputEnabled}"
+                                 ></CheckBox>-->
+                                <Switch id="theme-switch"
+                                        customTextOn="light" customTextOff="dark"
+                                        enabled="{configuration>/input/isGeneralInputEnabled}">
+                                    <layoutData>
+                                        <FlexItemData growFactor="1"/>
+                                    </layoutData>
+                                </Switch>
+
+                                <!-- <Slider min="0" max="20" enableTickmarks="true" class="sapUiSmallMarginBottom" width="100%">
+                                     <ResponsiveScale tickmarksBetweenLabels="1"/>
+                                 </Slider>-->
+                                <!--   <RadioButtonGroup id="playgroundPageThemeEdit"
+                                                         editable="{configuration>/input/isGeneralInputEnabled}">
+                                                                              selected="{apisettings>/graphql/playground/settings/editor/theme}"
+                                           <RadioButton text="{i18n>general.theme-light}"
+                                                        selected="true"
+                                           />
+                                       </RadioButtonGroup>-->
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>

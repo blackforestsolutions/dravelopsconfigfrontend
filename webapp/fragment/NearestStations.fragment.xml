@@ -94,11 +94,15 @@
                         </f:FormElement>
                         <f:FormElement label="maxResults">
                             <f:fields>
-                                <MaskInput mask="CC"
-                                    placeholderSymbol="_"
-                                    value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/maxResults}"
-                                    required="true"
-                                           editable="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
+                                <Slider value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/maxResults}"
+                                        width="100%"
+                                        min="1" max="15"
+                                        showAdvancedTooltip="true"
+                                        showHandleTooltip="false"
+                                        inputsAsTooltips="true"
+                                        enableTickmarks="true"
+                                        class="sapUiMediumMarginBottom"
+                                        enabled="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>

@@ -61,15 +61,15 @@
                         </f:FormElement>
                         <f:FormElement label="maxResults">
                             <f:fields>
-                               <MaskInput mask="CC"
-                                    placeholderSymbol="_"
-                                          value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/maxResults}"
-                                          required="true"
-                                          editable="{configuration>/input/isAdressAutocompletionInputEnabled}">
-                                    <rules>
-                                        <MaskInputRule maskFormatSymbol="C" regex="^([1-9]|[0-1][0-9])$"/>
-                                    </rules>
-                                </MaskInput>
+                                <Slider value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/maxResults}"
+                                        width="100%"
+                                        min="1" max="15"
+                                        showAdvancedTooltip="true"
+                                        showHandleTooltip="false"
+                                        inputsAsTooltips="true"
+                                        enableTickmarks="true"
+                                        class="sapUiMediumMarginBottom"
+                                        enabled="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <!--cannot access values without key for now-->
