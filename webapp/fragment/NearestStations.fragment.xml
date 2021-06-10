@@ -33,15 +33,17 @@
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="longitude">
-                            <StepInput
-                                    value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/longitude}"
-                                    min="-180"
-                                    max="180"
-                                    displayValuePrecision="1"
-                                    width="100%"
-                                    editable="{configuration>/input/isNearestStationsInputEnabled}"
-                                    textAlign="Begin"
-                                    validationMode="FocusOut"/>
+                            <f:fields>
+                                <StepInput
+                                        value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/longitude}"
+                                        min="-180"
+                                        max="180"
+                                        displayValuePrecision="1"
+                                        width="100%"
+                                        editable="{configuration>/input/isNearestStationsInputEnabled}"
+                                        textAlign="Begin"
+                                        validationMode="FocusOut"/>
+                            </f:fields>
                         </f:FormElement>
                         <f:FormElement label="latitude">
                             <f:fields>

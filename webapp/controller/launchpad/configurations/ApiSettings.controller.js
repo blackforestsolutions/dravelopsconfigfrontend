@@ -56,9 +56,8 @@ sap.ui.define([
         onRouteMatched: function () {
             oModelApiSettings.loadData(URL);
             oModelApiSettings.dataLoaded().then(() => {
-                    oView.setModel(oModelApiSettings, "apisettings");
-                }
-            );
+                oView.setModel(oModelApiSettings, "apisettings");
+            });
         },
 
         handleEditPress: function (oEvent) {
@@ -86,6 +85,7 @@ sap.ui.define([
             const checkPutResponse = (responseModel, pressedButtonId) => {
                 this.checkPutResponse(responseModel, pressedButtonId);
             };
+
             $.ajax({
                 url: URL,
                 type: "PUT",

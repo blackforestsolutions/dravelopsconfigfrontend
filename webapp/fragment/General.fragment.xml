@@ -38,24 +38,12 @@
                             <f:fields>
                                 <SegmentedButton selectedKey="{apisettings>/graphql/playground/settings/editor/theme}"
                                                  class="sapUiSmallMarginBottom"
-                                                 enabled="{configuration>/input/isGeneralInputEnabled}"
-                                >
+                                                 enabled="{configuration>/input/isGeneralInputEnabled}">
                                     <items>
                                         <SegmentedButtonItem text="light" key="light"/>
                                         <SegmentedButtonItem text="dark" key="dark"/>
                                     </items>
                                 </SegmentedButton>
-
-                                <!-- <Slider min="0" max="20" enableTickmarks="true" class="sapUiSmallMarginBottom" width="100%">
-                                     <ResponsiveScale tickmarksBetweenLabels="1"/>
-                                 </Slider>-->
-                                <!--   <RadioButtonGroup id="playgroundPageThemeEdit"
-                                                         editable="{configuration>/input/isGeneralInputEnabled}">
-                                                                              selected="{apisettings>/graphql/playground/settings/editor/theme}"
-                                           <RadioButton text="{i18n>general.theme-light}"
-                                                        selected="true"
-                                           />
-                                       </RadioButtonGroup>-->
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>
