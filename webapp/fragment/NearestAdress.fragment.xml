@@ -33,32 +33,43 @@
                                        editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="Query">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/query}"
-                                       required="true"
-                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
                         <f:FormElement label="longitude">
                             <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"
-                                       required="true"
-                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
+                                <StepInput
+                                        value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"
+                                        min="-180"
+                                        max="180"
+                                        displayValuePrecision="8"
+                                        width="100%"
+                                        editable="{configuration>/input/isNearestAdressesInputEnabled}"
+                                        textAlign="Begin"
+                                        validationMode="FocusOut"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="latitude">
                             <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"
-                                       required="true"
-                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
+                                <StepInput
+                                        value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"
+                                        min="-90"
+                                        max="90"
+                                        displayValuePrecision="8"
+                                        width="100%"
+                                        editable="{configuration>/input/isNearestAdressesInputEnabled}"
+                                        textAlign="Begin"
+                                        validationMode="FocusOut"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="radiusInKilometers">
                             <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"
-                                       required="true"
-                                       editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
+                                <StepInput
+                                        value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"
+                                        min="0.5"
+                                        max="5"
+                                        displayValuePrecision="1"
+                                        width="100%"
+                                        editable="{configuration>/input/isNearestAdressesInputEnabled}"
+                                        textAlign="Begin"
+                                        validationMode="FocusOut"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="language">
@@ -67,7 +78,7 @@
                                            placeholderSymbol="_"
                                            value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/language}"
                                            required="true"
-                                           editable="{configuration>/input/isJourneySubscriptionInputEnabled}">
+                                           editable="{configuration>/input/isNearestAdressesInputEnabled}">
                                     <rules>
                                         <MaskInputRule maskFormatSymbol="C" regex="[a-z]"/>
                                     </rules>
@@ -84,7 +95,7 @@
                                         inputsAsTooltips="true"
                                         enableTickmarks="true"
                                         class="sapUiMediumMarginBottom"
-                                        enabled="{configuration>/input/isJourneySubscriptionInputEnabled}"/>
+                                        enabled="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <!--cannot access values without key for now-->

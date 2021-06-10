@@ -32,13 +32,6 @@
                                        editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="Query">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/query}"
-                                       required="true"
-                                       editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
                         <f:FormElement label="text">
                             <f:fields>
                                 <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/text}"

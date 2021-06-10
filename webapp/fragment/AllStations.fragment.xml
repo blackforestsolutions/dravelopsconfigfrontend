@@ -32,13 +32,6 @@
                                        editable="{configuration>/input/isAllStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="Query">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/ALL_STATIONS/query}"
-                                       required="true"
-                                       editable="{configuration>/input/isAllStationsInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
                     </f:formElements>
                 </f:FormContainer>
             </f:formContainers>

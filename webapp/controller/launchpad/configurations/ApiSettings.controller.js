@@ -31,12 +31,6 @@ sap.ui.define([
             // global configuration model for views and fragments
             oModelConfiguration = this.setInitialConfigurations();
             oView.setModel(oModelConfiguration, CONFIGURATION_MODEL);
-
-
-            oView.byId("theme-switch").attachChange(() => {
-                // maybe löschen
-            });
-
         },
 
 
@@ -69,14 +63,8 @@ sap.ui.define([
             oModelApiSettings.loadData(URL);
             oModelApiSettings.dataLoaded().then(() => {
                     oView.setModel(oModelApiSettings, "apisettings");
-                    setSwitchGeneral(oModelApiSettings.getProperty("/").graphql.playground.settings.editor.theme);
                 }
             );
-            // graphql/playground/settings/editor/theme
-            const setSwitchGeneral = (theme) => {
-                theme === "light" ? oView.byId("theme-switch").setState(true) : oView.byId("theme-switch").setState(false);
-
-            }
         },
 
         handleEditPress: function (oEvent) {
