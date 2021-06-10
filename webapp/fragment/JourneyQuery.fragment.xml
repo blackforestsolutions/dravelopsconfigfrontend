@@ -85,22 +85,13 @@
                                         validationMode="FocusOut"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="dateTime">
+                        <f:FormElement
+                                label="dateTime">
                             <f:fields>
-                                <!-- <MaskInput mask="CCCC-CC-CCTCC:CC:CC+CC:CC"
-                                            placeholderSymbol="_"
-                                            value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"
-                                            required="true"
-                                            editable="{configuration>/input/isJourneyQueryInputEnabled}">
-                                     <rules>
-                                         <MaskInputRule maskFormatSymbol="C" regex="[0-9]"/>
-                                     </rules>
-                                 </MaskInput>-->
-
                                 <DateTimePicker
-                                        id="DTP2"
+                                        id="datetimepicker"
                                         value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"
-                                        valueFormat="yyyy-MM-ddTHH-mm-ssZ" displayFormat="long"
+                                        valueFormat="yyyy-MM-ddTHH:mm:ssz" displayFormat="long"
                                         editable="{configuration>/input/isJourneyQueryInputEnabled}"
                                         class="sapUiSmallMarginBottom"/>
                                 <!--                                change="handleChange"-->
@@ -108,7 +99,7 @@
                         </f:FormElement>
                         <f:FormElement label="isArrivalDateTime">
                             <f:fields>
-                                <Switch id="isArrivalDateTime-querry"
+                                <Switch id="isArrivalDateTime"
                                         customTextOn="yes" customTextOff="no"
                                         state="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/isArrivalDateTime}"
                                         enabled="{configuration>/input/isJourneyQueryInputEnabled}">
