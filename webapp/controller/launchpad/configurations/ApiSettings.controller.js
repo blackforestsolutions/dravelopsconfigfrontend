@@ -33,12 +33,6 @@ sap.ui.define([
             oView.setModel(oModelConfiguration, CONFIGURATION_MODEL);
         },
 
-
-        update: function () {
-            alert("what up");
-        },
-
-
         setInitialConfigurations: function () {
             return new JSONModel({
                 input: {
