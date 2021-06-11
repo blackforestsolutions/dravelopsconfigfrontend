@@ -87,7 +87,7 @@
                         <f:FormElement
                                 label="dateTime">
                             <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}}"
+                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"
                                        required="true"
                                        editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
