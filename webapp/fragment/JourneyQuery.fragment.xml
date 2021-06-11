@@ -6,7 +6,6 @@
     <VBox class="sapUiSmallMargin">
         <f:Form id="FormEdit480_121202"
                 editable="true">
-
             <f:layout>
                 <f:ResponsiveGridLayout
                         labelSpanXL="3"
@@ -86,12 +85,12 @@
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement
-                                label="dateTime">
+                                label="dateTime {apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}">
                             <f:fields>
                                 <DateTimePicker
                                         id="datetimepicker"
                                         value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"
-                                        valueFormat="yyyy-MM-ddTHH:mm:ssz" displayFormat="long"
+                                        valueFormat="yyyy-MM-ddTHH:mm:ssZ"
                                         editable="{configuration>/input/isJourneyQueryInputEnabled}"
                                         class="sapUiSmallMarginBottom"/>
                                 <!--                                change="handleChange"-->
@@ -151,13 +150,11 @@
                                 <StepInput
                                         value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/maxPastDaysInCalendar}"
                                         min="0"
-                                        width="40%"
+                                        width="100%"
                                         editable="{configuration>/input/isJourneyQueryInputEnabled}"
-                                        textAlign="Center"
+                                        textAlign="Begin"
                                         validationMode="FocusOut"/>
                             </f:fields>
-
-                            <!--                            fieldWidth="{fieldWidth}"-->
                         </f:FormElement>
                     </f:formElements>
                 </f:FormContainer>
