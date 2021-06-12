@@ -3,15 +3,10 @@ node_modules
 .editorconfig
 .github
 .vscode
-.eslintrc.json
 .gitignore
 yarn.lock
 yarn-error.log
-webapp
-.eslintrc
-ui5.yaml
 .idea
-package.json
 package-lock.json
 README.md
 docker-compose.yml

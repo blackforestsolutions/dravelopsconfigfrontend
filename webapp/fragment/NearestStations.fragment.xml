@@ -6,7 +6,6 @@
     <VBox class="sapUiSmallMargin">
         <f:Form id="FormEdit480_121206"
                 editable="true">
-
             <f:layout>
                 <f:ResponsiveGridLayout
                         labelSpanXL="3"
@@ -26,53 +25,76 @@
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>
-                        <f:FormElement label="{i18n>name}">
+                        <f:FormElement label="Name">
                             <f:fields>
                                 <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/name}"
                                        required="true"
                                        editable="{configuration>/input/isNearestStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="{i18n>query}">
+                        <f:FormElement label="longitude">
                             <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/query}"
-                                       required="true"
-                                       editable="{configuration>/input/isNearestStationsInputEnabled}"/>
+                                <StepInput
+                                        value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/longitude}"
+                                        min="-180"
+                                        max="180"
+                                        displayValuePrecision="1"
+                                        width="100%"
+                                        editable="{configuration>/input/isNearestStationsInputEnabled}"
+                                        textAlign="Begin"
+                                        validationMode="FocusOut"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="{i18n>longitude}">
+                        <f:FormElement label="latitude">
                             <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/longitude}"
-                                       required="true"
-                                       editable="{configuration>/input/isNearestStationsInputEnabled}"/>
+                                <StepInput
+                                        value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/latitude}"
+                                        min="-90"
+                                        max="90"
+                                        displayValuePrecision="8"
+                                        width="100%"
+                                        editable="{configuration>/input/isNearestStationsInputEnabled}"
+                                        textAlign="Begin"
+                                        validationMode="FocusOut"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="{i18n>latitude}">
+                        <f:FormElement label="radiusInKilometers">
                             <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/latitude}"
-                                       required="true"
-                                       editable="{configuration>/input/isNearestStationsInputEnabled}"/>
+                                <StepInput
+                                        value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/radiusInKilometers}"
+                                        min="0.5"
+                                        max="5"
+                                        displayValuePrecision="1"
+                                        width="100%"
+                                        editable="{configuration>/input/isNearestStationsInputEnabled}"
+                                        textAlign="Begin"
+                                        validationMode="FocusOut"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="{i18n>NearestStations.radiusInKilometers}">
+                        <f:FormElement label="language">
                             <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/radiusInKilometers}"
-                                       required="true"
-                                       editable="{configuration>/input/isNearestStationsInputEnabled}"/>
+                                <MaskInput mask="CC"
+                                           placeholderSymbol="_"
+                                           value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/language}"
+                                           required="true"
+                                           editable="{configuration>/input/isNearestStationsInputEnabled}">
+                                    <rules>
+                                        <MaskInputRule maskFormatSymbol="C" regex="[a-z]"/>
+                                    </rules>
+                                </MaskInput>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="{i18n>language}">
+                        <f:FormElement label="maxResults">
                             <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/variables/language}"
-                                       required="true"
-                                       editable="{configuration>/input/isNearestStationsInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
-                        <f:FormElement label="{i18n>maxResults}">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/maxResults}"
-                                       required="true"
-                                       editable="{configuration>/input/isNearestStationsInputEnabled}"/>
+                                <Slider value="{apisettings>/graphql/playground/tabs/NEAREST_STATIONS/maxResults}"
+                                        width="100%"
+                                        min="1" max="15"
+                                        showAdvancedTooltip="true"
+                                        showHandleTooltip="false"
+                                        inputsAsTooltips="true"
+                                        enableTickmarks="true"
+                                        class="sapUiMediumMarginBottom"
+                                        enabled="{configuration>/input/isNearestStationsInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>

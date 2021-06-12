@@ -185,7 +185,7 @@
                     <List id="configurationTabs" itemPress=".onListItemPress" mode="SingleSelectMaster"
                           includeItemInSelection="true">
                         <StandardListItem id="general"
-                                          title="{i18n>general}" type="Active" custom:to="general"
+                                          title="{i18n>general}" type="Active" custom:to="GENERAL"
                                           icon="sap-icon://developer-settings"
                                           iconInset="false" selected="true"/>
                         <StandardListItem id="journeyQuery"

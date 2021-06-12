@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "start": "ui5 serve -o index.html --accept-remote-connections",
-    "lint": "eslint webapp",
+    "lint": "eslint webapp --max-warnings=0",
     "build": "ui5 build -a"
   },
   "dependencies": {},
