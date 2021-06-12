@@ -25,14 +25,14 @@
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>
-                        <f:FormElement label="Name">
+                        <f:FormElement label="{i18n>name}">
                             <f:fields>
                                 <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/name}"
                                        required="true"
                                        editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="departureLatitude">
+                        <f:FormElement label="{i18n>departureLatitude}">
                             <f:fields>
                                 <StepInput
                                         value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLatitude}"
@@ -45,7 +45,7 @@
                                         validationMode="FocusOut"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="departureLongitude">
+                        <f:FormElement label="{i18n>departureLongitude}">
                             <f:fields>
                                 <StepInput
                                         value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/departureLongitude}"
@@ -58,7 +58,7 @@
                                         validationMode="FocusOut"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="arrivalLatitude">
+                        <f:FormElement label="{i18n>arrivalLatitude}">
                             <f:fields>
                                 <StepInput
                                         value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLatitude}"
@@ -71,7 +71,7 @@
                                         validationMode="FocusOut"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="arrivalLongitude">
+                        <f:FormElement label="{i18n>arrivalLongitude}">
                             <f:fields>
                                 <StepInput
                                         value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/arrivalLongitude}"
@@ -85,14 +85,14 @@
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement
-                                label="dateTime">
+                                label="{i18n>dateTime}">
                             <f:fields>
                                 <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"
                                        required="true"
                                        editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="isArrivalDateTime">
+                        <f:FormElement label="{i18n>isArrivalDateTime}">
                             <f:fields>
                                 <Switch id="isArrivalDateTime"
                                         customTextOn="yes" customTextOff="no"
@@ -101,7 +101,7 @@
                                 </Switch>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="language">
+                        <f:FormElement label="{i18n>language}">
                             <f:fields>
                                 <MaskInput mask="CC"
                                            placeholderSymbol="_"
@@ -114,7 +114,7 @@
                                 </MaskInput>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="maxResults">
+                        <f:FormElement label="{i18n>maxResults}">
                             <f:fields>
                                 <Slider value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/maxResults}"
                                         width="100%"
@@ -127,21 +127,21 @@
                                         enabled="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="departurePlaceholder">
+                        <f:FormElement label="{i18n>departurePlaceholder}">
                             <f:fields>
                                 <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/departurePlaceholder}"
                                        required="true"
                                        editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="arrivalPlaceholder">
+                        <f:FormElement label="{i18n>arrivalPlaceholder}">
                             <f:fields>
                                 <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/arrivalPlaceholder}"
                                        required="true"
                                        editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="maxPastDaysInCalendar">
+                        <f:FormElement label="{i18n>maxPastDaysInCalendar}">
                             <f:fields>
                                 <StepInput
                                         value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/maxPastDaysInCalendar}"
