@@ -32,13 +32,6 @@
                                        editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="Query">
-                            <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/query}"
-                                       required="true"
-                                       editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
-                            </f:fields>
-                        </f:FormElement>
                         <f:FormElement label="text">
                             <f:fields>
                                 <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/text}"
@@ -48,16 +41,28 @@
                         </f:FormElement>
                         <f:FormElement label="language">
                             <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/language}"
-                                       required="true"
-                                       editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
+                                <MaskInput mask="CC"
+                                    placeholderSymbol="_"
+                                    value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/variables/language}"
+                                    required="true"
+                                    editable="{configuration>/input/isAdressAutocompletionInputEnabled}">
+                                    <rules>
+                                        <MaskInputRule maskFormatSymbol="C" regex="[a-z]"/>
+                                    </rules>
+                                </MaskInput>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="maxResults">
                             <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/maxResults}"
-                                       required="true"
-                                       editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
+                                <Slider value="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/maxResults}"
+                                        width="100%"
+                                        min="1" max="15"
+                                        showAdvancedTooltip="true"
+                                        showHandleTooltip="false"
+                                        inputsAsTooltips="true"
+                                        enableTickmarks="true"
+                                        class="sapUiMediumMarginBottom"
+                                        enabled="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
                         <!--cannot access values without key for now-->

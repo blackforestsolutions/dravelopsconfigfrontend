@@ -36,9 +36,14 @@
                         </f:FormElement>
                         <f:FormElement label="{i18n>general.theme}">
                             <f:fields>
-                                <Input value="{apisettings>/graphql/playground/settings/editor/theme}"
-                                       required="true"
-                                       editable="{configuration>/input/isGeneralInputEnabled}"/>
+                                <SegmentedButton selectedKey="{apisettings>/graphql/playground/settings/editor/theme}"
+                                                 class="sapUiSmallMarginBottom"
+                                                 enabled="{configuration>/input/isGeneralInputEnabled}">
+                                    <items>
+                                        <SegmentedButtonItem text="light" key="light"/>
+                                        <SegmentedButtonItem text="dark" key="dark"/>
+                                    </items>
+                                </SegmentedButton>
                             </f:fields>
                         </f:FormElement>
                     </f:formElements>

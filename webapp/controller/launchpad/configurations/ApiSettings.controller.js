@@ -31,7 +31,6 @@ sap.ui.define([
             // global configuration model for views and fragments
             oModelConfiguration = this.setInitialConfigurations();
             oView.setModel(oModelConfiguration, CONFIGURATION_MODEL);
-
         },
 
         setInitialConfigurations: function () {
@@ -82,9 +81,11 @@ sap.ui.define([
         // sending updated CallStatus to backend and verify response
         handleSavePress: function (oEvent) {
             const pressedButtonId = this.getButtonId(oEvent);
+
             const checkPutResponse = (responseModel, pressedButtonId) => {
                 this.checkPutResponse(responseModel, pressedButtonId);
             };
+
             $.ajax({
                 url: URL,
                 type: "PUT",
