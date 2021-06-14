@@ -94,6 +94,7 @@
                         </f:FormElement>
                         <f:FormElement label="{i18n>isArrivalDateTime}">
                             <f:fields>
+                                <!--                                        translate custom text-->
                                 <Switch id="isArrivalDateTime"
                                         customTextOn="yes" customTextOff="no"
                                         state="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/isArrivalDateTime}"

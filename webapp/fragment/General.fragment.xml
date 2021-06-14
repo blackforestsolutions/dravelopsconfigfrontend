@@ -40,6 +40,7 @@
                                                  class="sapUiSmallMarginBottom"
                                                  enabled="{configuration>/input/isGeneralInputEnabled}">
                                     <items>
+                                        <!--                                        todo text-->
                                         <SegmentedButtonItem text="light" key="light"/>
                                         <SegmentedButtonItem text="dark" key="dark"/>
                                     </items>
