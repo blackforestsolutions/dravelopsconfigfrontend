@@ -13,7 +13,7 @@ sap.ui.define([
     "sap/m/Text",
     "sap/base/Log",
     'sap/ui/core/BusyIndicator'
-], function (BaseController, JSONModel, MessageToast, ValueState, Dialog, DialogType, Button, ButtonType, Text, Log, BusyIndicator,) {
+], function (BaseController, JSONModel, MessageToast, ValueState, Dialog, DialogType, Button, ButtonType, Text, Log, BusyIndicator) {
     "use strict";
 
     const URL = "http://localhost:8092/configbackend";
@@ -88,8 +88,8 @@ sap.ui.define([
             };
 
             const hideBusyIndicator = () => {
-                this.hideBusyIndicator()
-            }
+                this.hideBusyIndicator();
+            };
 
             this.showBusyIndicator();
             $.ajax({
@@ -103,7 +103,7 @@ sap.ui.define([
                     checkPutResponse(responseModel, pressedButtonId);
                 },
                 error: function (error) {
-                    hideBusyIndicator()
+                    hideBusyIndicator();
                     if (error !== undefined) {
                         sap.m.MessageToast.show("An error occurred", {
                             duration: 6000
@@ -172,7 +172,7 @@ sap.ui.define([
                 this.toggleButtonsAndInputs(false, pressedButtonId);
 
             }
-            this.hideBusyIndicator()
+            this.hideBusyIndicator();
         },
 
         toggleButtonsAndInputs: function (isEdit, pressedButtonIdArray) {
@@ -229,7 +229,7 @@ sap.ui.define([
 
         showBusyIndicator: function () {
             BusyIndicator.show();
-        },
+        }
 
     });
 });
