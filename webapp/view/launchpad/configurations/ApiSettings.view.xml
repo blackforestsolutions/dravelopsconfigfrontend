@@ -180,7 +180,7 @@
             <masterPages>
                 <Page
                         id="master"
-                        title="Configurations"
+                        title="{i18n>ApiSettingsTile}"
                         backgroundDesign="List" navButtonPress="onNavBack" showNavButton="true">
                     <List id="configurationTabs" itemPress=".onListItemPress" mode="SingleSelectMaster"
                           includeItemInSelection="true">
