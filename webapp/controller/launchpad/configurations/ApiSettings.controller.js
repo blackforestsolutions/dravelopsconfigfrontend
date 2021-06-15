@@ -11,8 +11,9 @@ sap.ui.define([
     "sap/m/Button",
     "sap/m/ButtonType",
     "sap/m/Text",
-    "sap/base/Log"
-], function (BaseController, JSONModel, MessageToast, ValueState, Dialog, DialogType, Button, ButtonType, Text, Log) {
+    "sap/base/Log",
+    'sap/ui/core/BusyIndicator'
+], function (BaseController, JSONModel, MessageToast, ValueState, Dialog, DialogType, Button, ButtonType, Text, Log, BusyIndicator,) {
     "use strict";
 
     const URL = "http://localhost:8092/configbackend";
@@ -86,6 +87,11 @@ sap.ui.define([
                 this.checkPutResponse(responseModel, pressedButtonId);
             };
 
+            const hideBusyIndicator = () => {
+                this.hideBusyIndicator()
+            }
+
+            this.showBusyIndicator();
             $.ajax({
                 url: URL,
                 type: "PUT",
@@ -97,6 +103,7 @@ sap.ui.define([
                     checkPutResponse(responseModel, pressedButtonId);
                 },
                 error: function (error) {
+                    hideBusyIndicator()
                     if (error !== undefined) {
                         sap.m.MessageToast.show("An error occurred", {
                             duration: 6000
@@ -116,8 +123,6 @@ sap.ui.define([
             for (let callStatusEntry = 0; callStatusEntry < callStatuses.length; callStatusEntry++) {
                 if (callStatuses[callStatusEntry].status === "FAILED") {
                     isFailed = false;
-
-
                     switch (callStatuses[callStatusEntry].calledObject) {
                         case "NEAREST_ADDRESSES":
                             errorContent += "Nearest adress";
@@ -167,6 +172,7 @@ sap.ui.define([
                 this.toggleButtonsAndInputs(false, pressedButtonId);
 
             }
+            this.hideBusyIndicator()
         },
 
         toggleButtonsAndInputs: function (isEdit, pressedButtonIdArray) {
@@ -215,6 +221,15 @@ sap.ui.define([
                 Log.info("SplitApp object can't be found");
             }
             return result;
-        }
+        },
+
+        hideBusyIndicator: function () {
+            BusyIndicator.hide();
+        },
+
+        showBusyIndicator: function () {
+            BusyIndicator.show();
+        },
+
     });
 });
