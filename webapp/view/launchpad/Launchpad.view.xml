@@ -28,7 +28,7 @@
                                     </m:TileContent>
                                 </m:GenericTile>
                                 <m:GenericTile id="tile1-2" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
-                                               header="Configure-2" press="tileClicked">
+                                               header="{i18n>DummyTile1}" press="tileClicked">
                                     <m:TileContent>
                                         <m:TileContent>
                                             <m:ImageContent
@@ -39,7 +39,7 @@
                                     </m:TileContent>
                                 </m:GenericTile>
                                 <m:GenericTile id="tile1-3" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
-                                               header="Configure-3" press="tileClicked">
+                                               header="{i18n>DummyTile2}" press="tileClicked">
                                     <m:TileContent>
                                         <m:TileContent>
                                             <m:ImageContent
@@ -61,7 +61,7 @@
                             <m:Panel headerText="{i18n>Anchorbutton-2}" backgroundDesign="Transparent" width="100%">
 
                                 <m:GenericTile id="tile2-1" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
-                                               header="Configure-1" press="tileClicked">
+                                               header="{i18n>DummyTile1}" press="tileClicked">
                                     <m:TileContent>
                                         <m:TileContent>
                                             <m:ImageContent
@@ -72,7 +72,7 @@
                                     </m:TileContent>
                                 </m:GenericTile>
                                 <m:GenericTile id="tile2-2" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
-                                               header="Configure-2" press="tileClicked">
+                                               header="{i18n>DummyTile2}" press="tileClicked">
                                     <m:TileContent>
                                         <m:TileContent>
                                             <m:ImageContent
@@ -83,7 +83,7 @@
                                     </m:TileContent>
                                 </m:GenericTile>
                                 <m:GenericTile id="tile2-3" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
-                                               header="Configure-3" press="tileClicked">
+                                               header="{i18n>DummyTile3}" press="tileClicked">
                                     <m:TileContent>
                                         <m:TileContent>
                                             <m:ImageContent

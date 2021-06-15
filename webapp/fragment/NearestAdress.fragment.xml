@@ -26,14 +26,14 @@
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>
-                        <f:FormElement label="Name">
+                        <f:FormElement label="{i18n>name}">
                             <f:fields>
                                 <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/name}"
                                        required="true"
                                        editable="{configuration>/input/isNearestAdressesInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="longitude">
+                        <f:FormElement label="{i18n>longitude}">
                             <f:fields>
                                 <StepInput
                                         value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/longitude}"
@@ -46,7 +46,7 @@
                                         validationMode="FocusOut"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="latitude">
+                        <f:FormElement label="{i18n>latitude}">
                             <f:fields>
                                 <StepInput
                                         value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/latitude}"
@@ -59,7 +59,7 @@
                                         validationMode="FocusOut"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="radiusInKilometers">
+                        <f:FormElement label="{i18n>radiusInKilometers}">
                             <f:fields>
                                 <StepInput
                                         value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/variables/radiusInKilometers}"
@@ -72,7 +72,7 @@
                                         validationMode="FocusOut"/>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="language">
+                        <f:FormElement label="{i18n>language}">
                             <f:fields>
                                 <MaskInput mask="CC"
                                            placeholderSymbol="_"
@@ -85,7 +85,7 @@
                                 </MaskInput>
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="maxResults">
+                        <f:FormElement label="{i18n>maxResults}">
                             <f:fields>
                                 <Slider value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/maxResults}"
                                         width="100%"
@@ -99,7 +99,7 @@
                             </f:fields>
                         </f:FormElement>
                         <!--cannot access values without key for now-->
-                        <!--<f:FormElement label="layers">
+                        <!--<f:FormElement label="{i18n>layers}">
                             <f:fields>
                                 <Input value="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/layers}"
                                        required="true"
