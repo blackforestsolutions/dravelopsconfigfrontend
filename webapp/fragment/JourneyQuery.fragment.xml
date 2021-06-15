@@ -152,7 +152,6 @@
                                         width="100%"
                                         editable="{configuration>/input/isJourneyQueryInputEnabled}"
                                         textAlign="Begin"
-
                                         validationMode="FocusOut"/>
                             </f:fields>
                         </f:FormElement>

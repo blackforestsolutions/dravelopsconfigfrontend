@@ -230,6 +230,5 @@ sap.ui.define([
         showBusyIndicator: function () {
             BusyIndicator.show();
         }
-
     });
 });
