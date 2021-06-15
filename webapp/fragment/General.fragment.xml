@@ -25,7 +25,7 @@
             <f:formContainers>
                 <f:FormContainer>
                     <f:formElements>
-                        <f:FormElement label="{i18n>general.page-title}">
+                        <f:FormElement label="{i18n>page-title}">
                             <f:fields>
                                 <Input value="{apisettings>/graphql/playground/page-title}"
                                        id="playgroundPageTitleEdit"
@@ -34,15 +34,14 @@
                                 />
                             </f:fields>
                         </f:FormElement>
-                        <f:FormElement label="{i18n>general.theme}">
+                        <f:FormElement label="{i18n>theme}">
                             <f:fields>
                                 <SegmentedButton selectedKey="{apisettings>/graphql/playground/settings/editor/theme}"
                                                  class="sapUiSmallMarginBottom"
                                                  enabled="{configuration>/input/isGeneralInputEnabled}">
                                     <items>
-                                        <!--                                        todo text-->
-                                        <SegmentedButtonItem text="light" key="light"/>
-                                        <SegmentedButtonItem text="dark" key="dark"/>
+                                        <SegmentedButtonItem text="{i18n>light}" key="light"/>
+                                        <SegmentedButtonItem text="{i18n>dark}" key="dark"/>
                                     </items>
                                 </SegmentedButton>
                             </f:fields>
