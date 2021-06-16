@@ -87,9 +87,12 @@
                         <f:FormElement
                                 label="{i18n>dateTime}">
                             <f:fields>
-                                <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"
-                                       required="true"
-                                       editable="{configuration>/input/isJourneyQueryInputEnabled}"/>
+                                <DateTimePicker
+                                        id="datetimepicker"
+                                        value="{apisettings>/graphql/playground/tabs/JOURNEY_QUERY/variables/dateTime}"
+                                        valueFormat="yyyy-MM-ddTHH:mm:ssXXX"
+                                        editable="{configuration>/input/isJourneyQueryInputEnabled}"
+                                        class="sapUiSmallMarginBottom"/>
                             </f:fields>
                         </f:FormElement>
                         <f:FormElement label="{i18n>isArrivalDateTime}">
