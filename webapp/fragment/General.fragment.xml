@@ -13,14 +13,13 @@
                         labelSpanS="12"
                         adjustLabelSpan="false"
                         emptySpanXL="4"
-                        emptySpanL="4"
-                        emptySpanM="4"
+                        emptySpanL="2"
+                        emptySpanM="1"
                         emptySpanS="0"
                         columnsXL="1"
                         columnsL="1"
                         columnsM="1"
-                        singleContainerFullSize="true"
-                />
+                        singleContainerFullSize="true"/>
             </f:layout>
             <f:formContainers>
                 <f:FormContainer>
