@@ -1,0 +1,9 @@
+{
+  "setting-items": [
+    {
+      "icon-src": "sap-icon://home",
+      "title": "Theme",
+      "subTitle": "change theme"
+    }
+  ]
+}

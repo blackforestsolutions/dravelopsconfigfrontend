@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:f="sap.f" xmlns:core="sap.ui.core" xmlns="sap.m">
+    <ResponsivePopover placement="Bottom" showHeader="false">
+        <f:ProductSwitch change="fnChange"
+                         items="{
+				path: '/setting-items'
+			}">
+            <f:items>
+                <f:ProductSwitchItem src="{icon-src}" title="{title}" subTitle="{subTitle}" targetSrc="{targetSrc}"
+                                     target="{target}"/>
+            </f:items>
+        </f:ProductSwitch>
+    </ResponsivePopover>
+</core:FragmentDefinition>

@@ -1,10 +1,14 @@
 <mvc:View
-        controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.BaseController"
+        xmlns:f="sap.f"
         xmlns:mvc="sap.ui.core.mvc"
-        xmlns:f="sap.f">
+        controllerName="de.blackforestsolutions.dravelopsconfigfrontend.controller.shared.Logotoolbar"
+        height="100%"
+>
     <f:ShellBar
             homeIcon="./img/corporate-logo.jpg"
             title=""
-            homeIconPressed="onHomeIconPressed">
+            homeIconPressed="onHomeIconPressed"
+            productSwitcherPressed="fnOpen"
+            showProductSwitcher="true">
     </f:ShellBar>
 </mvc:View>
