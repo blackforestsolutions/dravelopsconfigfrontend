@@ -101,7 +101,7 @@
                         </f:FormElement>
                         <f:FormElement label="{i18n>layers}">
                             <f:fields>
-                                <CheckBox text="{i18n>venue} ({i18n>venueTooltip})"
+                                <CheckBox text="{i18n>venue} ({i18n>venueFurtherInformation})"
                                           wrapping="true"
                                           selected="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/layers/hasVenue}"
                                           editable="{configuration>/input/isNearestAdressesInputEnabled}">
@@ -111,7 +111,7 @@
                                                 indentM="0"/>
                                     </layoutData>
                                 </CheckBox>
-                                <CheckBox text="{i18n>address} ({i18n>addressTooltip})"
+                                <CheckBox text="{i18n>address} ({i18n>addressFurtherInformation})"
                                           wrapping="true"
                                           selected="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/layers/hasAddress}"
                                           editable="{configuration>/input/isNearestAdressesInputEnabled}">
@@ -121,7 +121,7 @@
                                                     indentM="3"/>
                                     </layoutData>
                                 </CheckBox>
-                                <CheckBox text="{i18n>street} ({i18n>streetTooltip})"
+                                <CheckBox text="{i18n>street} ({i18n>streetFurtherInformation})"
                                           wrapping="true"
                                           selected="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/layers/hasStreet}"
                                           editable="{configuration>/input/isNearestAdressesInputEnabled}">
@@ -131,7 +131,7 @@
                                                     indentM="3"/>
                                     </layoutData>
                                 </CheckBox>
-                                <CheckBox text="{i18n>locality} ({i18n>localityTooltip})"
+                                <CheckBox text="{i18n>locality} ({i18n>localityFurtherInformation})"
                                           wrapping="true"
                                           selected="{apisettings>/graphql/playground/tabs/NEAREST_ADDRESSES/layers/hasLocality}"
                                           editable="{configuration>/input/isNearestAdressesInputEnabled}">
