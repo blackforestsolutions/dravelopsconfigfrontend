@@ -1,5 +1,6 @@
 <core:FragmentDefinition
         xmlns:core="sap.ui.core"
+        xmlns:l="sap.ui.layout"
         xmlns:f="sap.ui.layout.form"
         xmlns="sap.m">
 
@@ -13,9 +14,9 @@
                         labelSpanM="3"
                         labelSpanS="12"
                         adjustLabelSpan="false"
-                        emptySpanXL="4"
-                        emptySpanL="4"
-                        emptySpanM="4"
+                        emptySpanXL="2"
+                        emptySpanL="2"
+                        emptySpanM="2"
                         emptySpanS="0"
                         columnsXL="1"
                         columnsL="1"
@@ -65,26 +66,50 @@
                                         enabled="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
                             </f:fields>
                         </f:FormElement>
-                        <!--cannot access values without key for now-->
-                        <!--<f:FormElement label="layers">
+                        <f:FormElement label="{i18n>layers}">
                             <f:fields>
-                                <List id="layers"
-                                      items="{path: 'apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers', templateShareable:false}">
-                                    <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers}"
-                                           required="true"
-                                           editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
-                                    <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers}"
-                                           required="true"
-                                           editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
-                                    <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers/[2]}"
-                                           required="true"
-                                           editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
-                                    <Input value="{apisettings>/graphql/playground/tabs/JOURNEY_SUBSCRIPTION/layers/[3]}"
-                                           required="true"
-                                           editable="{configuration>/input/isAdressAutocompletionInputEnabled}"/>
-                                </List>
+                                <CheckBox text="{i18n>venue} ({i18n>venueFurtherInformation})"
+                                          wrapping="true"
+                                          selected="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/layers/hasVenue}"
+                                          editable="{configuration>/input/isAdressAutocompletionInputEnabled}">
+                                    <layoutData>
+                                        <l:GridData
+                                                indentL="0"
+                                                indentM="0"/>
+                                    </layoutData>
+                                </CheckBox>
+                                <CheckBox text="{i18n>address} ({i18n>addressFurtherInformation})"
+                                          wrapping="true"
+                                          selected="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/layers/hasAddress}"
+                                          editable="{configuration>/input/isAdressAutocompletionInputEnabled}">
+                                    <layoutData>
+                                        <l:GridData linebreak="true"
+                                                    indentL="3"
+                                                    indentM="3"/>
+                                    </layoutData>
+                                </CheckBox>
+                                <CheckBox text="{i18n>street} ({i18n>streetFurtherInformation})"
+                                          wrapping="true"
+                                          selected="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/layers/hasStreet}"
+                                          editable="{configuration>/input/isAdressAutocompletionInputEnabled}">
+                                    <layoutData>
+                                        <l:GridData linebreak="true"
+                                                    indentL="3"
+                                                    indentM="3"/>
+                                    </layoutData>
+                                </CheckBox>
+                                <CheckBox text="{i18n>locality} ({i18n>localityFurtherInformation})"
+                                          wrapping="true"
+                                          selected="{apisettings>/graphql/playground/tabs/ADDRESS_AUTOCOMPLETION/layers/hasLocality}"
+                                          editable="{configuration>/input/isAdressAutocompletionInputEnabled}">
+                                    <layoutData>
+                                        <l:GridData linebreak="true"
+                                                    indentL="3"
+                                                    indentM="3"/>
+                                    </layoutData>
+                                </CheckBox>
                             </f:fields>
-                        </f:FormElement>-->
+                        </f:FormElement>
                     </f:formElements>
                 </f:FormContainer>
             </f:formContainers>
